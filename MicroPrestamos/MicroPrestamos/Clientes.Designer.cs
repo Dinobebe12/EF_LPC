@@ -36,7 +36,7 @@
             this.lblGenero = new System.Windows.Forms.Label();
             this.lblEstadoCivil = new System.Windows.Forms.Label();
             this.lblCorreoElectronico = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
+            this.lblDireccion = new System.Windows.Forms.Label();
             this.Nombretxt = new System.Windows.Forms.TextBox();
             this.Apellido1txt = new System.Windows.Forms.TextBox();
             this.Apellido2txt = new System.Windows.Forms.TextBox();
@@ -50,10 +50,16 @@
             this.prestamosDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.serviciosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.serviciosTableAdapter = new MicroPrestamos.PrestamosDataSetTableAdapters.ServiciosTableAdapter();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.prestamosDataSet1 = new MicroPrestamos.PrestamosDataSet1();
+            this.dgvDatosPersonales = new System.Windows.Forms.DataGridView();
             this.clientesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.prestamosDataSet1 = new MicroPrestamos.PrestamosDataSet1();
             this.clientesTableAdapter = new MicroPrestamos.PrestamosDataSet1TableAdapters.ClientesTableAdapter();
+            this.btnAgregar = new System.Windows.Forms.Button();
+            this.btnBuscar = new System.Windows.Forms.Button();
+            this.btnLimpiar = new System.Windows.Forms.Button();
+            this.btnEliminar = new System.Windows.Forms.Button();
+            this.btnActualizar = new System.Windows.Forms.Button();
+            this.txtBuscar = new System.Windows.Forms.TextBox();
             this.cliIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cliNombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cliPrimerApellidoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -66,9 +72,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.prestamosDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.prestamosDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.serviciosBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.prestamosDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDatosPersonales)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.prestamosDataSet1)).BeginInit();
             this.SuspendLayout();
             // 
             // lblNombre
@@ -134,14 +140,14 @@
             this.lblCorreoElectronico.TabIndex = 6;
             this.lblCorreoElectronico.Text = "Correo Electrónico:";
             // 
-            // label8
+            // lblDireccion
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(9, 235);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(55, 13);
-            this.label8.TabIndex = 7;
-            this.label8.Text = "Dirección:";
+            this.lblDireccion.AutoSize = true;
+            this.lblDireccion.Location = new System.Drawing.Point(9, 235);
+            this.lblDireccion.Name = "lblDireccion";
+            this.lblDireccion.Size = new System.Drawing.Size(55, 13);
+            this.lblDireccion.TabIndex = 7;
+            this.lblDireccion.Text = "Dirección:";
             // 
             // Nombretxt
             // 
@@ -233,11 +239,11 @@
             // 
             this.serviciosTableAdapter.ClearBeforeFill = true;
             // 
-            // dataGridView1
+            // dgvDatosPersonales
             // 
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvDatosPersonales.AutoGenerateColumns = false;
+            this.dgvDatosPersonales.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDatosPersonales.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.cliIDDataGridViewTextBoxColumn,
             this.cliNombreDataGridViewTextBoxColumn,
             this.cliPrimerApellidoDataGridViewTextBoxColumn,
@@ -247,87 +253,158 @@
             this.cliEstadoCivilDataGridViewTextBoxColumn,
             this.cliCorreoElectronicoDataGridViewTextBoxColumn,
             this.cliDireccionDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.clientesBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(493, 69);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(351, 179);
-            this.dataGridView1.TabIndex = 17;
-            // 
-            // prestamosDataSet1
-            // 
-            this.prestamosDataSet1.DataSetName = "PrestamosDataSet1";
-            this.prestamosDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.dgvDatosPersonales.DataSource = this.clientesBindingSource;
+            this.dgvDatosPersonales.Location = new System.Drawing.Point(500, 96);
+            this.dgvDatosPersonales.Name = "dgvDatosPersonales";
+            this.dgvDatosPersonales.ReadOnly = true;
+            this.dgvDatosPersonales.Size = new System.Drawing.Size(344, 210);
+            this.dgvDatosPersonales.TabIndex = 17;
             // 
             // clientesBindingSource
             // 
             this.clientesBindingSource.DataMember = "Clientes";
             this.clientesBindingSource.DataSource = this.prestamosDataSet1;
             // 
+            // prestamosDataSet1
+            // 
+            this.prestamosDataSet1.DataSetName = "PrestamosDataSet1";
+            this.prestamosDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // clientesTableAdapter
             // 
             this.clientesTableAdapter.ClearBeforeFill = true;
             // 
+            // btnAgregar
+            // 
+            this.btnAgregar.Location = new System.Drawing.Point(30, 394);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(75, 23);
+            this.btnAgregar.TabIndex = 18;
+            this.btnAgregar.Text = "Agregar";
+            this.btnAgregar.UseVisualStyleBackColor = true;
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.Location = new System.Drawing.Point(750, 60);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(75, 23);
+            this.btnBuscar.TabIndex = 19;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            // 
+            // btnLimpiar
+            // 
+            this.btnLimpiar.Location = new System.Drawing.Point(360, 394);
+            this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.Size = new System.Drawing.Size(75, 23);
+            this.btnLimpiar.TabIndex = 20;
+            this.btnLimpiar.Text = "Limpiar";
+            this.btnLimpiar.UseVisualStyleBackColor = true;
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.Location = new System.Drawing.Point(259, 394);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(75, 23);
+            this.btnEliminar.TabIndex = 21;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = true;
+            // 
+            // btnActualizar
+            // 
+            this.btnActualizar.Location = new System.Drawing.Point(152, 394);
+            this.btnActualizar.Name = "btnActualizar";
+            this.btnActualizar.Size = new System.Drawing.Size(75, 23);
+            this.btnActualizar.TabIndex = 22;
+            this.btnActualizar.Text = "Actualizar";
+            this.btnActualizar.UseVisualStyleBackColor = true;
+            // 
+            // txtBuscar
+            // 
+            this.txtBuscar.Location = new System.Drawing.Point(592, 62);
+            this.txtBuscar.Name = "txtBuscar";
+            this.txtBuscar.Size = new System.Drawing.Size(142, 20);
+            this.txtBuscar.TabIndex = 23;
+            // 
             // cliIDDataGridViewTextBoxColumn
             // 
             this.cliIDDataGridViewTextBoxColumn.DataPropertyName = "Cli_ID";
-            this.cliIDDataGridViewTextBoxColumn.HeaderText = "Cli_ID";
+            this.cliIDDataGridViewTextBoxColumn.HeaderText = "ID";
             this.cliIDDataGridViewTextBoxColumn.Name = "cliIDDataGridViewTextBoxColumn";
             this.cliIDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.cliIDDataGridViewTextBoxColumn.Width = 40;
             // 
             // cliNombreDataGridViewTextBoxColumn
             // 
             this.cliNombreDataGridViewTextBoxColumn.DataPropertyName = "Cli_Nombre";
-            this.cliNombreDataGridViewTextBoxColumn.HeaderText = "Cli_Nombre";
+            this.cliNombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
             this.cliNombreDataGridViewTextBoxColumn.Name = "cliNombreDataGridViewTextBoxColumn";
+            this.cliNombreDataGridViewTextBoxColumn.ReadOnly = true;
+            this.cliNombreDataGridViewTextBoxColumn.Width = 125;
             // 
             // cliPrimerApellidoDataGridViewTextBoxColumn
             // 
             this.cliPrimerApellidoDataGridViewTextBoxColumn.DataPropertyName = "Cli_Primer_Apellido";
-            this.cliPrimerApellidoDataGridViewTextBoxColumn.HeaderText = "Cli_Primer_Apellido";
+            this.cliPrimerApellidoDataGridViewTextBoxColumn.HeaderText = "Primer Apellido";
             this.cliPrimerApellidoDataGridViewTextBoxColumn.Name = "cliPrimerApellidoDataGridViewTextBoxColumn";
+            this.cliPrimerApellidoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.cliPrimerApellidoDataGridViewTextBoxColumn.Width = 125;
             // 
             // cliSegundoApellidoDataGridViewTextBoxColumn
             // 
             this.cliSegundoApellidoDataGridViewTextBoxColumn.DataPropertyName = "Cli_Segundo_Apellido";
-            this.cliSegundoApellidoDataGridViewTextBoxColumn.HeaderText = "Cli_Segundo_Apellido";
+            this.cliSegundoApellidoDataGridViewTextBoxColumn.HeaderText = "Segundo Apellido";
             this.cliSegundoApellidoDataGridViewTextBoxColumn.Name = "cliSegundoApellidoDataGridViewTextBoxColumn";
+            this.cliSegundoApellidoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.cliSegundoApellidoDataGridViewTextBoxColumn.Width = 125;
             // 
             // cliCedulaDataGridViewTextBoxColumn
             // 
             this.cliCedulaDataGridViewTextBoxColumn.DataPropertyName = "Cli_Cedula";
-            this.cliCedulaDataGridViewTextBoxColumn.HeaderText = "Cli_Cedula";
+            this.cliCedulaDataGridViewTextBoxColumn.HeaderText = "Cédula";
             this.cliCedulaDataGridViewTextBoxColumn.Name = "cliCedulaDataGridViewTextBoxColumn";
+            this.cliCedulaDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // cliGeneroDataGridViewTextBoxColumn
             // 
             this.cliGeneroDataGridViewTextBoxColumn.DataPropertyName = "Cli_Genero";
-            this.cliGeneroDataGridViewTextBoxColumn.HeaderText = "Cli_Genero";
+            this.cliGeneroDataGridViewTextBoxColumn.HeaderText = "Género";
             this.cliGeneroDataGridViewTextBoxColumn.Name = "cliGeneroDataGridViewTextBoxColumn";
+            this.cliGeneroDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // cliEstadoCivilDataGridViewTextBoxColumn
             // 
             this.cliEstadoCivilDataGridViewTextBoxColumn.DataPropertyName = "Cli_Estado_Civil";
-            this.cliEstadoCivilDataGridViewTextBoxColumn.HeaderText = "Cli_Estado_Civil";
+            this.cliEstadoCivilDataGridViewTextBoxColumn.HeaderText = "Estado Civil";
             this.cliEstadoCivilDataGridViewTextBoxColumn.Name = "cliEstadoCivilDataGridViewTextBoxColumn";
+            this.cliEstadoCivilDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // cliCorreoElectronicoDataGridViewTextBoxColumn
             // 
             this.cliCorreoElectronicoDataGridViewTextBoxColumn.DataPropertyName = "Cli_Correo_Electronico";
-            this.cliCorreoElectronicoDataGridViewTextBoxColumn.HeaderText = "Cli_Correo_Electronico";
+            this.cliCorreoElectronicoDataGridViewTextBoxColumn.HeaderText = "Correo Electrónico";
             this.cliCorreoElectronicoDataGridViewTextBoxColumn.Name = "cliCorreoElectronicoDataGridViewTextBoxColumn";
+            this.cliCorreoElectronicoDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // cliDireccionDataGridViewTextBoxColumn
             // 
             this.cliDireccionDataGridViewTextBoxColumn.DataPropertyName = "Cli_Direccion";
-            this.cliDireccionDataGridViewTextBoxColumn.HeaderText = "Cli_Direccion";
+            this.cliDireccionDataGridViewTextBoxColumn.HeaderText = "Dirección";
             this.cliDireccionDataGridViewTextBoxColumn.Name = "cliDireccionDataGridViewTextBoxColumn";
+            this.cliDireccionDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // Registrarse
+            // Clientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(856, 462);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.txtBuscar);
+            this.Controls.Add(this.btnActualizar);
+            this.Controls.Add(this.btnEliminar);
+            this.Controls.Add(this.btnLimpiar);
+            this.Controls.Add(this.btnBuscar);
+            this.Controls.Add(this.btnAgregar);
+            this.Controls.Add(this.dgvDatosPersonales);
             this.Controls.Add(this.lblTitulo);
             this.Controls.Add(this.Direcciontxt);
             this.Controls.Add(this.Correotxt);
@@ -337,7 +414,7 @@
             this.Controls.Add(this.Apellido2txt);
             this.Controls.Add(this.Apellido1txt);
             this.Controls.Add(this.Nombretxt);
-            this.Controls.Add(this.label8);
+            this.Controls.Add(this.lblDireccion);
             this.Controls.Add(this.lblCorreoElectronico);
             this.Controls.Add(this.lblEstadoCivil);
             this.Controls.Add(this.lblGenero);
@@ -345,15 +422,15 @@
             this.Controls.Add(this.lblSegundoApellido);
             this.Controls.Add(this.lblPrimerApellido);
             this.Controls.Add(this.lblNombre);
-            this.Name = "Registrarse";
+            this.Name = "Clientes";
             this.Text = "Registrarse";
             this.Load += new System.EventHandler(this.Registrarse_Load);
             ((System.ComponentModel.ISupportInitialize)(this.prestamosDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.prestamosDataSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.serviciosBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.prestamosDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDatosPersonales)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.prestamosDataSet1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -368,7 +445,7 @@
         private System.Windows.Forms.Label lblGenero;
         private System.Windows.Forms.Label lblEstadoCivil;
         private System.Windows.Forms.Label lblCorreoElectronico;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label lblDireccion;
         private System.Windows.Forms.TextBox Nombretxt;
         private System.Windows.Forms.TextBox Apellido1txt;
         private System.Windows.Forms.TextBox Apellido2txt;
@@ -382,10 +459,16 @@
         private PrestamosDataSet prestamosDataSet;
         private System.Windows.Forms.BindingSource serviciosBindingSource;
         private PrestamosDataSetTableAdapters.ServiciosTableAdapter serviciosTableAdapter;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvDatosPersonales;
         private PrestamosDataSet1 prestamosDataSet1;
         private System.Windows.Forms.BindingSource clientesBindingSource;
         private PrestamosDataSet1TableAdapters.ClientesTableAdapter clientesTableAdapter;
+        private System.Windows.Forms.Button btnAgregar;
+        private System.Windows.Forms.Button btnBuscar;
+        private System.Windows.Forms.Button btnLimpiar;
+        private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.Button btnActualizar;
+        private System.Windows.Forms.TextBox txtBuscar;
         private System.Windows.Forms.DataGridViewTextBoxColumn cliIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn cliNombreDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn cliPrimerApellidoDataGridViewTextBoxColumn;

@@ -21,17 +21,6 @@ namespace MicroPrestamos
         {
             // TODO: This line of code loads data into the 'prestamosDataSet.Servicios' table. You can move, or remove it, as needed.
             this.serviciosTableAdapter.Fill(this.prestamosDataSet.Servicios);
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }
