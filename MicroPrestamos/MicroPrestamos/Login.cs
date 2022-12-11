@@ -50,5 +50,12 @@ namespace MicroPrestamos
                 conn.Close();
             }
         }
+
+        private void btnRegistrarse_Click(object sender, EventArgs e)
+        {
+            Registrarse registrarse = new Registrarse();
+            this.Hide();
+            registrarse.ShowDialog();
+        }
     }
 }
