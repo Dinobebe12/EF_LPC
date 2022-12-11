@@ -33,7 +33,6 @@
             this.lblContrasena = new System.Windows.Forms.Label();
             this.txtUsuario = new System.Windows.Forms.TextBox();
             this.txtContrasena = new System.Windows.Forms.TextBox();
-            this.btnRegistrarse = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnLogin
@@ -79,22 +78,11 @@
             this.txtContrasena.Size = new System.Drawing.Size(100, 20);
             this.txtContrasena.TabIndex = 4;
             // 
-            // btnRegistrarse
-            // 
-            this.btnRegistrarse.Location = new System.Drawing.Point(105, 257);
-            this.btnRegistrarse.Name = "btnRegistrarse";
-            this.btnRegistrarse.Size = new System.Drawing.Size(84, 23);
-            this.btnRegistrarse.TabIndex = 5;
-            this.btnRegistrarse.Text = "Registrarse";
-            this.btnRegistrarse.UseVisualStyleBackColor = true;
-            this.btnRegistrarse.Click += new System.EventHandler(this.btnRegistrarse_Click);
-            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(314, 292);
-            this.Controls.Add(this.btnRegistrarse);
             this.Controls.Add(this.txtContrasena);
             this.Controls.Add(this.txtUsuario);
             this.Controls.Add(this.lblContrasena);
@@ -114,6 +102,5 @@
         private System.Windows.Forms.Label lblContrasena;
         private System.Windows.Forms.TextBox txtUsuario;
         private System.Windows.Forms.TextBox txtContrasena;
-        private System.Windows.Forms.Button btnRegistrarse;
     }
 }
