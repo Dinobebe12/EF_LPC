@@ -28,28 +28,29 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnLogin = new System.Windows.Forms.Button();
+            this.BtnLogin = new System.Windows.Forms.Button();
             this.lblUsuario = new System.Windows.Forms.Label();
             this.lblContrasena = new System.Windows.Forms.Label();
-            this.txtUsuario = new System.Windows.Forms.TextBox();
-            this.txtContrasena = new System.Windows.Forms.TextBox();
-            this.btnRegistrarse = new System.Windows.Forms.Button();
+            this.TxtUsuario = new System.Windows.Forms.TextBox();
+            this.TxtContrasena = new System.Windows.Forms.TextBox();
+            this.BtnRegistrarse = new System.Windows.Forms.Button();
+            this.BtnVerContrasena = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // btnLogin
+            // BtnLogin
             // 
-            this.btnLogin.Location = new System.Drawing.Point(105, 224);
-            this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(84, 23);
-            this.btnLogin.TabIndex = 0;
-            this.btnLogin.Text = "Iniciar Sesión";
-            this.btnLogin.UseVisualStyleBackColor = true;
-            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
+            this.BtnLogin.Location = new System.Drawing.Point(105, 224);
+            this.BtnLogin.Name = "BtnLogin";
+            this.BtnLogin.Size = new System.Drawing.Size(84, 23);
+            this.BtnLogin.TabIndex = 0;
+            this.BtnLogin.Text = "Iniciar Sesión";
+            this.BtnLogin.UseVisualStyleBackColor = true;
+            this.BtnLogin.Click += new System.EventHandler(this.BtnLogin_Click);
             // 
             // lblUsuario
             // 
             this.lblUsuario.AutoSize = true;
-            this.lblUsuario.Location = new System.Drawing.Point(111, 57);
+            this.lblUsuario.Location = new System.Drawing.Point(131, 48);
             this.lblUsuario.Name = "lblUsuario";
             this.lblUsuario.Size = new System.Drawing.Size(43, 13);
             this.lblUsuario.TabIndex = 1;
@@ -58,48 +59,59 @@
             // lblContrasena
             // 
             this.lblContrasena.AutoSize = true;
-            this.lblContrasena.Location = new System.Drawing.Point(111, 129);
+            this.lblContrasena.Location = new System.Drawing.Point(122, 108);
             this.lblContrasena.Name = "lblContrasena";
             this.lblContrasena.Size = new System.Drawing.Size(61, 13);
             this.lblContrasena.TabIndex = 2;
             this.lblContrasena.Text = "Contraseña";
             // 
-            // txtUsuario
+            // TxtUsuario
             // 
-            this.txtUsuario.Location = new System.Drawing.Point(105, 89);
-            this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(100, 20);
-            this.txtUsuario.TabIndex = 3;
+            this.TxtUsuario.Location = new System.Drawing.Point(105, 73);
+            this.TxtUsuario.Name = "TxtUsuario";
+            this.TxtUsuario.Size = new System.Drawing.Size(100, 20);
+            this.TxtUsuario.TabIndex = 3;
             // 
-            // txtContrasena
+            // TxtContrasena
             // 
-            this.txtContrasena.Location = new System.Drawing.Point(105, 167);
-            this.txtContrasena.Name = "txtContrasena";
-            this.txtContrasena.PasswordChar = '*';
-            this.txtContrasena.Size = new System.Drawing.Size(100, 20);
-            this.txtContrasena.TabIndex = 4;
+            this.TxtContrasena.Location = new System.Drawing.Point(105, 134);
+            this.TxtContrasena.Name = "TxtContrasena";
+            this.TxtContrasena.PasswordChar = '*';
+            this.TxtContrasena.Size = new System.Drawing.Size(100, 20);
+            this.TxtContrasena.TabIndex = 4;
             // 
-            // btnRegistrarse
+            // BtnRegistrarse
             // 
-            this.btnRegistrarse.Location = new System.Drawing.Point(105, 257);
-            this.btnRegistrarse.Name = "btnRegistrarse";
-            this.btnRegistrarse.Size = new System.Drawing.Size(84, 23);
-            this.btnRegistrarse.TabIndex = 5;
-            this.btnRegistrarse.Text = "Registrarse";
-            this.btnRegistrarse.UseVisualStyleBackColor = true;
-            this.btnRegistrarse.Click += new System.EventHandler(this.btnRegistrarse_Click);
+            this.BtnRegistrarse.Location = new System.Drawing.Point(105, 257);
+            this.BtnRegistrarse.Name = "BtnRegistrarse";
+            this.BtnRegistrarse.Size = new System.Drawing.Size(84, 23);
+            this.BtnRegistrarse.TabIndex = 5;
+            this.BtnRegistrarse.Text = "Registrarse";
+            this.BtnRegistrarse.UseVisualStyleBackColor = true;
+            this.BtnRegistrarse.Click += new System.EventHandler(this.BtnRegistrarse_Click);
+            // 
+            // BtnVerContrasena
+            // 
+            this.BtnVerContrasena.Location = new System.Drawing.Point(114, 160);
+            this.BtnVerContrasena.Name = "BtnVerContrasena";
+            this.BtnVerContrasena.Size = new System.Drawing.Size(69, 24);
+            this.BtnVerContrasena.TabIndex = 29;
+            this.BtnVerContrasena.Text = "Ver";
+            this.BtnVerContrasena.UseVisualStyleBackColor = true;
+            this.BtnVerContrasena.Click += new System.EventHandler(this.BtnVerContrasena_Click);
             // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(314, 292);
-            this.Controls.Add(this.btnRegistrarse);
-            this.Controls.Add(this.txtContrasena);
-            this.Controls.Add(this.txtUsuario);
+            this.Controls.Add(this.BtnVerContrasena);
+            this.Controls.Add(this.BtnRegistrarse);
+            this.Controls.Add(this.TxtContrasena);
+            this.Controls.Add(this.TxtUsuario);
             this.Controls.Add(this.lblContrasena);
             this.Controls.Add(this.lblUsuario);
-            this.Controls.Add(this.btnLogin);
+            this.Controls.Add(this.BtnLogin);
             this.Name = "Login";
             this.Text = "Login";
             this.ResumeLayout(false);
@@ -109,11 +121,12 @@
 
         #endregion
 
-        private System.Windows.Forms.Button btnLogin;
+        private System.Windows.Forms.Button BtnLogin;
         private System.Windows.Forms.Label lblUsuario;
         private System.Windows.Forms.Label lblContrasena;
-        private System.Windows.Forms.TextBox txtUsuario;
-        private System.Windows.Forms.TextBox txtContrasena;
-        private System.Windows.Forms.Button btnRegistrarse;
+        private System.Windows.Forms.TextBox TxtUsuario;
+        private System.Windows.Forms.TextBox TxtContrasena;
+        private System.Windows.Forms.Button BtnRegistrarse;
+        private System.Windows.Forms.Button BtnVerContrasena;
     }
 }

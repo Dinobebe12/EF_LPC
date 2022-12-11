@@ -69,6 +69,11 @@
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnActualizar = new System.Windows.Forms.Button();
             this.txtBuscar = new System.Windows.Forms.TextBox();
+            this.lblContrasena = new System.Windows.Forms.Label();
+            this.LblUsuario = new System.Windows.Forms.Label();
+            this.TxtContrasena = new System.Windows.Forms.TextBox();
+            this.TxtUsuario = new System.Windows.Forms.TextBox();
+            this.BtnVerContrasena = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.prestamosDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.prestamosDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.serviciosBindingSource)).BeginInit();
@@ -205,14 +210,14 @@
             // 
             this.Correotxt.Location = new System.Drawing.Point(12, 203);
             this.Correotxt.Name = "Correotxt";
-            this.Correotxt.Size = new System.Drawing.Size(313, 20);
+            this.Correotxt.Size = new System.Drawing.Size(304, 20);
             this.Correotxt.TabIndex = 14;
             // 
             // Direcciontxt
             // 
             this.Direcciontxt.Location = new System.Drawing.Point(12, 251);
             this.Direcciontxt.Name = "Direcciontxt";
-            this.Direcciontxt.Size = new System.Drawing.Size(409, 20);
+            this.Direcciontxt.Size = new System.Drawing.Size(475, 20);
             this.Direcciontxt.TabIndex = 15;
             // 
             // lblTitulo
@@ -357,7 +362,7 @@
             this.btnAgregar.TabIndex = 18;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
-            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
+            this.btnAgregar.Click += new System.EventHandler(this.BtnAgregar_Click);
             // 
             // btnBuscar
             // 
@@ -402,11 +407,59 @@
             this.txtBuscar.Size = new System.Drawing.Size(142, 20);
             this.txtBuscar.TabIndex = 23;
             // 
+            // lblContrasena
+            // 
+            this.lblContrasena.AutoSize = true;
+            this.lblContrasena.Location = new System.Drawing.Point(247, 293);
+            this.lblContrasena.Name = "lblContrasena";
+            this.lblContrasena.Size = new System.Drawing.Size(64, 13);
+            this.lblContrasena.TabIndex = 24;
+            this.lblContrasena.Text = "Contraseña:";
+            // 
+            // LblUsuario
+            // 
+            this.LblUsuario.AutoSize = true;
+            this.LblUsuario.Location = new System.Drawing.Point(9, 293);
+            this.LblUsuario.Name = "LblUsuario";
+            this.LblUsuario.Size = new System.Drawing.Size(46, 13);
+            this.LblUsuario.TabIndex = 25;
+            this.LblUsuario.Text = "Usuario:";
+            // 
+            // TxtContrasena
+            // 
+            this.TxtContrasena.Location = new System.Drawing.Point(317, 293);
+            this.TxtContrasena.Name = "TxtContrasena";
+            this.TxtContrasena.PasswordChar = '*';
+            this.TxtContrasena.Size = new System.Drawing.Size(170, 20);
+            this.TxtContrasena.TabIndex = 26;
+            // 
+            // TxtUsuario
+            // 
+            this.TxtUsuario.Location = new System.Drawing.Point(61, 293);
+            this.TxtUsuario.Name = "TxtUsuario";
+            this.TxtUsuario.Size = new System.Drawing.Size(166, 20);
+            this.TxtUsuario.TabIndex = 27;
+            // 
+            // BtnVerContrasena
+            // 
+            this.BtnVerContrasena.Location = new System.Drawing.Point(317, 319);
+            this.BtnVerContrasena.Name = "BtnVerContrasena";
+            this.BtnVerContrasena.Size = new System.Drawing.Size(69, 24);
+            this.BtnVerContrasena.TabIndex = 28;
+            this.BtnVerContrasena.Text = "Ver";
+            this.BtnVerContrasena.UseVisualStyleBackColor = true;
+            this.BtnVerContrasena.Click += new System.EventHandler(this.BtnVerContrasena_Click);
+            // 
             // Clientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(856, 462);
+            this.Controls.Add(this.BtnVerContrasena);
+            this.Controls.Add(this.TxtUsuario);
+            this.Controls.Add(this.TxtContrasena);
+            this.Controls.Add(this.LblUsuario);
+            this.Controls.Add(this.lblContrasena);
             this.Controls.Add(this.txtBuscar);
             this.Controls.Add(this.btnActualizar);
             this.Controls.Add(this.btnEliminar);
@@ -487,5 +540,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn cliEstadoCivilDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn cliCorreoElectronicoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn cliDireccionDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Label lblContrasena;
+        private System.Windows.Forms.Label LblUsuario;
+        private System.Windows.Forms.TextBox TxtContrasena;
+        private System.Windows.Forms.TextBox TxtUsuario;
+        private System.Windows.Forms.Button BtnVerContrasena;
     }
 }
