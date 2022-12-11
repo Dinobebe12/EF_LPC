@@ -16,7 +16,7 @@ namespace MicroPrestamos
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new PrestamoPant());
+            Application.Run(new Login());
         }
     }
 }

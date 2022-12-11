@@ -1,0 +1,12 @@
+C:\Users\victo\source\repos\EF_LPC\MicroPrestamos\MicroPrestamos\bin\Debug\MicroPrestamos.exe.config
+C:\Users\victo\source\repos\EF_LPC\MicroPrestamos\MicroPrestamos\bin\Debug\MicroPrestamos.exe
+C:\Users\victo\source\repos\EF_LPC\MicroPrestamos\MicroPrestamos\bin\Debug\MicroPrestamos.pdb
+C:\Users\victo\source\repos\EF_LPC\MicroPrestamos\MicroPrestamos\obj\Debug\MicroPrestamos.csproj.AssemblyReference.cache
+C:\Users\victo\source\repos\EF_LPC\MicroPrestamos\MicroPrestamos\obj\Debug\MicroPrestamos.csproj.SuggestedBindingRedirects.cache
+C:\Users\victo\source\repos\EF_LPC\MicroPrestamos\MicroPrestamos\obj\Debug\MicroPrestamos.PrestamoPant.resources
+C:\Users\victo\source\repos\EF_LPC\MicroPrestamos\MicroPrestamos\obj\Debug\MicroPrestamos.Login.resources
+C:\Users\victo\source\repos\EF_LPC\MicroPrestamos\MicroPrestamos\obj\Debug\MicroPrestamos.Properties.Resources.resources
+C:\Users\victo\source\repos\EF_LPC\MicroPrestamos\MicroPrestamos\obj\Debug\MicroPrestamos.csproj.GenerateResource.cache
+C:\Users\victo\source\repos\EF_LPC\MicroPrestamos\MicroPrestamos\obj\Debug\MicroPrestamos.csproj.CoreCompileInputs.cache
+C:\Users\victo\source\repos\EF_LPC\MicroPrestamos\MicroPrestamos\obj\Debug\MicroPrestamos.exe
+C:\Users\victo\source\repos\EF_LPC\MicroPrestamos\MicroPrestamos\obj\Debug\MicroPrestamos.pdb
