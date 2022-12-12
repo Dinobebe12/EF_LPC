@@ -74,6 +74,7 @@
             this.UsuariosMenubtn.TabIndex = 2;
             this.UsuariosMenubtn.Text = "Usuarios";
             this.UsuariosMenubtn.UseVisualStyleBackColor = true;
+            this.UsuariosMenubtn.Click += new System.EventHandler(this.UsuariosMenubtn_Click);
             // 
             // ConsultaMenubtn
             // 
@@ -86,6 +87,7 @@
             this.ConsultaMenubtn.TabIndex = 3;
             this.ConsultaMenubtn.Text = "Consulta";
             this.ConsultaMenubtn.UseVisualStyleBackColor = true;
+            this.ConsultaMenubtn.Click += new System.EventHandler(this.ConsultaMenubtn_Click);
             // 
             // SalirMenubtn
             // 
