@@ -29,8 +29,17 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PrestamoPant));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.servIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cliCedulaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.servMontoPrestamoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.servCuotaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.servTasaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.servFechaInicioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.servFechaFinDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.servTotalPagarDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.serviciosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.prestamosDataSet = new MicroPrestamos.PrestamosDataSet();
             this.serviciosTableAdapter = new MicroPrestamos.PrestamosDataSetTableAdapters.ServiciosTableAdapter();
@@ -44,14 +53,11 @@
             this.MontoPrestamotxt = new System.Windows.Forms.TextBox();
             this.Cuotatxt = new System.Windows.Forms.TextBox();
             this.Tasatxt = new System.Windows.Forms.TextBox();
-            this.servIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cliCedulaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.servMontoPrestamoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.servCuotaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.servTasaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.servFechaInicioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.servFechaFinDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.servTotalPagarDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AgregarPrestamosbtn = new System.Windows.Forms.Button();
+            this.TotalPagarlbl = new System.Windows.Forms.Label();
+            this.TotalPagartxt = new System.Windows.Forms.TextBox();
+            this.FechaFinlbl = new System.Windows.Forms.Label();
+            this.FechaFinDataTime = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.serviciosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.prestamosDataSet)).BeginInit();
@@ -73,8 +79,63 @@
             this.dataGridView1.DataSource = this.serviciosBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(27, 279);
             this.dataGridView1.Name = "dataGridView1";
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.Size = new System.Drawing.Size(834, 165);
             this.dataGridView1.TabIndex = 0;
+            // 
+            // servIDDataGridViewTextBoxColumn
+            // 
+            this.servIDDataGridViewTextBoxColumn.DataPropertyName = "Serv_ID";
+            this.servIDDataGridViewTextBoxColumn.HeaderText = "ID";
+            this.servIDDataGridViewTextBoxColumn.Name = "servIDDataGridViewTextBoxColumn";
+            this.servIDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.servIDDataGridViewTextBoxColumn.Width = 40;
+            // 
+            // cliCedulaDataGridViewTextBoxColumn
+            // 
+            this.cliCedulaDataGridViewTextBoxColumn.DataPropertyName = "Cli_Cedula";
+            this.cliCedulaDataGridViewTextBoxColumn.HeaderText = "Cedula";
+            this.cliCedulaDataGridViewTextBoxColumn.Name = "cliCedulaDataGridViewTextBoxColumn";
+            // 
+            // servMontoPrestamoDataGridViewTextBoxColumn
+            // 
+            this.servMontoPrestamoDataGridViewTextBoxColumn.DataPropertyName = "Serv_Monto_Prestamo";
+            this.servMontoPrestamoDataGridViewTextBoxColumn.HeaderText = "Monto del Prestamo";
+            this.servMontoPrestamoDataGridViewTextBoxColumn.Name = "servMontoPrestamoDataGridViewTextBoxColumn";
+            this.servMontoPrestamoDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // servCuotaDataGridViewTextBoxColumn
+            // 
+            this.servCuotaDataGridViewTextBoxColumn.DataPropertyName = "Serv_Cuota";
+            this.servCuotaDataGridViewTextBoxColumn.HeaderText = "Cuota";
+            this.servCuotaDataGridViewTextBoxColumn.Name = "servCuotaDataGridViewTextBoxColumn";
+            // 
+            // servTasaDataGridViewTextBoxColumn
+            // 
+            this.servTasaDataGridViewTextBoxColumn.DataPropertyName = "Serv_Tasa";
+            this.servTasaDataGridViewTextBoxColumn.HeaderText = "Tasa";
+            this.servTasaDataGridViewTextBoxColumn.Name = "servTasaDataGridViewTextBoxColumn";
+            // 
+            // servFechaInicioDataGridViewTextBoxColumn
+            // 
+            this.servFechaInicioDataGridViewTextBoxColumn.DataPropertyName = "Serv_Fecha_Inicio";
+            this.servFechaInicioDataGridViewTextBoxColumn.HeaderText = "Fecha de Inicio";
+            this.servFechaInicioDataGridViewTextBoxColumn.Name = "servFechaInicioDataGridViewTextBoxColumn";
+            this.servFechaInicioDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // servFechaFinDataGridViewTextBoxColumn
+            // 
+            this.servFechaFinDataGridViewTextBoxColumn.DataPropertyName = "Serv_Fecha_Fin";
+            this.servFechaFinDataGridViewTextBoxColumn.HeaderText = "Fecha Final";
+            this.servFechaFinDataGridViewTextBoxColumn.Name = "servFechaFinDataGridViewTextBoxColumn";
+            // 
+            // servTotalPagarDataGridViewTextBoxColumn
+            // 
+            this.servTotalPagarDataGridViewTextBoxColumn.DataPropertyName = "Serv_Total_Pagar";
+            this.servTotalPagarDataGridViewTextBoxColumn.HeaderText = "Total a Pagar";
+            this.servTotalPagarDataGridViewTextBoxColumn.Name = "servTotalPagarDataGridViewTextBoxColumn";
             // 
             // serviciosBindingSource
             // 
@@ -139,7 +200,7 @@
             this.FechaInicioDataTime.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.FechaInicioDataTime.Location = new System.Drawing.Point(143, 124);
             this.FechaInicioDataTime.Name = "FechaInicioDataTime";
-            this.FechaInicioDataTime.Size = new System.Drawing.Size(200, 20);
+            this.FechaInicioDataTime.Size = new System.Drawing.Size(87, 20);
             this.FechaInicioDataTime.TabIndex = 11;
             // 
             // FechaIniciolbl
@@ -181,63 +242,64 @@
             this.Tasatxt.Size = new System.Drawing.Size(110, 20);
             this.Tasatxt.TabIndex = 10;
             // 
-            // servIDDataGridViewTextBoxColumn
+            // AgregarPrestamosbtn
             // 
-            this.servIDDataGridViewTextBoxColumn.DataPropertyName = "Serv_ID";
-            this.servIDDataGridViewTextBoxColumn.HeaderText = "ID";
-            this.servIDDataGridViewTextBoxColumn.Name = "servIDDataGridViewTextBoxColumn";
-            this.servIDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.servIDDataGridViewTextBoxColumn.Width = 40;
+            this.AgregarPrestamosbtn.ForeColor = System.Drawing.Color.ForestGreen;
+            this.AgregarPrestamosbtn.Location = new System.Drawing.Point(27, 235);
+            this.AgregarPrestamosbtn.Name = "AgregarPrestamosbtn";
+            this.AgregarPrestamosbtn.Size = new System.Drawing.Size(75, 23);
+            this.AgregarPrestamosbtn.TabIndex = 12;
+            this.AgregarPrestamosbtn.Text = "Agregar";
+            this.AgregarPrestamosbtn.UseVisualStyleBackColor = true;
+            this.AgregarPrestamosbtn.Click += new System.EventHandler(this.AgregarPrestamosbtn_Click);
             // 
-            // cliCedulaDataGridViewTextBoxColumn
+            // TotalPagarlbl
             // 
-            this.cliCedulaDataGridViewTextBoxColumn.DataPropertyName = "Cli_Cedula";
-            this.cliCedulaDataGridViewTextBoxColumn.HeaderText = "Cedula";
-            this.cliCedulaDataGridViewTextBoxColumn.Name = "cliCedulaDataGridViewTextBoxColumn";
+            this.TotalPagarlbl.AutoSize = true;
+            this.TotalPagarlbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TotalPagarlbl.ForeColor = System.Drawing.Color.Black;
+            this.TotalPagarlbl.Location = new System.Drawing.Point(481, 194);
+            this.TotalPagarlbl.Name = "TotalPagarlbl";
+            this.TotalPagarlbl.Size = new System.Drawing.Size(106, 16);
+            this.TotalPagarlbl.TabIndex = 13;
+            this.TotalPagarlbl.Text = "Total a Pagar:";
             // 
-            // servMontoPrestamoDataGridViewTextBoxColumn
+            // TotalPagartxt
             // 
-            this.servMontoPrestamoDataGridViewTextBoxColumn.DataPropertyName = "Serv_Monto_Prestamo";
-            this.servMontoPrestamoDataGridViewTextBoxColumn.HeaderText = "Monto del Prestamo";
-            this.servMontoPrestamoDataGridViewTextBoxColumn.Name = "servMontoPrestamoDataGridViewTextBoxColumn";
-            this.servMontoPrestamoDataGridViewTextBoxColumn.Width = 125;
+            this.TotalPagartxt.Location = new System.Drawing.Point(594, 194);
+            this.TotalPagartxt.Name = "TotalPagartxt";
+            this.TotalPagartxt.Size = new System.Drawing.Size(110, 20);
+            this.TotalPagartxt.TabIndex = 14;
             // 
-            // servCuotaDataGridViewTextBoxColumn
+            // FechaFinlbl
             // 
-            this.servCuotaDataGridViewTextBoxColumn.DataPropertyName = "Serv_Cuota";
-            this.servCuotaDataGridViewTextBoxColumn.HeaderText = "Cuota";
-            this.servCuotaDataGridViewTextBoxColumn.Name = "servCuotaDataGridViewTextBoxColumn";
+            this.FechaFinlbl.AutoSize = true;
+            this.FechaFinlbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FechaFinlbl.ForeColor = System.Drawing.Color.Black;
+            this.FechaFinlbl.Location = new System.Drawing.Point(45, 164);
+            this.FechaFinlbl.Name = "FechaFinlbl";
+            this.FechaFinlbl.Size = new System.Drawing.Size(92, 16);
+            this.FechaFinlbl.TabIndex = 15;
+            this.FechaFinlbl.Text = "Fecha Final:";
             // 
-            // servTasaDataGridViewTextBoxColumn
+            // FechaFinDataTime
             // 
-            this.servTasaDataGridViewTextBoxColumn.DataPropertyName = "Serv_Tasa";
-            this.servTasaDataGridViewTextBoxColumn.HeaderText = "Tasa";
-            this.servTasaDataGridViewTextBoxColumn.Name = "servTasaDataGridViewTextBoxColumn";
-            // 
-            // servFechaInicioDataGridViewTextBoxColumn
-            // 
-            this.servFechaInicioDataGridViewTextBoxColumn.DataPropertyName = "Serv_Fecha_Inicio";
-            this.servFechaInicioDataGridViewTextBoxColumn.HeaderText = "Fecha de Inicio";
-            this.servFechaInicioDataGridViewTextBoxColumn.Name = "servFechaInicioDataGridViewTextBoxColumn";
-            this.servFechaInicioDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // servFechaFinDataGridViewTextBoxColumn
-            // 
-            this.servFechaFinDataGridViewTextBoxColumn.DataPropertyName = "Serv_Fecha_Fin";
-            this.servFechaFinDataGridViewTextBoxColumn.HeaderText = "Fecha Final";
-            this.servFechaFinDataGridViewTextBoxColumn.Name = "servFechaFinDataGridViewTextBoxColumn";
-            // 
-            // servTotalPagarDataGridViewTextBoxColumn
-            // 
-            this.servTotalPagarDataGridViewTextBoxColumn.DataPropertyName = "Serv_Total_Pagar";
-            this.servTotalPagarDataGridViewTextBoxColumn.HeaderText = "Total a Pagar";
-            this.servTotalPagarDataGridViewTextBoxColumn.Name = "servTotalPagarDataGridViewTextBoxColumn";
+            this.FechaFinDataTime.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.FechaFinDataTime.Location = new System.Drawing.Point(143, 164);
+            this.FechaFinDataTime.Name = "FechaFinDataTime";
+            this.FechaFinDataTime.Size = new System.Drawing.Size(87, 20);
+            this.FechaFinDataTime.TabIndex = 16;
             // 
             // PrestamoPant
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(891, 450);
+            this.Controls.Add(this.FechaFinDataTime);
+            this.Controls.Add(this.FechaFinlbl);
+            this.Controls.Add(this.TotalPagartxt);
+            this.Controls.Add(this.TotalPagarlbl);
+            this.Controls.Add(this.AgregarPrestamosbtn);
             this.Controls.Add(this.Tasatxt);
             this.Controls.Add(this.Cuotatxt);
             this.Controls.Add(this.MontoPrestamotxt);
@@ -286,6 +348,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn servFechaInicioDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn servFechaFinDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn servTotalPagarDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Button AgregarPrestamosbtn;
+        private System.Windows.Forms.Label TotalPagarlbl;
+        private System.Windows.Forms.TextBox TotalPagartxt;
+        private System.Windows.Forms.Label FechaFinlbl;
+        private System.Windows.Forms.DateTimePicker FechaFinDataTime;
     }
 }
 
