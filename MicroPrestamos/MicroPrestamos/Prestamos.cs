@@ -39,7 +39,7 @@ namespace MicroPrestamos
             {
                 if (conn.State == ConnectionState.Closed)
                     conn.Open();
-                string query1 = "Insert Into Clientes (Cli_Cedula, Serv_Monto_Prestamo, Serv_Cuota, Serv_Tasa, Serv_Fecha_Inicio, Serv_Fecha_Fin, Serv_Total_Pagar)" +
+                string query1 = "Insert Into Servicios (Cli_Cedula, Serv_Monto_Prestamo, Serv_Cuota, Serv_Tasa, Serv_Fecha_Inicio, Serv_Fecha_Fin, Serv_Total_Pagar)" +
                     "Values (@Cli_Cedula, @Serv_Monto_Prestamo, @Serv_Cuota, @Serv_Tasa, @Serv_Fecha_Inicio, @Serv_Fecha_Fin, @Serv_Total_Pagar)";
 
 
