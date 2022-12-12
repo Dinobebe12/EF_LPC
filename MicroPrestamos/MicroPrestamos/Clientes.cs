@@ -17,8 +17,8 @@ namespace MicroPrestamos
         {
             InitializeComponent();
         }
-        readonly SqlConnection conn = new SqlConnection(@"Data Source = DESKTOP-TKG1DP2; Initial Catalog = Prestamos; Integrated Security=True;");
-        //readonly SqlConnection conn = new SqlConnection(@"Data Source = DINO\SQLEXPRESS; Initial Catalog = Prestamos; Integrated Security=True;");
+        //readonly SqlConnection conn = new SqlConnection(@"Data Source = DESKTOP-TKG1DP2; Initial Catalog = Prestamos; Integrated Security=True;");
+        readonly SqlConnection conn = new SqlConnection(@"Data Source = DINO\SQLEXPRESS; Initial Catalog = Prestamos; Integrated Security=True;");
         private void Registrarse_Load(object sender, EventArgs e)
         {
             SqlDataAdapter MyDA = new SqlDataAdapter();
@@ -38,8 +38,6 @@ namespace MicroPrestamos
             {
                 string query = "Insert Into Clientes (Cli_Nombre, Cli_Primer_Apellido, Cli_Segundo_Apellido, Cli_Cedula, Cli_Genero, Cli_Estado_Civil, Cli_Correo_Electronico, Cli_Direccion)" +
                                             "Values (@Cli_Nombre, @Cli_Primer_Apellido, @Cli_Segundo_Apellido, @Cli_Cedula, @Cli_Genero, @Cli_Estado_Civil, @Cli_Correo_Electronico, @Cli_Direccion)";
-                string query2 = "Insert Into Usuarios (Usu_Usuario, Usu_Contrasena, Usu_Nombre, Rol_ID, Usu_Estado)" +
-                                            "Values (@Usu_Usuario, @Usu_Contrasena, @Usu_Nombre, @Rol_ID, @Usu_Estado)";
                 if (conn.State == ConnectionState.Closed)
                     conn.Open();
                 SqlCommand command = new SqlCommand(query, conn)
@@ -55,30 +53,6 @@ namespace MicroPrestamos
                 command.Parameters.AddWithValue("@Cli_Correo_Electronico", Correotxt.Text);
                 command.Parameters.AddWithValue("@Cli_Direccion", Direcciontxt.Text);
                 command.ExecuteNonQuery();
-                SqlCommand command2 = new SqlCommand(query2, conn)
-                {
-                    CommandType = CommandType.Text
-                };
-                if (TxtUsuario.Text != "" && TxtContrasena.Text != "")
-                {
-                command2.Parameters.AddWithValue("@Usu_Usuario", TxtUsuario.Text);
-                command2.Parameters.AddWithValue("@Usu_Contrasena", TxtContrasena.Text);
-                command2.Parameters.AddWithValue("@Usu_Nombre", $"{Nombretxt.Text} {Apellido1txt.Text}");
-                command2.Parameters.AddWithValue("@Rol_ID", "5");
-                command2.Parameters.AddWithValue("@Usu_Estado", "1");
-                command2.ExecuteNonQuery();
-                }
-                MessageBox.Show("Cuenta creada con satisfacción");
-                SqlDataAdapter MyDA = new SqlDataAdapter();
-                string sqlSelectAll = "SELECT * from Clientes";
-                MyDA.SelectCommand = new SqlCommand(sqlSelectAll, conn);
-                DataTable table = new DataTable();
-                MyDA.Fill(table);
-                BindingSource bSource = new BindingSource
-                {
-                    DataSource = table
-                };
-                dgvDatosPersonales.DataSource = bSource;
 
                 Login login = new Login();
                 this.Hide();
@@ -91,19 +65,6 @@ namespace MicroPrestamos
             finally
             {
                 conn.Close();
-            }
-        }
-        private void BtnVerContrasena_Click(object sender, EventArgs e)
-        {
-            if (TxtContrasena.PasswordChar == '*')
-            {
-                TxtContrasena.PasswordChar = '\0';
-                BtnVerContrasena.Text = "Ocultar";
-            }
-            else
-            {
-                TxtContrasena.PasswordChar = '*';
-                BtnVerContrasena.Text = "Ver";
             }
         }
         private void BtnActualizar_Click(object sender, EventArgs e)

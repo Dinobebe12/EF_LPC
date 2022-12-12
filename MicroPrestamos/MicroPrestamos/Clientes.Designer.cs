@@ -69,11 +69,6 @@
             this.BtnDeshabilitar = new System.Windows.Forms.Button();
             this.BtnActualizar = new System.Windows.Forms.Button();
             this.txtBuscar = new System.Windows.Forms.TextBox();
-            this.lblContrasena = new System.Windows.Forms.Label();
-            this.LblUsuario = new System.Windows.Forms.Label();
-            this.TxtContrasena = new System.Windows.Forms.TextBox();
-            this.TxtUsuario = new System.Windows.Forms.TextBox();
-            this.BtnVerContrasena = new System.Windows.Forms.Button();
             this.BtnHabilitar = new System.Windows.Forms.Button();
             this.VolverRegistrobtn = new System.Windows.Forms.Button();
             this.BtnBuscar = new System.Windows.Forms.Button();
@@ -408,50 +403,6 @@
             this.txtBuscar.Size = new System.Drawing.Size(142, 20);
             this.txtBuscar.TabIndex = 23;
             // 
-            // lblContrasena
-            // 
-            this.lblContrasena.AutoSize = true;
-            this.lblContrasena.Location = new System.Drawing.Point(247, 293);
-            this.lblContrasena.Name = "lblContrasena";
-            this.lblContrasena.Size = new System.Drawing.Size(64, 13);
-            this.lblContrasena.TabIndex = 24;
-            this.lblContrasena.Text = "Contraseña:";
-            // 
-            // LblUsuario
-            // 
-            this.LblUsuario.AutoSize = true;
-            this.LblUsuario.Location = new System.Drawing.Point(9, 293);
-            this.LblUsuario.Name = "LblUsuario";
-            this.LblUsuario.Size = new System.Drawing.Size(46, 13);
-            this.LblUsuario.TabIndex = 25;
-            this.LblUsuario.Text = "Usuario:";
-            // 
-            // TxtContrasena
-            // 
-            this.TxtContrasena.Location = new System.Drawing.Point(317, 293);
-            this.TxtContrasena.Name = "TxtContrasena";
-            this.TxtContrasena.PasswordChar = '*';
-            this.TxtContrasena.Size = new System.Drawing.Size(170, 20);
-            this.TxtContrasena.TabIndex = 26;
-            // 
-            // TxtUsuario
-            // 
-            this.TxtUsuario.Location = new System.Drawing.Point(61, 293);
-            this.TxtUsuario.Name = "TxtUsuario";
-            this.TxtUsuario.Size = new System.Drawing.Size(166, 20);
-            this.TxtUsuario.TabIndex = 27;
-            // 
-            // BtnVerContrasena
-            // 
-            this.BtnVerContrasena.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.BtnVerContrasena.Location = new System.Drawing.Point(317, 319);
-            this.BtnVerContrasena.Name = "BtnVerContrasena";
-            this.BtnVerContrasena.Size = new System.Drawing.Size(69, 24);
-            this.BtnVerContrasena.TabIndex = 28;
-            this.BtnVerContrasena.Text = "Ver";
-            this.BtnVerContrasena.UseVisualStyleBackColor = true;
-            this.BtnVerContrasena.Click += new System.EventHandler(this.BtnVerContrasena_Click);
-            // 
             // BtnHabilitar
             // 
             this.BtnHabilitar.ForeColor = System.Drawing.Color.Crimson;
@@ -495,11 +446,6 @@
             this.Controls.Add(this.BtnBuscar);
             this.Controls.Add(this.VolverRegistrobtn);
             this.Controls.Add(this.BtnHabilitar);
-            this.Controls.Add(this.BtnVerContrasena);
-            this.Controls.Add(this.TxtUsuario);
-            this.Controls.Add(this.TxtContrasena);
-            this.Controls.Add(this.LblUsuario);
-            this.Controls.Add(this.lblContrasena);
             this.Controls.Add(this.txtBuscar);
             this.Controls.Add(this.BtnActualizar);
             this.Controls.Add(this.BtnDeshabilitar);
@@ -580,11 +526,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn cliEstadoCivilDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn cliCorreoElectronicoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn cliDireccionDataGridViewTextBoxColumn;
-        private System.Windows.Forms.Label lblContrasena;
-        private System.Windows.Forms.Label LblUsuario;
-        private System.Windows.Forms.TextBox TxtContrasena;
-        private System.Windows.Forms.TextBox TxtUsuario;
-        private System.Windows.Forms.Button BtnVerContrasena;
         private System.Windows.Forms.Button BtnHabilitar;
         private System.Windows.Forms.Button VolverRegistrobtn;
         private System.Windows.Forms.Button BtnBuscar;

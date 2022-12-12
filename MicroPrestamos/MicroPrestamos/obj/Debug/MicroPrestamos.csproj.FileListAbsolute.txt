@@ -41,3 +41,5 @@ C:\Users\victo\source\repos\EF_LPC\MicroPrestamos\MicroPrestamos\obj\Debug\Micro
 C:\Users\victo\source\repos\EF_LPC\MicroPrestamos\MicroPrestamos\obj\Debug\MicroPrestamos.ClientesPant.resources
 C:\Users\Jose Rodriguez\Documents\GitHub\EF_LPC\MicroPrestamos\MicroPrestamos\obj\Debug\MicroPrestamos.UsuariosPant.resources
 C:\Users\Jose Rodriguez\Documents\GitHub\EF_LPC\MicroPrestamos\MicroPrestamos\obj\Debug\MicroPrestamos.ConsultaPant.resources
+C:\Users\victo\source\repos\EF_LPC\MicroPrestamos\MicroPrestamos\obj\Debug\MicroPrestamos.UsuariosPant.resources
+C:\Users\victo\source\repos\EF_LPC\MicroPrestamos\MicroPrestamos\obj\Debug\MicroPrestamos.ConsultaPant.resources
