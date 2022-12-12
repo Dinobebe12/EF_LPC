@@ -41,13 +41,10 @@
             this.prestamosDataSet2 = new MicroPrestamos.PrestamosDataSet2();
             this.serviciosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.serviciosTableAdapter = new MicroPrestamos.PrestamosDataSet2TableAdapters.ServiciosTableAdapter();
-            this.servIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cliCedulaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.servMontoPrestamoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.servCuotaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.servTasaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.servFechaInicioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.servFechaFinDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.servTotalPagarDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.prestamosDataSet2)).BeginInit();
@@ -80,7 +77,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(90, 384);
+            this.button1.Location = new System.Drawing.Point(101, 414);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(77, 28);
             this.button1.TabIndex = 6;
@@ -89,7 +86,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(90, 350);
+            this.button2.Location = new System.Drawing.Point(101, 380);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(77, 28);
             this.button2.TabIndex = 7;
@@ -110,14 +107,12 @@
             this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.servIDDataGridViewTextBoxColumn,
             this.cliCedulaDataGridViewTextBoxColumn,
             this.servMontoPrestamoDataGridViewTextBoxColumn,
             this.servCuotaDataGridViewTextBoxColumn,
             this.servTasaDataGridViewTextBoxColumn,
-            this.servFechaInicioDataGridViewTextBoxColumn,
-            this.servFechaFinDataGridViewTextBoxColumn,
             this.servTotalPagarDataGridViewTextBoxColumn});
+            this.dataGridView1.Cursor = System.Windows.Forms.Cursors.Default;
             this.dataGridView1.DataSource = this.serviciosBindingSource;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
@@ -128,8 +123,9 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.GridColor = System.Drawing.SystemColors.ActiveCaption;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 73);
+            this.dataGridView1.Location = new System.Drawing.Point(205, 260);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RightToLeft = System.Windows.Forms.RightToLeft.No;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe Print", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -138,8 +134,10 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dataGridView1.Size = new System.Drawing.Size(892, 187);
+            this.dataGridView1.RowHeadersVisible = false;
+            this.dataGridView1.Size = new System.Drawing.Size(505, 187);
             this.dataGridView1.TabIndex = 8;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // prestamosDataSet2
             // 
@@ -155,53 +153,34 @@
             // 
             this.serviciosTableAdapter.ClearBeforeFill = true;
             // 
-            // servIDDataGridViewTextBoxColumn
-            // 
-            this.servIDDataGridViewTextBoxColumn.DataPropertyName = "Serv_ID";
-            this.servIDDataGridViewTextBoxColumn.HeaderText = "Serv_ID";
-            this.servIDDataGridViewTextBoxColumn.Name = "servIDDataGridViewTextBoxColumn";
-            this.servIDDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
             // cliCedulaDataGridViewTextBoxColumn
             // 
             this.cliCedulaDataGridViewTextBoxColumn.DataPropertyName = "Cli_Cedula";
-            this.cliCedulaDataGridViewTextBoxColumn.HeaderText = "Cli_Cedula";
+            this.cliCedulaDataGridViewTextBoxColumn.HeaderText = "Cedula";
             this.cliCedulaDataGridViewTextBoxColumn.Name = "cliCedulaDataGridViewTextBoxColumn";
             // 
             // servMontoPrestamoDataGridViewTextBoxColumn
             // 
             this.servMontoPrestamoDataGridViewTextBoxColumn.DataPropertyName = "Serv_Monto_Prestamo";
-            this.servMontoPrestamoDataGridViewTextBoxColumn.HeaderText = "Serv_Monto_Prestamo";
+            this.servMontoPrestamoDataGridViewTextBoxColumn.HeaderText = "Monto del Prestamo";
             this.servMontoPrestamoDataGridViewTextBoxColumn.Name = "servMontoPrestamoDataGridViewTextBoxColumn";
             // 
             // servCuotaDataGridViewTextBoxColumn
             // 
             this.servCuotaDataGridViewTextBoxColumn.DataPropertyName = "Serv_Cuota";
-            this.servCuotaDataGridViewTextBoxColumn.HeaderText = "Serv_Cuota";
+            this.servCuotaDataGridViewTextBoxColumn.HeaderText = "Cuota";
             this.servCuotaDataGridViewTextBoxColumn.Name = "servCuotaDataGridViewTextBoxColumn";
             // 
             // servTasaDataGridViewTextBoxColumn
             // 
             this.servTasaDataGridViewTextBoxColumn.DataPropertyName = "Serv_Tasa";
-            this.servTasaDataGridViewTextBoxColumn.HeaderText = "Serv_Tasa";
+            this.servTasaDataGridViewTextBoxColumn.HeaderText = "Tasa";
             this.servTasaDataGridViewTextBoxColumn.Name = "servTasaDataGridViewTextBoxColumn";
-            // 
-            // servFechaInicioDataGridViewTextBoxColumn
-            // 
-            this.servFechaInicioDataGridViewTextBoxColumn.DataPropertyName = "Serv_Fecha_Inicio";
-            this.servFechaInicioDataGridViewTextBoxColumn.HeaderText = "Serv_Fecha_Inicio";
-            this.servFechaInicioDataGridViewTextBoxColumn.Name = "servFechaInicioDataGridViewTextBoxColumn";
-            // 
-            // servFechaFinDataGridViewTextBoxColumn
-            // 
-            this.servFechaFinDataGridViewTextBoxColumn.DataPropertyName = "Serv_Fecha_Fin";
-            this.servFechaFinDataGridViewTextBoxColumn.HeaderText = "Serv_Fecha_Fin";
-            this.servFechaFinDataGridViewTextBoxColumn.Name = "servFechaFinDataGridViewTextBoxColumn";
             // 
             // servTotalPagarDataGridViewTextBoxColumn
             // 
             this.servTotalPagarDataGridViewTextBoxColumn.DataPropertyName = "Serv_Total_Pagar";
-            this.servTotalPagarDataGridViewTextBoxColumn.HeaderText = "Serv_Total_Pagar";
+            this.servTotalPagarDataGridViewTextBoxColumn.HeaderText = "Total a Pagar";
             this.servTotalPagarDataGridViewTextBoxColumn.Name = "servTotalPagarDataGridViewTextBoxColumn";
             // 
             // ConsultaPant
@@ -240,13 +219,10 @@
         private PrestamosDataSet2 prestamosDataSet2;
         private System.Windows.Forms.BindingSource serviciosBindingSource;
         private PrestamosDataSet2TableAdapters.ServiciosTableAdapter serviciosTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn servIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn cliCedulaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn servMontoPrestamoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn servCuotaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn servTasaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn servFechaInicioDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn servFechaFinDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn servTotalPagarDataGridViewTextBoxColumn;
     }
 }
