@@ -213,6 +213,47 @@ namespace MicroPrestamos
                 }
             }
         }
+
+        private void EliminarPrestamosbtn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string queryCliente = $"Update Servicio Set Cli_Estado = @Cli_Estado Where Cli_Cedula = '{CedulaPrestamostxt.Text}'";
+
+                if (conn.State == ConnectionState.Closed)
+                    conn.Open();
+
+                SqlCommand command = new SqlCommand(queryCliente, conn);
+                command.Parameters.AddWithValue("@Cli_Estado", "0");
+
+                if (command.ExecuteNonQuery() == 1)
+                {
+                    MessageBox.Show("Datos Eliminados correctamente");
+                    SqlDataAdapter MyDA = new SqlDataAdapter();
+                    string sqlSelectAll = "SELECT * from Servicios";
+                    MyDA.SelectCommand = new SqlCommand(sqlSelectAll, conn);
+                    DataTable table = new DataTable();
+                    MyDA.Fill(table);
+                    BindingSource bSource = new BindingSource
+                    {
+                        DataSource = table
+                    };
+                    dataGridView1.DataSource = bSource;
+                }
+                else
+                {
+                    MessageBox.Show("No se encontro el dato a Eliminar");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
     }
     
     
