@@ -24,3 +24,16 @@ C:\Users\Jose Rodriguez\Source\Repos\Dinobebe12\EF_LPC\MicroPrestamos\MicroPrest
 C:\Users\Jose Rodriguez\Source\Repos\Dinobebe12\EF_LPC\MicroPrestamos\MicroPrestamos\obj\Debug\MicroPrestamos.exe
 C:\Users\Jose Rodriguez\Source\Repos\Dinobebe12\EF_LPC\MicroPrestamos\MicroPrestamos\obj\Debug\MicroPrestamos.pdb
 C:\Users\victo\source\repos\EF_LPC\MicroPrestamos\MicroPrestamos\obj\Debug\MicroPrestamos.Clientes.resources
+C:\Users\Jose Rodriguez\Documents\GitHub\EF_LPC\MicroPrestamos\MicroPrestamos\bin\Debug\MicroPrestamos.exe.config
+C:\Users\Jose Rodriguez\Documents\GitHub\EF_LPC\MicroPrestamos\MicroPrestamos\bin\Debug\MicroPrestamos.exe
+C:\Users\Jose Rodriguez\Documents\GitHub\EF_LPC\MicroPrestamos\MicroPrestamos\bin\Debug\MicroPrestamos.pdb
+C:\Users\Jose Rodriguez\Documents\GitHub\EF_LPC\MicroPrestamos\MicroPrestamos\obj\Debug\MicroPrestamos.csproj.AssemblyReference.cache
+C:\Users\Jose Rodriguez\Documents\GitHub\EF_LPC\MicroPrestamos\MicroPrestamos\obj\Debug\MicroPrestamos.csproj.SuggestedBindingRedirects.cache
+C:\Users\Jose Rodriguez\Documents\GitHub\EF_LPC\MicroPrestamos\MicroPrestamos\obj\Debug\MicroPrestamos.PrestamoPant.resources
+C:\Users\Jose Rodriguez\Documents\GitHub\EF_LPC\MicroPrestamos\MicroPrestamos\obj\Debug\MicroPrestamos.Login.resources
+C:\Users\Jose Rodriguez\Documents\GitHub\EF_LPC\MicroPrestamos\MicroPrestamos\obj\Debug\MicroPrestamos.Properties.Resources.resources
+C:\Users\Jose Rodriguez\Documents\GitHub\EF_LPC\MicroPrestamos\MicroPrestamos\obj\Debug\MicroPrestamos.Clientes.resources
+C:\Users\Jose Rodriguez\Documents\GitHub\EF_LPC\MicroPrestamos\MicroPrestamos\obj\Debug\MicroPrestamos.csproj.GenerateResource.cache
+C:\Users\Jose Rodriguez\Documents\GitHub\EF_LPC\MicroPrestamos\MicroPrestamos\obj\Debug\MicroPrestamos.csproj.CoreCompileInputs.cache
+C:\Users\Jose Rodriguez\Documents\GitHub\EF_LPC\MicroPrestamos\MicroPrestamos\obj\Debug\MicroPrestamos.exe
+C:\Users\Jose Rodriguez\Documents\GitHub\EF_LPC\MicroPrestamos\MicroPrestamos\obj\Debug\MicroPrestamos.pdb

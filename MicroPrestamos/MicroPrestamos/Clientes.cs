@@ -18,7 +18,7 @@ namespace MicroPrestamos
             InitializeComponent();
         }
         //readonly SqlConnection conn = new SqlConnection(@"Data Source = DESKTOP-TKG1DP2; Initial Catalog = Prestamos; Integrated Security=True;");
-        readonly SqlConnection conn = new SqlConnection(@"Data Source = DINO\SQLEXPRESS; Initial Catalog = Prestamos; Integrated Security=True;");
+        readonly SqlConnection conn = new SqlConnection(@"Data Source = DESKTOP-TKG1DP2; Initial Catalog = Prestamos; Integrated Security=True;");
         private void Registrarse_Load(object sender, EventArgs e)
         {
             SqlDataAdapter MyDA = new SqlDataAdapter();
@@ -79,6 +79,7 @@ namespace MicroPrestamos
                     DataSource = table
                 };
                 dgvDatosPersonales.DataSource = bSource;
+
                 Login login = new Login();
                 this.Hide();
                 login.ShowDialog();

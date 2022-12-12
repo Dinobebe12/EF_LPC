@@ -39,11 +39,11 @@ namespace MicroPrestamos
             {
                 if (conn.State == ConnectionState.Closed)
                     conn.Open();
-                String query = "Insert Into Clientes (Cli_Cedula, Serv_Monto_Prestamo, Serv_Cuota, Serv_Tasa, Serv_Fecha_Inicio, Serv_Fecha_Fin, Serv_Total_Pagar)" +
-                    "Values (@Cli_Nombre, @Cli_Primer_Apellido, @Cli_Segundo_Apellido, @Cli_Cedula, @Cli_Genero, @Cli_Estado_Civil, @Cli_Correo_Electronico, @Cli_Direccion)";
+                string query1 = "Insert Into Clientes (Cli_Cedula, Serv_Monto_Prestamo, Serv_Cuota, Serv_Tasa, Serv_Fecha_Inicio, Serv_Fecha_Fin, Serv_Total_Pagar)" +
+                    "Values (@Cli_Cedula, @Serv_Monto_Prestamo, @Serv_Cuota, @Serv_Tasa, @Serv_Fecha_Inicio, @Serv_Fecha_Fin, @Serv_Total_Pagar)";
 
 
-                SqlCommand command = new SqlCommand(query, conn)
+                SqlCommand command = new SqlCommand(query1, conn)
                 {
                     CommandType = CommandType.Text
                 };
@@ -56,16 +56,24 @@ namespace MicroPrestamos
                 command.Parameters.AddWithValue("@Serv_Total_Pagar", TotalPagartxt.Text);
                 command.ExecuteNonQuery();
 
-                if (count == 1)
+
+                MessageBox.Show("Se agrego el prestamo satisfactoriamente!");
+                SqlDataAdapter MyDA = new SqlDataAdapter();
+                string sqlSelectAll = "SELECT * from Servicios";
+                MyDA.SelectCommand = new SqlCommand(sqlSelectAll, conn);
+                DataTable table = new DataTable();
+                MyDA.Fill(table);
+                BindingSource bSource = new BindingSource
                 {
-                    PrestamoPant prestamoPant = new PrestamoPant();
-                    this.Hide();
-                    prestamoPant.ShowDialog();
-                }
-                else
-                {
-                    MessageBox.Show("Usuario o Contraseña incorrecto.");
-                }
+                    DataSource = table
+                };
+                dataGridView1.DataSource = bSource;
+
+
+                PrestamoPant PrestamoPant = new PrestamoPant();
+                this.Hide();
+                PrestamoPant.ShowDialog();
+
             }
             catch (Exception ex)
             {
@@ -75,9 +83,7 @@ namespace MicroPrestamos
             {
                 conn.Close();
             }
-
-
-
         }
     }
+    
 }
