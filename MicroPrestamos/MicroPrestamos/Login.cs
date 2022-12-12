@@ -35,9 +35,9 @@ namespace MicroPrestamos
                 int count = Convert.ToInt32(Command.ExecuteScalar());
                 if (count == 1)
                 {
-                    PrestamoPant prestamoPant = new PrestamoPant();
+                    MenuPant MenuPant = new MenuPant();
                     this.Hide();
-                    prestamoPant.ShowDialog();
+                    MenuPant.ShowDialog();
                 }
                 else
                 {
@@ -55,7 +55,7 @@ namespace MicroPrestamos
         }
         private void BtnRegistrarse_Click(object sender, EventArgs e)
         {
-            Clientes registrarse = new Clientes();
+            ClientesPant registrarse = new ClientesPant();
             this.Hide();
             registrarse.ShowDialog();
         }
@@ -71,6 +71,11 @@ namespace MicroPrestamos
                 TxtContrasena.PasswordChar = '*';
                 BtnVerContrasena.Text = "Ver";
             }
+        }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

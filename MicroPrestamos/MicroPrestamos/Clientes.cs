@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace MicroPrestamos
 {
-    public partial class Clientes : Form
+    public partial class ClientesPant : Form
     {
-        public Clientes()
+        public ClientesPant()
         {
             InitializeComponent();
         }
@@ -290,6 +290,11 @@ namespace MicroPrestamos
             }
         }
 
-
+        private void VolverRegistrobtn_Click(object sender, EventArgs e)
+        {
+            MenuPant MenuPant = new MenuPant();
+            this.Hide();
+            MenuPant.ShowDialog();
+        }
     }
 }

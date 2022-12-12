@@ -61,6 +61,7 @@
             this.ActualizarPrestamosbtn = new System.Windows.Forms.Button();
             this.LimpiarPrestamosbtn = new System.Windows.Forms.Button();
             this.EliminarPrestamosbtn = new System.Windows.Forms.Button();
+            this.VolverPrestamobtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.serviciosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.prestamosDataSet)).BeginInit();
@@ -326,11 +327,26 @@
             this.EliminarPrestamosbtn.UseVisualStyleBackColor = true;
             this.EliminarPrestamosbtn.Click += new System.EventHandler(this.EliminarPrestamosbtn_Click);
             // 
+            // VolverPrestamobtn
+            // 
+            this.VolverPrestamobtn.BackColor = System.Drawing.Color.LightBlue;
+            this.VolverPrestamobtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.VolverPrestamobtn.Font = new System.Drawing.Font("MV Boli", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.VolverPrestamobtn.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.VolverPrestamobtn.Location = new System.Drawing.Point(809, 12);
+            this.VolverPrestamobtn.Name = "VolverPrestamobtn";
+            this.VolverPrestamobtn.Size = new System.Drawing.Size(70, 33);
+            this.VolverPrestamobtn.TabIndex = 31;
+            this.VolverPrestamobtn.Text = "Volver";
+            this.VolverPrestamobtn.UseVisualStyleBackColor = false;
+            this.VolverPrestamobtn.Click += new System.EventHandler(this.VolverPrestamobtn_Click);
+            // 
             // PrestamoPant
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(891, 450);
+            this.Controls.Add(this.VolverPrestamobtn);
             this.Controls.Add(this.EliminarPrestamosbtn);
             this.Controls.Add(this.LimpiarPrestamosbtn);
             this.Controls.Add(this.ActualizarPrestamosbtn);
@@ -353,6 +369,7 @@
             this.ForeColor = System.Drawing.Color.Cornsilk;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "PrestamoPant";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Prestamos";
             this.Load += new System.EventHandler(this.PrestamoPant_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -395,6 +412,7 @@
         private System.Windows.Forms.Button ActualizarPrestamosbtn;
         private System.Windows.Forms.Button LimpiarPrestamosbtn;
         private System.Windows.Forms.Button EliminarPrestamosbtn;
+        private System.Windows.Forms.Button VolverPrestamobtn;
     }
 }
 

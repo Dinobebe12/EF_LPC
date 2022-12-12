@@ -1,6 +1,6 @@
 ﻿namespace MicroPrestamos
 {
-    partial class Clientes
+    partial class ClientesPant
     {
         /// <summary>
         /// Required designer variable.
@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ClientesPant));
             this.lblNombre = new System.Windows.Forms.Label();
             this.lblPrimerApellido = new System.Windows.Forms.Label();
             this.lblSegundoApellido = new System.Windows.Forms.Label();
@@ -74,6 +75,7 @@
             this.TxtUsuario = new System.Windows.Forms.TextBox();
             this.BtnVerContrasena = new System.Windows.Forms.Button();
             this.BtnHabilitar = new System.Windows.Forms.Button();
+            this.VolverRegistrobtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.prestamosDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.prestamosDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.serviciosBindingSource)).BeginInit();
@@ -454,11 +456,26 @@
             this.BtnHabilitar.UseVisualStyleBackColor = true;
             this.BtnHabilitar.Click += new System.EventHandler(this.BtnHabilitar_Click);
             // 
-            // Clientes
+            // VolverRegistrobtn
+            // 
+            this.VolverRegistrobtn.BackColor = System.Drawing.Color.LightBlue;
+            this.VolverRegistrobtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.VolverRegistrobtn.Font = new System.Drawing.Font("MV Boli", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.VolverRegistrobtn.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.VolverRegistrobtn.Location = new System.Drawing.Point(774, 417);
+            this.VolverRegistrobtn.Name = "VolverRegistrobtn";
+            this.VolverRegistrobtn.Size = new System.Drawing.Size(70, 33);
+            this.VolverRegistrobtn.TabIndex = 30;
+            this.VolverRegistrobtn.Text = "Volver";
+            this.VolverRegistrobtn.UseVisualStyleBackColor = false;
+            this.VolverRegistrobtn.Click += new System.EventHandler(this.VolverRegistrobtn_Click);
+            // 
+            // ClientesPant
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(856, 462);
+            this.Controls.Add(this.VolverRegistrobtn);
             this.Controls.Add(this.BtnHabilitar);
             this.Controls.Add(this.BtnVerContrasena);
             this.Controls.Add(this.TxtUsuario);
@@ -488,7 +505,9 @@
             this.Controls.Add(this.lblSegundoApellido);
             this.Controls.Add(this.lblPrimerApellido);
             this.Controls.Add(this.lblNombre);
-            this.Name = "Clientes";
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Name = "ClientesPant";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registrarse";
             this.Load += new System.EventHandler(this.Registrarse_Load);
             ((System.ComponentModel.ISupportInitialize)(this.prestamosDataSet)).EndInit();
@@ -549,5 +568,6 @@
         private System.Windows.Forms.TextBox TxtUsuario;
         private System.Windows.Forms.Button BtnVerContrasena;
         private System.Windows.Forms.Button BtnHabilitar;
+        private System.Windows.Forms.Button VolverRegistrobtn;
     }
 }
