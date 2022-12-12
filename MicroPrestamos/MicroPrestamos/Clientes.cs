@@ -17,17 +17,21 @@ namespace MicroPrestamos
         {
             InitializeComponent();
         }
-
-        //SqlConnection conn = new SqlConnection(@"Data Source = DESKTOP-TKG1DP2; Initial Catalog = Prestamos; Integrated Security=True;");
+        //readonly SqlConnection conn = new SqlConnection(@"Data Source = DESKTOP-TKG1DP2; Initial Catalog = Prestamos; Integrated Security=True;");
         readonly SqlConnection conn = new SqlConnection(@"Data Source = DINO\SQLEXPRESS; Initial Catalog = Prestamos; Integrated Security=True;");
         private void Registrarse_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'prestamosDataSet1.Clientes' table. You can move, or remove it, as needed.
-            this.clientesTableAdapter.Fill(this.prestamosDataSet1.Clientes);
-            // TODO: This line of code loads data into the 'prestamosDataSet.Servicios' table. You can move, or remove it, as needed.
-            this.serviciosTableAdapter.Fill(this.prestamosDataSet.Servicios);
+            SqlDataAdapter MyDA = new SqlDataAdapter();
+            string sqlSelectAll = "SELECT * from Clientes";
+            MyDA.SelectCommand = new SqlCommand(sqlSelectAll, conn);
+            DataTable table = new DataTable();
+            MyDA.Fill(table);
+            BindingSource bSource = new BindingSource
+            {
+                DataSource = table
+            };
+            dgvDatosPersonales.DataSource = bSource;
         }
-
         private void BtnAgregar_Click(object sender, EventArgs e)
         {
             try
@@ -51,19 +55,30 @@ namespace MicroPrestamos
                 command.Parameters.AddWithValue("@Cli_Correo_Electronico", Correotxt.Text);
                 command.Parameters.AddWithValue("@Cli_Direccion", Direcciontxt.Text);
                 command.ExecuteNonQuery();
-
                 SqlCommand command2 = new SqlCommand(query2, conn)
                 {
                     CommandType = CommandType.Text
                 };
+                if (TxtUsuario.Text != "" && TxtContrasena.Text != "")
+                {
                 command2.Parameters.AddWithValue("@Usu_Usuario", TxtUsuario.Text);
                 command2.Parameters.AddWithValue("@Usu_Contrasena", TxtContrasena.Text);
                 command2.Parameters.AddWithValue("@Usu_Nombre", $"{Nombretxt.Text} {Apellido1txt.Text}");
                 command2.Parameters.AddWithValue("@Rol_ID", "5");
                 command2.Parameters.AddWithValue("@Usu_Estado", "1");
                 command2.ExecuteNonQuery();
-
+                }
                 MessageBox.Show("Cuenta creada con satisfacción");
+                SqlDataAdapter MyDA = new SqlDataAdapter();
+                string sqlSelectAll = "SELECT * from Clientes";
+                MyDA.SelectCommand = new SqlCommand(sqlSelectAll, conn);
+                DataTable table = new DataTable();
+                MyDA.Fill(table);
+                BindingSource bSource = new BindingSource
+                {
+                    DataSource = table
+                };
+                dgvDatosPersonales.DataSource = bSource;
                 Login login = new Login();
                 this.Hide();
                 login.ShowDialog();
@@ -77,7 +92,6 @@ namespace MicroPrestamos
                 conn.Close();
             }
         }
-
         private void BtnVerContrasena_Click(object sender, EventArgs e)
         {
             if (TxtContrasena.PasswordChar == '*')
@@ -91,7 +105,6 @@ namespace MicroPrestamos
                 BtnVerContrasena.Text = "Ver";
             }
         }
-
         private void BtnActualizar_Click(object sender, EventArgs e)
         {
             try
@@ -180,6 +193,91 @@ namespace MicroPrestamos
                     DataSource = table
                 };
                 dgvDatosPersonales.DataSource = bSource;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+        private void BtnDeshabilitar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string queryCliente = $"Update Clientes Set Cli_Estado = @Cli_Estado Where Cli_Cedula = '{CedulaDPtxt.Text}'";
+                if (conn.State == ConnectionState.Closed)
+                    conn.Open();
+                SqlCommand command = new SqlCommand(queryCliente, conn);
+                command.Parameters.AddWithValue("@Cli_Estado", "0");
+                if (command.ExecuteNonQuery() == 1)
+                {
+                    MessageBox.Show("Dato deshabilitado correctamente");
+                    SqlDataAdapter MyDA = new SqlDataAdapter();
+                    string sqlSelectAll = "SELECT * from Clientes";
+                    MyDA.SelectCommand = new SqlCommand(sqlSelectAll, conn);
+                    DataTable table = new DataTable();
+                    MyDA.Fill(table);
+                    BindingSource bSource = new BindingSource
+                    {
+                        DataSource = table
+                    };
+                    dgvDatosPersonales.DataSource = bSource;
+                }
+                else
+                {
+                    MessageBox.Show("No se encontro el dato a deshabilitar");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+        private void BtnLimpiar_Click(object sender, EventArgs e)
+        {
+            foreach (Control item in ActiveForm.Controls)
+            {
+                if (item.GetType() == new TextBox().GetType())
+                {
+                    TextBox obj = (TextBox)item;
+                    obj.Clear();
+                }
+            }
+        }
+        private void BtnHabilitar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string queryCliente = $"Update Clientes Set Cli_Estado = @Cli_Estado Where Cli_Cedula = '{CedulaDPtxt.Text}'";
+                if (conn.State == ConnectionState.Closed)
+                    conn.Open();
+                SqlCommand command = new SqlCommand(queryCliente, conn);
+                command.Parameters.AddWithValue("@Cli_Estado", "1");
+                if (command.ExecuteNonQuery() == 1)
+                {
+                    MessageBox.Show("Dato habilitado correctamente");
+                    SqlDataAdapter MyDA = new SqlDataAdapter();
+                    string sqlSelectAll = "SELECT * from Clientes";
+                    MyDA.SelectCommand = new SqlCommand(sqlSelectAll, conn);
+                    DataTable table = new DataTable();
+                    MyDA.Fill(table);
+                    BindingSource bSource = new BindingSource
+                    {
+                        DataSource = table
+                    };
+                    dgvDatosPersonales.DataSource = bSource;
+                }
+                else
+                {
+                    MessageBox.Show("No se encontro el dato a habilitar");
+                }
             }
             catch (Exception ex)
             {

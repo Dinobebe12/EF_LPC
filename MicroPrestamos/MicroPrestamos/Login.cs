@@ -17,7 +17,6 @@ namespace MicroPrestamos
         {
             InitializeComponent();
         }
-
         //SqlConnection conn = new SqlConnection(@"Data Source = DESKTOP-TKG1DP2; Initial Catalog = Prestamos; Integrated Security=True;");
         readonly SqlConnection conn = new SqlConnection(@"Data Source = DINO\SQLEXPRESS; Initial Catalog = Prestamos; Integrated Security=True;");
         private void BtnLogin_Click(object sender, EventArgs e)
@@ -54,7 +53,6 @@ namespace MicroPrestamos
                 conn.Close();
             }
         }
-
         private void BtnRegistrarse_Click(object sender, EventArgs e)
         {
             Clientes registrarse = new Clientes();

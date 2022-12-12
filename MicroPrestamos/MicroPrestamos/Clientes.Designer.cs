@@ -66,7 +66,7 @@
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.BtnLimpiar = new System.Windows.Forms.Button();
-            this.BtnEliminar = new System.Windows.Forms.Button();
+            this.BtnDeshabilitar = new System.Windows.Forms.Button();
             this.BtnActualizar = new System.Windows.Forms.Button();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.lblContrasena = new System.Windows.Forms.Label();
@@ -74,6 +74,7 @@
             this.TxtContrasena = new System.Windows.Forms.TextBox();
             this.TxtUsuario = new System.Windows.Forms.TextBox();
             this.BtnVerContrasena = new System.Windows.Forms.Button();
+            this.BtnHabilitar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.prestamosDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.prestamosDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.serviciosBindingSource)).BeginInit();
@@ -178,6 +179,7 @@
             // CedulaDPtxt
             // 
             this.CedulaDPtxt.Location = new System.Drawing.Point(12, 151);
+            this.CedulaDPtxt.MaxLength = 13;
             this.CedulaDPtxt.Name = "CedulaDPtxt";
             this.CedulaDPtxt.Size = new System.Drawing.Size(147, 20);
             this.CedulaDPtxt.TabIndex = 11;
@@ -374,21 +376,23 @@
             // 
             // BtnLimpiar
             // 
-            this.BtnLimpiar.Location = new System.Drawing.Point(360, 394);
+            this.BtnLimpiar.Location = new System.Drawing.Point(31, 365);
             this.BtnLimpiar.Name = "BtnLimpiar";
             this.BtnLimpiar.Size = new System.Drawing.Size(75, 23);
             this.BtnLimpiar.TabIndex = 20;
             this.BtnLimpiar.Text = "Limpiar";
             this.BtnLimpiar.UseVisualStyleBackColor = true;
+            this.BtnLimpiar.Click += new System.EventHandler(this.BtnLimpiar_Click);
             // 
-            // BtnEliminar
+            // BtnDeshabilitar
             // 
-            this.BtnEliminar.Location = new System.Drawing.Point(259, 394);
-            this.BtnEliminar.Name = "BtnEliminar";
-            this.BtnEliminar.Size = new System.Drawing.Size(75, 23);
-            this.BtnEliminar.TabIndex = 21;
-            this.BtnEliminar.Text = "Eliminar";
-            this.BtnEliminar.UseVisualStyleBackColor = true;
+            this.BtnDeshabilitar.Location = new System.Drawing.Point(259, 394);
+            this.BtnDeshabilitar.Name = "BtnDeshabilitar";
+            this.BtnDeshabilitar.Size = new System.Drawing.Size(75, 23);
+            this.BtnDeshabilitar.TabIndex = 21;
+            this.BtnDeshabilitar.Text = "Deshabilitar";
+            this.BtnDeshabilitar.UseVisualStyleBackColor = true;
+            this.BtnDeshabilitar.Click += new System.EventHandler(this.BtnDeshabilitar_Click);
             // 
             // BtnActualizar
             // 
@@ -450,11 +454,22 @@
             this.BtnVerContrasena.UseVisualStyleBackColor = true;
             this.BtnVerContrasena.Click += new System.EventHandler(this.BtnVerContrasena_Click);
             // 
+            // BtnHabilitar
+            // 
+            this.BtnHabilitar.Location = new System.Drawing.Point(259, 365);
+            this.BtnHabilitar.Name = "BtnHabilitar";
+            this.BtnHabilitar.Size = new System.Drawing.Size(75, 23);
+            this.BtnHabilitar.TabIndex = 29;
+            this.BtnHabilitar.Text = "Habilitar";
+            this.BtnHabilitar.UseVisualStyleBackColor = true;
+            this.BtnHabilitar.Click += new System.EventHandler(this.BtnHabilitar_Click);
+            // 
             // Clientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(856, 462);
+            this.Controls.Add(this.BtnHabilitar);
             this.Controls.Add(this.BtnVerContrasena);
             this.Controls.Add(this.TxtUsuario);
             this.Controls.Add(this.TxtContrasena);
@@ -462,7 +477,7 @@
             this.Controls.Add(this.lblContrasena);
             this.Controls.Add(this.txtBuscar);
             this.Controls.Add(this.BtnActualizar);
-            this.Controls.Add(this.BtnEliminar);
+            this.Controls.Add(this.BtnDeshabilitar);
             this.Controls.Add(this.BtnLimpiar);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.btnAgregar);
@@ -528,7 +543,7 @@
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Button BtnLimpiar;
-        private System.Windows.Forms.Button BtnEliminar;
+        private System.Windows.Forms.Button BtnDeshabilitar;
         private System.Windows.Forms.Button BtnActualizar;
         private System.Windows.Forms.TextBox txtBuscar;
         private System.Windows.Forms.DataGridViewTextBoxColumn cliIDDataGridViewTextBoxColumn;
@@ -545,5 +560,6 @@
         private System.Windows.Forms.TextBox TxtContrasena;
         private System.Windows.Forms.TextBox TxtUsuario;
         private System.Windows.Forms.Button BtnVerContrasena;
+        private System.Windows.Forms.Button BtnHabilitar;
     }
 }

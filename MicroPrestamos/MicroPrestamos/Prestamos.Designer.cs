@@ -136,6 +136,7 @@
             // 
             // FechaInicioDataTime
             // 
+            this.FechaInicioDataTime.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.FechaInicioDataTime.Location = new System.Drawing.Point(143, 124);
             this.FechaInicioDataTime.Name = "FechaInicioDataTime";
             this.FechaInicioDataTime.Size = new System.Drawing.Size(200, 20);

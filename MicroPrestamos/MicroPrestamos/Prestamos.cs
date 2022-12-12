@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -16,11 +17,20 @@ namespace MicroPrestamos
         {
             InitializeComponent();
         }
-
+        //SqlConnection conn = new SqlConnection(@"Data Source = DESKTOP-TKG1DP2; Initial Catalog = Prestamos; Integrated Security=True;");
+        readonly SqlConnection conn = new SqlConnection(@"Data Source = DINO\SQLEXPRESS; Initial Catalog = Prestamos; Integrated Security=True;");
         private void PrestamoPant_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'prestamosDataSet.Servicios' table. You can move, or remove it, as needed.
-            this.serviciosTableAdapter.Fill(this.prestamosDataSet.Servicios);
+            SqlDataAdapter MyDA = new SqlDataAdapter();
+            string sqlSelectAll = "SELECT * from Servicios";
+            MyDA.SelectCommand = new SqlCommand(sqlSelectAll, conn);
+            DataTable table = new DataTable();
+            MyDA.Fill(table);
+            BindingSource bSource = new BindingSource
+            {
+                DataSource = table
+            };
+            dataGridView1.DataSource = bSource;
         }
     }
 }
