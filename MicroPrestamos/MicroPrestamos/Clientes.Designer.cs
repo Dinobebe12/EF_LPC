@@ -359,6 +359,7 @@
             // 
             // btnAgregar
             // 
+            this.btnAgregar.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnAgregar.Location = new System.Drawing.Point(30, 394);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(75, 23);
@@ -369,6 +370,7 @@
             // 
             // BtnLimpiar
             // 
+            this.BtnLimpiar.ForeColor = System.Drawing.Color.Magenta;
             this.BtnLimpiar.Location = new System.Drawing.Point(31, 365);
             this.BtnLimpiar.Name = "BtnLimpiar";
             this.BtnLimpiar.Size = new System.Drawing.Size(75, 23);
@@ -379,6 +381,7 @@
             // 
             // BtnDeshabilitar
             // 
+            this.BtnDeshabilitar.ForeColor = System.Drawing.Color.Crimson;
             this.BtnDeshabilitar.Location = new System.Drawing.Point(259, 394);
             this.BtnDeshabilitar.Name = "BtnDeshabilitar";
             this.BtnDeshabilitar.Size = new System.Drawing.Size(75, 23);
@@ -389,6 +392,7 @@
             // 
             // BtnActualizar
             // 
+            this.BtnActualizar.ForeColor = System.Drawing.Color.Teal;
             this.BtnActualizar.Location = new System.Drawing.Point(152, 394);
             this.BtnActualizar.Name = "BtnActualizar";
             this.BtnActualizar.Size = new System.Drawing.Size(75, 23);
@@ -439,6 +443,7 @@
             // 
             // BtnVerContrasena
             // 
+            this.BtnVerContrasena.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.BtnVerContrasena.Location = new System.Drawing.Point(317, 319);
             this.BtnVerContrasena.Name = "BtnVerContrasena";
             this.BtnVerContrasena.Size = new System.Drawing.Size(69, 24);
@@ -449,6 +454,7 @@
             // 
             // BtnHabilitar
             // 
+            this.BtnHabilitar.ForeColor = System.Drawing.Color.Crimson;
             this.BtnHabilitar.Location = new System.Drawing.Point(259, 365);
             this.BtnHabilitar.Name = "BtnHabilitar";
             this.BtnHabilitar.Size = new System.Drawing.Size(75, 23);
