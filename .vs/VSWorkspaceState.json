@@ -1,6 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\MicroPrestamos",
+    "\\MicroPrestamos\\MicroPrestamos"
   ],
+  "SelectedNode": "\\MicroPrestamos\\MicroPrestamos\\Prestamos.cs",
   "PreviewInSolutionExplorer": false
 }
