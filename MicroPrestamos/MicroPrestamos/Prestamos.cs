@@ -202,6 +202,17 @@ namespace MicroPrestamos
             }
         }
 
+        private void LimpiarPrestamosbtn_Click(object sender, EventArgs e)
+        {
+            foreach (Control item in ActiveForm.Controls)
+            {
+                if (item.GetType() == new TextBox().GetType())
+                {
+                    TextBox obj = (TextBox)item;
+                    obj.Clear();
+                }
+            }
+        }
     }
     
     

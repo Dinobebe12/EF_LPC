@@ -59,6 +59,7 @@
             this.FechaFinlbl = new System.Windows.Forms.Label();
             this.FechaFinDataTime = new System.Windows.Forms.DateTimePicker();
             this.ActualizarPrestamosbtn = new System.Windows.Forms.Button();
+            this.LimpiarPrestamosbtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.serviciosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.prestamosDataSet)).BeginInit();
@@ -302,11 +303,23 @@
             this.ActualizarPrestamosbtn.UseVisualStyleBackColor = true;
             this.ActualizarPrestamosbtn.Click += new System.EventHandler(this.ActualizarPrestamosbtn_Click);
             // 
+            // LimpiarPrestamosbtn
+            // 
+            this.LimpiarPrestamosbtn.ForeColor = System.Drawing.Color.Magenta;
+            this.LimpiarPrestamosbtn.Location = new System.Drawing.Point(222, 235);
+            this.LimpiarPrestamosbtn.Name = "LimpiarPrestamosbtn";
+            this.LimpiarPrestamosbtn.Size = new System.Drawing.Size(75, 23);
+            this.LimpiarPrestamosbtn.TabIndex = 18;
+            this.LimpiarPrestamosbtn.Text = "Limpiar";
+            this.LimpiarPrestamosbtn.UseVisualStyleBackColor = true;
+            this.LimpiarPrestamosbtn.Click += new System.EventHandler(this.LimpiarPrestamosbtn_Click);
+            // 
             // PrestamoPant
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(891, 450);
+            this.Controls.Add(this.LimpiarPrestamosbtn);
             this.Controls.Add(this.ActualizarPrestamosbtn);
             this.Controls.Add(this.FechaFinDataTime);
             this.Controls.Add(this.FechaFinlbl);
@@ -367,6 +380,7 @@
         private System.Windows.Forms.Label FechaFinlbl;
         private System.Windows.Forms.DateTimePicker FechaFinDataTime;
         private System.Windows.Forms.Button ActualizarPrestamosbtn;
+        private System.Windows.Forms.Button LimpiarPrestamosbtn;
     }
 }
 
