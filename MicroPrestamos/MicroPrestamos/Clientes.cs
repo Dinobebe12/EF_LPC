@@ -18,7 +18,7 @@ namespace MicroPrestamos
             InitializeComponent();
         }
         //readonly SqlConnection conn = new SqlConnection(@"Data Source = DESKTOP-TKG1DP2; Initial Catalog = Prestamos; Integrated Security=True;");
-        readonly SqlConnection conn = new SqlConnection(@"Data Source = DESKTOP-TKG1DP2; Initial Catalog = Prestamos; Integrated Security=True;");
+        readonly SqlConnection conn = new SqlConnection(@"Data Source = DINO\SQLEXPRESS; Initial Catalog = Prestamos; Integrated Security=True;");
         private void Registrarse_Load(object sender, EventArgs e)
         {
             SqlDataAdapter MyDA = new SqlDataAdapter();
@@ -295,6 +295,34 @@ namespace MicroPrestamos
             MenuPant MenuPant = new MenuPant();
             this.Hide();
             MenuPant.ShowDialog();
+        }
+        private void BtnBuscar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (conn.State == ConnectionState.Closed)
+                    conn.Open();
+                SqlDataAdapter MyDA = new SqlDataAdapter();
+                string sqlSelectAll = $"Select * From Clientes Where Cli_ID = {txtBuscar.Text} OR Cli_Nombre = '{txtBuscar.Text}' OR Cli_Primer_Apellido = '{txtBuscar.Text}' " +
+                    $"OR Cli_Segundo_Apellido = '{txtBuscar.Text}' OR Cli_Cedula = '{txtBuscar.Text}' OR Cli_Genero = '{txtBuscar.Text}' OR " +
+                    $"Cli_Estado_Civil = '{txtBuscar.Text}' OR Cli_Correo_Electronico = '{txtBuscar.Text}' OR Cli_Direccion = '{txtBuscar.Text}'";
+                MyDA.SelectCommand = new SqlCommand(sqlSelectAll, conn);
+                DataTable table = new DataTable();
+                MyDA.Fill(table);
+                BindingSource bSource = new BindingSource
+                {
+                    DataSource = table
+                };
+                dgvDatosPersonales.DataSource = bSource;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
         }
     }
 }

@@ -16,21 +16,18 @@ namespace MicroPrestamos
         {
             InitializeComponent();
         }
-
         private void PrestamosMenubtn_Click(object sender, EventArgs e)
         {
             PrestamoPant PrestamoPant = new PrestamoPant();
             this.Hide();
             PrestamoPant.ShowDialog();
         }
-
         private void ClientesMenubtn_Click(object sender, EventArgs e)
         {
             ClientesPant ClientesPant = new ClientesPant();
             this.Hide();
             ClientesPant.ShowDialog();
         }
-
         private void SalirMenubtn_Click(object sender, EventArgs e)
         {
             Login login = new Login();

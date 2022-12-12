@@ -145,5 +145,8 @@
   <ItemGroup>
     <None Include="Resources\kisspng-computer-icons-login-management-user-5ae155f3386149.6695613615247170432309.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\X mark.jpg.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

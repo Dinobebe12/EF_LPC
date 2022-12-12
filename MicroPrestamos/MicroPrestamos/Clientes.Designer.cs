@@ -76,6 +76,7 @@
             this.BtnVerContrasena = new System.Windows.Forms.Button();
             this.BtnHabilitar = new System.Windows.Forms.Button();
             this.VolverRegistrobtn = new System.Windows.Forms.Button();
+            this.BtnBuscar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.prestamosDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.prestamosDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.serviciosBindingSource)).BeginInit();
@@ -470,11 +471,22 @@
             this.VolverRegistrobtn.UseVisualStyleBackColor = false;
             this.VolverRegistrobtn.Click += new System.EventHandler(this.VolverRegistrobtn_Click);
             // 
+            // BtnBuscar
+            // 
+            this.BtnBuscar.Location = new System.Drawing.Point(740, 62);
+            this.BtnBuscar.Name = "BtnBuscar";
+            this.BtnBuscar.Size = new System.Drawing.Size(75, 23);
+            this.BtnBuscar.TabIndex = 31;
+            this.BtnBuscar.Text = "Buscar";
+            this.BtnBuscar.UseVisualStyleBackColor = true;
+            this.BtnBuscar.Click += new System.EventHandler(this.BtnBuscar_Click);
+            // 
             // ClientesPant
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(856, 462);
+            this.Controls.Add(this.BtnBuscar);
             this.Controls.Add(this.VolverRegistrobtn);
             this.Controls.Add(this.BtnHabilitar);
             this.Controls.Add(this.BtnVerContrasena);
@@ -569,5 +581,6 @@
         private System.Windows.Forms.Button BtnVerContrasena;
         private System.Windows.Forms.Button BtnHabilitar;
         private System.Windows.Forms.Button VolverRegistrobtn;
+        private System.Windows.Forms.Button BtnBuscar;
     }
 }
