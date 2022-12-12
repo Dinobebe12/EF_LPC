@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ClientesPant));
             this.lblNombre = new System.Windows.Forms.Label();
             this.lblPrimerApellido = new System.Windows.Forms.Label();
@@ -52,7 +54,6 @@
             this.serviciosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.serviciosTableAdapter = new MicroPrestamos.PrestamosDataSetTableAdapters.ServiciosTableAdapter();
             this.dgvDatosPersonales = new System.Windows.Forms.DataGridView();
-            this.cliIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cliNombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cliPrimerApellidoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cliSegundoApellidoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -83,99 +84,115 @@
             // lblNombre
             // 
             this.lblNombre.AutoSize = true;
-            this.lblNombre.Location = new System.Drawing.Point(9, 69);
+            this.lblNombre.Font = new System.Drawing.Font("Segoe Print", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombre.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.lblNombre.Location = new System.Drawing.Point(9, 75);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(58, 13);
+            this.lblNombre.Size = new System.Drawing.Size(99, 28);
             this.lblNombre.TabIndex = 0;
             this.lblNombre.Text = "Nombre(s):";
             // 
             // lblPrimerApellido
             // 
             this.lblPrimerApellido.AutoSize = true;
-            this.lblPrimerApellido.Location = new System.Drawing.Point(171, 69);
+            this.lblPrimerApellido.Font = new System.Drawing.Font("Segoe Print", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPrimerApellido.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.lblPrimerApellido.Location = new System.Drawing.Point(171, 75);
             this.lblPrimerApellido.Name = "lblPrimerApellido";
-            this.lblPrimerApellido.Size = new System.Drawing.Size(79, 13);
+            this.lblPrimerApellido.Size = new System.Drawing.Size(144, 28);
             this.lblPrimerApellido.TabIndex = 1;
             this.lblPrimerApellido.Text = "Primer Apellido:";
             // 
             // lblSegundoApellido
             // 
             this.lblSegundoApellido.AutoSize = true;
-            this.lblSegundoApellido.Location = new System.Drawing.Point(342, 69);
+            this.lblSegundoApellido.Font = new System.Drawing.Font("Segoe Print", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSegundoApellido.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.lblSegundoApellido.Location = new System.Drawing.Point(342, 75);
             this.lblSegundoApellido.Name = "lblSegundoApellido";
-            this.lblSegundoApellido.Size = new System.Drawing.Size(93, 13);
+            this.lblSegundoApellido.Size = new System.Drawing.Size(156, 28);
             this.lblSegundoApellido.TabIndex = 2;
             this.lblSegundoApellido.Text = "Segundo Apelldio:";
             // 
             // lblCedula
             // 
             this.lblCedula.AutoSize = true;
-            this.lblCedula.Location = new System.Drawing.Point(9, 125);
+            this.lblCedula.Font = new System.Drawing.Font("Segoe Print", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCedula.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.lblCedula.Location = new System.Drawing.Point(9, 131);
             this.lblCedula.Name = "lblCedula";
-            this.lblCedula.Size = new System.Drawing.Size(43, 13);
+            this.lblCedula.Size = new System.Drawing.Size(71, 28);
             this.lblCedula.TabIndex = 3;
             this.lblCedula.Text = "Cédula:";
             // 
             // lblGenero
             // 
             this.lblGenero.AutoSize = true;
-            this.lblGenero.Location = new System.Drawing.Point(171, 125);
+            this.lblGenero.Font = new System.Drawing.Font("Segoe Print", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGenero.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.lblGenero.Location = new System.Drawing.Point(171, 131);
             this.lblGenero.Name = "lblGenero";
-            this.lblGenero.Size = new System.Drawing.Size(45, 13);
+            this.lblGenero.Size = new System.Drawing.Size(73, 28);
             this.lblGenero.TabIndex = 4;
             this.lblGenero.Text = "Género:";
             // 
             // lblEstadoCivil
             // 
             this.lblEstadoCivil.AutoSize = true;
-            this.lblEstadoCivil.Location = new System.Drawing.Point(342, 125);
+            this.lblEstadoCivil.Font = new System.Drawing.Font("Segoe Print", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEstadoCivil.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.lblEstadoCivil.Location = new System.Drawing.Point(342, 131);
             this.lblEstadoCivil.Name = "lblEstadoCivil";
-            this.lblEstadoCivil.Size = new System.Drawing.Size(65, 13);
+            this.lblEstadoCivil.Size = new System.Drawing.Size(112, 28);
             this.lblEstadoCivil.TabIndex = 5;
             this.lblEstadoCivil.Text = "Estado Civil:";
             // 
             // lblCorreoElectronico
             // 
             this.lblCorreoElectronico.AutoSize = true;
-            this.lblCorreoElectronico.Location = new System.Drawing.Point(9, 187);
+            this.lblCorreoElectronico.Font = new System.Drawing.Font("Segoe Print", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCorreoElectronico.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.lblCorreoElectronico.Location = new System.Drawing.Point(9, 193);
             this.lblCorreoElectronico.Name = "lblCorreoElectronico";
-            this.lblCorreoElectronico.Size = new System.Drawing.Size(97, 13);
+            this.lblCorreoElectronico.Size = new System.Drawing.Size(165, 28);
             this.lblCorreoElectronico.TabIndex = 6;
             this.lblCorreoElectronico.Text = "Correo Electrónico:";
             // 
             // lblDireccion
             // 
             this.lblDireccion.AutoSize = true;
-            this.lblDireccion.Location = new System.Drawing.Point(9, 235);
+            this.lblDireccion.Font = new System.Drawing.Font("Segoe Print", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDireccion.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.lblDireccion.Location = new System.Drawing.Point(7, 251);
             this.lblDireccion.Name = "lblDireccion";
-            this.lblDireccion.Size = new System.Drawing.Size(55, 13);
+            this.lblDireccion.Size = new System.Drawing.Size(92, 28);
             this.lblDireccion.TabIndex = 7;
             this.lblDireccion.Text = "Dirección:";
             // 
             // Nombretxt
             // 
-            this.Nombretxt.Location = new System.Drawing.Point(12, 96);
+            this.Nombretxt.Location = new System.Drawing.Point(12, 102);
             this.Nombretxt.Name = "Nombretxt";
             this.Nombretxt.Size = new System.Drawing.Size(147, 20);
             this.Nombretxt.TabIndex = 8;
             // 
             // Apellido1txt
             // 
-            this.Apellido1txt.Location = new System.Drawing.Point(174, 96);
+            this.Apellido1txt.Location = new System.Drawing.Point(174, 102);
             this.Apellido1txt.Name = "Apellido1txt";
             this.Apellido1txt.Size = new System.Drawing.Size(142, 20);
             this.Apellido1txt.TabIndex = 9;
             // 
             // Apellido2txt
             // 
-            this.Apellido2txt.Location = new System.Drawing.Point(345, 96);
+            this.Apellido2txt.Location = new System.Drawing.Point(345, 102);
             this.Apellido2txt.Name = "Apellido2txt";
             this.Apellido2txt.Size = new System.Drawing.Size(142, 20);
             this.Apellido2txt.TabIndex = 10;
             // 
             // CedulaDPtxt
             // 
-            this.CedulaDPtxt.Location = new System.Drawing.Point(12, 151);
+            this.CedulaDPtxt.Location = new System.Drawing.Point(12, 157);
             this.CedulaDPtxt.MaxLength = 13;
             this.CedulaDPtxt.Name = "CedulaDPtxt";
             this.CedulaDPtxt.Size = new System.Drawing.Size(147, 20);
@@ -187,7 +204,7 @@
             this.Generobox.Items.AddRange(new object[] {
             "Femenino",
             "Masculino"});
-            this.Generobox.Location = new System.Drawing.Point(174, 151);
+            this.Generobox.Location = new System.Drawing.Point(174, 157);
             this.Generobox.Name = "Generobox";
             this.Generobox.Size = new System.Drawing.Size(142, 21);
             this.Generobox.TabIndex = 12;
@@ -200,21 +217,21 @@
             "Casado/a",
             "Viudo/a",
             "Divorciado/a"});
-            this.EstadoCivilbox.Location = new System.Drawing.Point(345, 150);
+            this.EstadoCivilbox.Location = new System.Drawing.Point(345, 157);
             this.EstadoCivilbox.Name = "EstadoCivilbox";
             this.EstadoCivilbox.Size = new System.Drawing.Size(142, 21);
             this.EstadoCivilbox.TabIndex = 13;
             // 
             // Correotxt
             // 
-            this.Correotxt.Location = new System.Drawing.Point(12, 203);
+            this.Correotxt.Location = new System.Drawing.Point(12, 224);
             this.Correotxt.Name = "Correotxt";
             this.Correotxt.Size = new System.Drawing.Size(304, 20);
             this.Correotxt.TabIndex = 14;
             // 
             // Direcciontxt
             // 
-            this.Direcciontxt.Location = new System.Drawing.Point(12, 251);
+            this.Direcciontxt.Location = new System.Drawing.Point(10, 282);
             this.Direcciontxt.Name = "Direcciontxt";
             this.Direcciontxt.Size = new System.Drawing.Size(475, 20);
             this.Direcciontxt.TabIndex = 15;
@@ -222,12 +239,12 @@
             // lblTitulo
             // 
             this.lblTitulo.AutoSize = true;
-            this.lblTitulo.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.lblTitulo.BackColor = System.Drawing.SystemColors.Control;
             this.lblTitulo.Enabled = false;
-            this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitulo.Location = new System.Drawing.Point(132, 23);
+            this.lblTitulo.Font = new System.Drawing.Font("Segoe Print", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitulo.Location = new System.Drawing.Point(295, 9);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(184, 26);
+            this.lblTitulo.Size = new System.Drawing.Size(221, 43);
             this.lblTitulo.TabIndex = 16;
             this.lblTitulo.Text = "Datos Personales";
             this.lblTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -254,9 +271,17 @@
             // dgvDatosPersonales
             // 
             this.dgvDatosPersonales.AutoGenerateColumns = false;
+            this.dgvDatosPersonales.BackgroundColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe Print", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.Desktop;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDatosPersonales.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvDatosPersonales.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDatosPersonales.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.cliIDDataGridViewTextBoxColumn,
             this.cliNombreDataGridViewTextBoxColumn,
             this.cliPrimerApellidoDataGridViewTextBoxColumn,
             this.cliSegundoApellidoDataGridViewTextBoxColumn,
@@ -266,18 +291,20 @@
             this.cliCorreoElectronicoDataGridViewTextBoxColumn,
             this.cliDireccionDataGridViewTextBoxColumn});
             this.dgvDatosPersonales.DataSource = this.clientesBindingSource;
-            this.dgvDatosPersonales.Location = new System.Drawing.Point(500, 96);
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.Desktop;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvDatosPersonales.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvDatosPersonales.GridColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.dgvDatosPersonales.Location = new System.Drawing.Point(500, 102);
             this.dgvDatosPersonales.Name = "dgvDatosPersonales";
+            this.dgvDatosPersonales.RowHeadersVisible = false;
             this.dgvDatosPersonales.Size = new System.Drawing.Size(344, 210);
             this.dgvDatosPersonales.TabIndex = 17;
-            // 
-            // cliIDDataGridViewTextBoxColumn
-            // 
-            this.cliIDDataGridViewTextBoxColumn.DataPropertyName = "Cli_ID";
-            this.cliIDDataGridViewTextBoxColumn.HeaderText = "ID";
-            this.cliIDDataGridViewTextBoxColumn.Name = "cliIDDataGridViewTextBoxColumn";
-            this.cliIDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.cliIDDataGridViewTextBoxColumn.Width = 40;
             // 
             // cliNombreDataGridViewTextBoxColumn
             // 
@@ -355,7 +382,7 @@
             // btnAgregar
             // 
             this.btnAgregar.ForeColor = System.Drawing.Color.ForestGreen;
-            this.btnAgregar.Location = new System.Drawing.Point(30, 394);
+            this.btnAgregar.Location = new System.Drawing.Point(25, 364);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(75, 23);
             this.btnAgregar.TabIndex = 18;
@@ -366,7 +393,7 @@
             // BtnLimpiar
             // 
             this.BtnLimpiar.ForeColor = System.Drawing.Color.Magenta;
-            this.BtnLimpiar.Location = new System.Drawing.Point(31, 365);
+            this.BtnLimpiar.Location = new System.Drawing.Point(26, 335);
             this.BtnLimpiar.Name = "BtnLimpiar";
             this.BtnLimpiar.Size = new System.Drawing.Size(75, 23);
             this.BtnLimpiar.TabIndex = 20;
@@ -377,7 +404,7 @@
             // BtnDeshabilitar
             // 
             this.BtnDeshabilitar.ForeColor = System.Drawing.Color.Crimson;
-            this.BtnDeshabilitar.Location = new System.Drawing.Point(259, 394);
+            this.BtnDeshabilitar.Location = new System.Drawing.Point(254, 364);
             this.BtnDeshabilitar.Name = "BtnDeshabilitar";
             this.BtnDeshabilitar.Size = new System.Drawing.Size(75, 23);
             this.BtnDeshabilitar.TabIndex = 21;
@@ -388,7 +415,7 @@
             // BtnActualizar
             // 
             this.BtnActualizar.ForeColor = System.Drawing.Color.Teal;
-            this.BtnActualizar.Location = new System.Drawing.Point(152, 394);
+            this.BtnActualizar.Location = new System.Drawing.Point(147, 364);
             this.BtnActualizar.Name = "BtnActualizar";
             this.BtnActualizar.Size = new System.Drawing.Size(75, 23);
             this.BtnActualizar.TabIndex = 22;
@@ -398,7 +425,7 @@
             // 
             // txtBuscar
             // 
-            this.txtBuscar.Location = new System.Drawing.Point(592, 62);
+            this.txtBuscar.Location = new System.Drawing.Point(592, 68);
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(142, 20);
             this.txtBuscar.TabIndex = 23;
@@ -406,7 +433,7 @@
             // BtnHabilitar
             // 
             this.BtnHabilitar.ForeColor = System.Drawing.Color.Crimson;
-            this.BtnHabilitar.Location = new System.Drawing.Point(259, 365);
+            this.BtnHabilitar.Location = new System.Drawing.Point(254, 335);
             this.BtnHabilitar.Name = "BtnHabilitar";
             this.BtnHabilitar.Size = new System.Drawing.Size(75, 23);
             this.BtnHabilitar.TabIndex = 29;
@@ -430,7 +457,7 @@
             // 
             // BtnBuscar
             // 
-            this.BtnBuscar.Location = new System.Drawing.Point(740, 62);
+            this.BtnBuscar.Location = new System.Drawing.Point(740, 68);
             this.BtnBuscar.Name = "BtnBuscar";
             this.BtnBuscar.Size = new System.Drawing.Size(75, 23);
             this.BtnBuscar.TabIndex = 31;
@@ -442,7 +469,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(856, 462);
+            this.ClientSize = new System.Drawing.Size(856, 409);
             this.Controls.Add(this.BtnBuscar);
             this.Controls.Add(this.VolverRegistrobtn);
             this.Controls.Add(this.BtnHabilitar);
@@ -469,6 +496,7 @@
             this.Controls.Add(this.lblSegundoApellido);
             this.Controls.Add(this.lblPrimerApellido);
             this.Controls.Add(this.lblNombre);
+            this.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ClientesPant";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -517,7 +545,9 @@
         private System.Windows.Forms.Button BtnDeshabilitar;
         private System.Windows.Forms.Button BtnActualizar;
         private System.Windows.Forms.TextBox txtBuscar;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cliIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Button BtnHabilitar;
+        private System.Windows.Forms.Button VolverRegistrobtn;
+        private System.Windows.Forms.Button BtnBuscar;
         private System.Windows.Forms.DataGridViewTextBoxColumn cliNombreDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn cliPrimerApellidoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn cliSegundoApellidoDataGridViewTextBoxColumn;
@@ -526,8 +556,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn cliEstadoCivilDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn cliCorreoElectronicoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn cliDireccionDataGridViewTextBoxColumn;
-        private System.Windows.Forms.Button BtnHabilitar;
-        private System.Windows.Forms.Button VolverRegistrobtn;
-        private System.Windows.Forms.Button BtnBuscar;
     }
 }
