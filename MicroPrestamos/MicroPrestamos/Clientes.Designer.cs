@@ -64,7 +64,6 @@
             this.prestamosDataSet1 = new MicroPrestamos.PrestamosDataSet1();
             this.clientesTableAdapter = new MicroPrestamos.PrestamosDataSet1TableAdapters.ClientesTableAdapter();
             this.btnAgregar = new System.Windows.Forms.Button();
-            this.btnBuscar = new System.Windows.Forms.Button();
             this.BtnLimpiar = new System.Windows.Forms.Button();
             this.BtnDeshabilitar = new System.Windows.Forms.Button();
             this.BtnActualizar = new System.Windows.Forms.Button();
@@ -365,15 +364,6 @@
             this.btnAgregar.UseVisualStyleBackColor = true;
             this.btnAgregar.Click += new System.EventHandler(this.BtnAgregar_Click);
             // 
-            // btnBuscar
-            // 
-            this.btnBuscar.Location = new System.Drawing.Point(750, 60);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(75, 23);
-            this.btnBuscar.TabIndex = 19;
-            this.btnBuscar.Text = "Buscar";
-            this.btnBuscar.UseVisualStyleBackColor = true;
-            // 
             // BtnLimpiar
             // 
             this.BtnLimpiar.Location = new System.Drawing.Point(31, 365);
@@ -479,7 +469,6 @@
             this.Controls.Add(this.BtnActualizar);
             this.Controls.Add(this.BtnDeshabilitar);
             this.Controls.Add(this.BtnLimpiar);
-            this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.dgvDatosPersonales);
             this.Controls.Add(this.lblTitulo);
@@ -541,7 +530,6 @@
         private System.Windows.Forms.BindingSource clientesBindingSource;
         private PrestamosDataSet1TableAdapters.ClientesTableAdapter clientesTableAdapter;
         private System.Windows.Forms.Button btnAgregar;
-        private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Button BtnLimpiar;
         private System.Windows.Forms.Button BtnDeshabilitar;
         private System.Windows.Forms.Button BtnActualizar;

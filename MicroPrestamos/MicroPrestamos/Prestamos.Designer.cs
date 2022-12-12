@@ -49,7 +49,7 @@
             this.Tasalbl = new System.Windows.Forms.Label();
             this.FechaInicioDataTime = new System.Windows.Forms.DateTimePicker();
             this.FechaIniciolbl = new System.Windows.Forms.Label();
-            this.Cedulatxt = new System.Windows.Forms.TextBox();
+            this.CedulaPrestamostxt = new System.Windows.Forms.TextBox();
             this.MontoPrestamotxt = new System.Windows.Forms.TextBox();
             this.Cuotatxt = new System.Windows.Forms.TextBox();
             this.Tasatxt = new System.Windows.Forms.TextBox();
@@ -58,6 +58,7 @@
             this.TotalPagartxt = new System.Windows.Forms.TextBox();
             this.FechaFinlbl = new System.Windows.Forms.Label();
             this.FechaFinDataTime = new System.Windows.Forms.DateTimePicker();
+            this.ActualizarPrestamosbtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.serviciosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.prestamosDataSet)).BeginInit();
@@ -214,12 +215,12 @@
             this.FechaIniciolbl.TabIndex = 6;
             this.FechaIniciolbl.Text = "Fecha de inicio:";
             // 
-            // Cedulatxt
+            // CedulaPrestamostxt
             // 
-            this.Cedulatxt.Location = new System.Drawing.Point(89, 43);
-            this.Cedulatxt.Name = "Cedulatxt";
-            this.Cedulatxt.Size = new System.Drawing.Size(118, 20);
-            this.Cedulatxt.TabIndex = 7;
+            this.CedulaPrestamostxt.Location = new System.Drawing.Point(89, 43);
+            this.CedulaPrestamostxt.Name = "CedulaPrestamostxt";
+            this.CedulaPrestamostxt.Size = new System.Drawing.Size(118, 20);
+            this.CedulaPrestamostxt.TabIndex = 7;
             // 
             // MontoPrestamotxt
             // 
@@ -290,11 +291,23 @@
             this.FechaFinDataTime.Size = new System.Drawing.Size(87, 20);
             this.FechaFinDataTime.TabIndex = 16;
             // 
+            // ActualizarPrestamosbtn
+            // 
+            this.ActualizarPrestamosbtn.ForeColor = System.Drawing.Color.Teal;
+            this.ActualizarPrestamosbtn.Location = new System.Drawing.Point(123, 235);
+            this.ActualizarPrestamosbtn.Name = "ActualizarPrestamosbtn";
+            this.ActualizarPrestamosbtn.Size = new System.Drawing.Size(75, 23);
+            this.ActualizarPrestamosbtn.TabIndex = 17;
+            this.ActualizarPrestamosbtn.Text = "Actualizar";
+            this.ActualizarPrestamosbtn.UseVisualStyleBackColor = true;
+            this.ActualizarPrestamosbtn.Click += new System.EventHandler(this.ActualizarPrestamosbtn_Click);
+            // 
             // PrestamoPant
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(891, 450);
+            this.Controls.Add(this.ActualizarPrestamosbtn);
             this.Controls.Add(this.FechaFinDataTime);
             this.Controls.Add(this.FechaFinlbl);
             this.Controls.Add(this.TotalPagartxt);
@@ -303,7 +316,7 @@
             this.Controls.Add(this.Tasatxt);
             this.Controls.Add(this.Cuotatxt);
             this.Controls.Add(this.MontoPrestamotxt);
-            this.Controls.Add(this.Cedulatxt);
+            this.Controls.Add(this.CedulaPrestamostxt);
             this.Controls.Add(this.FechaIniciolbl);
             this.Controls.Add(this.FechaInicioDataTime);
             this.Controls.Add(this.Tasalbl);
@@ -336,7 +349,7 @@
         private System.Windows.Forms.Label Tasalbl;
         private System.Windows.Forms.DateTimePicker FechaInicioDataTime;
         private System.Windows.Forms.Label FechaIniciolbl;
-        private System.Windows.Forms.TextBox Cedulatxt;
+        private System.Windows.Forms.TextBox CedulaPrestamostxt;
         private System.Windows.Forms.TextBox MontoPrestamotxt;
         private System.Windows.Forms.TextBox Cuotatxt;
         private System.Windows.Forms.TextBox Tasatxt;
@@ -353,6 +366,7 @@
         private System.Windows.Forms.TextBox TotalPagartxt;
         private System.Windows.Forms.Label FechaFinlbl;
         private System.Windows.Forms.DateTimePicker FechaFinDataTime;
+        private System.Windows.Forms.Button ActualizarPrestamosbtn;
     }
 }
 

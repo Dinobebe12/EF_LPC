@@ -47,7 +47,7 @@ namespace MicroPrestamos
                 {
                     CommandType = CommandType.Text
                 };
-                command.Parameters.AddWithValue("@Cli_Cedula", Cedulatxt.Text);
+                command.Parameters.AddWithValue("@Cli_Cedula", CedulaPrestamostxt.Text);
                 command.Parameters.AddWithValue("@Serv_Monto_Prestamo", MontoPrestamotxt.Text);
                 command.Parameters.AddWithValue("@Serv_Cuota", Cuotatxt.Text);
                 command.Parameters.AddWithValue("@Serv_Tasa", Tasatxt.Text);
@@ -84,6 +84,125 @@ namespace MicroPrestamos
                 conn.Close();
             }
         }
+
+        private void ActualizarPrestamosbtn_Click(object sender, EventArgs e)
+        {
+
+            try
+            {
+                if (conn.State == ConnectionState.Closed)
+                    conn.Open();
+
+                string cedula = $"Select Cli_Cedula From Servicios Where Cli_Cedula = '{CedulaPrestamostxt.Text}'";
+
+                SqlCommand cmdCedula = new SqlCommand(cedula, conn)
+                {
+                    CommandType = CommandType.Text
+                };
+                SqlDataReader reader = cmdCedula.ExecuteReader();
+                string cedulaSql = "";
+
+                while (reader.Read())
+                {
+                    cedulaSql = reader.GetString(0);
+                }
+                conn.Close();
+
+                if (conn.State == ConnectionState.Closed)
+                    conn.Open();
+
+
+                if (MontoPrestamotxt.Text != "")
+                {
+                    string query = $"Update Servicios Set Serv_Monto_Prestamo = @Serv_Monto_Prestamo Where Cli_Cedula = '{cedulaSql}'";
+                    SqlCommand command = new SqlCommand(query, conn);
+                    command.Parameters.AddWithValue("@Serv_Monto_Prestamo", MontoPrestamotxt.Text);
+                    command.ExecuteNonQuery();
+                }
+                conn.Close();
+
+                if (conn.State == ConnectionState.Closed)
+                    conn.Open();
+
+
+                if (Cuotatxt.Text != "")
+                {
+                    string query = $"Update Servicios Set Serv_Cuota = @Serv_Cuota Where Cli_Cedula = '{cedulaSql}'";
+                    SqlCommand command = new SqlCommand(query, conn);
+                    command.Parameters.AddWithValue("@Serv_Cuota", Cuotatxt.Text);
+                    command.ExecuteNonQuery();
+                }
+                conn.Close();
+
+                if (conn.State == ConnectionState.Closed)
+                    conn.Open();
+
+                if (Tasatxt.Text != "")
+                {
+                    string query = $"Update Servicios Set Serv_Tasa = @Serv_Tasa Where Cli_Cedula = '{cedulaSql}'";
+                    SqlCommand command = new SqlCommand(query, conn);
+                    command.Parameters.AddWithValue("@Serv_Tasa", Tasatxt.Text);
+                    command.ExecuteNonQuery();
+                }
+                conn.Close();
+
+                if (conn.State == ConnectionState.Closed)
+                    conn.Open();
+
+                if (FechaInicioDataTime.Text != "")
+                {
+                    string query = $"Update Servicios Set Serv_Fecha_Inicio = @Serv_Fecha_Inicio Where Cli_Cedula = '{cedulaSql}'";
+                    SqlCommand command = new SqlCommand(query, conn);
+                    command.Parameters.AddWithValue("@Serv_Fecha_Inicio", FechaInicioDataTime.Text);
+                    command.ExecuteNonQuery();
+                }
+                conn.Close();
+
+                if (conn.State == ConnectionState.Closed)
+                    conn.Open();
+
+                if (FechaFinDataTime.Text != "")
+                {
+                    string query = $"Update Servicios Set Serv_Fecha_Fin = @Serv_Fecha_Fin Where Cli_Cedula = '{cedulaSql}'";
+                    SqlCommand command = new SqlCommand(query, conn);
+                    command.Parameters.AddWithValue("@Serv_Fecha_Fin", FechaFinDataTime.Text);
+                    command.ExecuteNonQuery();
+                }
+                conn.Close();
+
+                if (conn.State == ConnectionState.Closed)
+                    conn.Open();
+
+                if (TotalPagartxt.Text != "")
+                {
+                    string query = $"Update Servicios Set Serv_Total_Pagar = @Serv_Total_Pagar Where Cli_Cedula = '{cedulaSql}'";
+                    SqlCommand command = new SqlCommand(query, conn);
+                    command.Parameters.AddWithValue("@Serv_Total_Pagar", TotalPagartxt.Text);
+                    command.ExecuteNonQuery();
+                }
+                MessageBox.Show("Datos Actualizados");
+                SqlDataAdapter MyDA = new SqlDataAdapter();
+                string sqlSelectAll = "SELECT * from Servicios";
+                MyDA.SelectCommand = new SqlCommand(sqlSelectAll, conn);
+                DataTable table = new DataTable();
+                MyDA.Fill(table);
+                BindingSource bSource = new BindingSource
+                {
+                    DataSource = table
+                };
+                dataGridView1.DataSource = bSource;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+
     }
+    
     
 }
