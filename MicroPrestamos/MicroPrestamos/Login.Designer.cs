@@ -35,6 +35,7 @@
             this.TxtUsuario = new System.Windows.Forms.TextBox();
             this.TxtContrasena = new System.Windows.Forms.TextBox();
             this.BtnVerContrasena = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // BtnLogin
@@ -54,7 +55,7 @@
             this.lblUsuario.AutoSize = true;
             this.lblUsuario.Font = new System.Drawing.Font("Segoe Print", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUsuario.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.lblUsuario.Location = new System.Drawing.Point(28, 90);
+            this.lblUsuario.Location = new System.Drawing.Point(42, 90);
             this.lblUsuario.Name = "lblUsuario";
             this.lblUsuario.Size = new System.Drawing.Size(68, 26);
             this.lblUsuario.TabIndex = 1;
@@ -103,6 +104,17 @@
             this.BtnVerContrasena.UseVisualStyleBackColor = false;
             this.BtnVerContrasena.Click += new System.EventHandler(this.BtnVerContrasena_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe Print", 21.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.label1.Location = new System.Drawing.Point(118, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(100, 51);
+            this.label1.TabIndex = 30;
+            this.label1.Text = "Login\r\n";
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -111,6 +123,7 @@
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(338, 301);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.BtnVerContrasena);
             this.Controls.Add(this.TxtContrasena);
             this.Controls.Add(this.TxtUsuario);
@@ -138,5 +151,6 @@
         private System.Windows.Forms.TextBox TxtUsuario;
         private System.Windows.Forms.TextBox TxtContrasena;
         private System.Windows.Forms.Button BtnVerContrasena;
+        private System.Windows.Forms.Label label1;
     }
 }

@@ -17,8 +17,8 @@ namespace MicroPrestamos
         {
             InitializeComponent();
         }
-        //readonly SqlConnection conn = new SqlConnection(@"Data Source = DESKTOP-TKG1DP2; Initial Catalog = Prestamos; Integrated Security=True;");
-        readonly SqlConnection conn = new SqlConnection(@"Data Source = DINO\SQLEXPRESS; Initial Catalog = Prestamos; Integrated Security=True;");
+        readonly SqlConnection conn = new SqlConnection(@"Data Source = DESKTOP-TKG1DP2; Initial Catalog = Prestamos; Integrated Security=True;");
+        //readonly SqlConnection conn = new SqlConnection(@"Data Source = DINO\SQLEXPRESS; Initial Catalog = Prestamos; Integrated Security=True;");
         private void PrestamoPant_Load(object sender, EventArgs e)
         {
             SqlDataAdapter MyDA = new SqlDataAdapter();
@@ -218,7 +218,7 @@ namespace MicroPrestamos
         {
             try
             {
-                string queryCliente = $"Update Servicio Set Cli_Estado = @Cli_Estado Where Cli_Cedula = '{CedulaPrestamostxt.Text}'";
+                string queryCliente = $"Update Servicios Set Cli_Estado = @Cli_Estado Where Cli_Cedula = '{CedulaPrestamostxt.Text}'";
 
                 if (conn.State == ConnectionState.Closed)
                     conn.Open();
