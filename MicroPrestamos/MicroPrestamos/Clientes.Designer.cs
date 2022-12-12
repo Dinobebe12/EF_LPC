@@ -65,9 +65,9 @@
             this.clientesTableAdapter = new MicroPrestamos.PrestamosDataSet1TableAdapters.ClientesTableAdapter();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnBuscar = new System.Windows.Forms.Button();
-            this.btnLimpiar = new System.Windows.Forms.Button();
-            this.btnEliminar = new System.Windows.Forms.Button();
-            this.btnActualizar = new System.Windows.Forms.Button();
+            this.BtnLimpiar = new System.Windows.Forms.Button();
+            this.BtnEliminar = new System.Windows.Forms.Button();
+            this.BtnActualizar = new System.Windows.Forms.Button();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.lblContrasena = new System.Windows.Forms.Label();
             this.LblUsuario = new System.Windows.Forms.Label();
@@ -269,7 +269,6 @@
             this.dgvDatosPersonales.DataSource = this.clientesBindingSource;
             this.dgvDatosPersonales.Location = new System.Drawing.Point(500, 96);
             this.dgvDatosPersonales.Name = "dgvDatosPersonales";
-            this.dgvDatosPersonales.ReadOnly = true;
             this.dgvDatosPersonales.Size = new System.Drawing.Size(344, 210);
             this.dgvDatosPersonales.TabIndex = 17;
             // 
@@ -373,32 +372,33 @@
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
             // 
-            // btnLimpiar
+            // BtnLimpiar
             // 
-            this.btnLimpiar.Location = new System.Drawing.Point(360, 394);
-            this.btnLimpiar.Name = "btnLimpiar";
-            this.btnLimpiar.Size = new System.Drawing.Size(75, 23);
-            this.btnLimpiar.TabIndex = 20;
-            this.btnLimpiar.Text = "Limpiar";
-            this.btnLimpiar.UseVisualStyleBackColor = true;
+            this.BtnLimpiar.Location = new System.Drawing.Point(360, 394);
+            this.BtnLimpiar.Name = "BtnLimpiar";
+            this.BtnLimpiar.Size = new System.Drawing.Size(75, 23);
+            this.BtnLimpiar.TabIndex = 20;
+            this.BtnLimpiar.Text = "Limpiar";
+            this.BtnLimpiar.UseVisualStyleBackColor = true;
             // 
-            // btnEliminar
+            // BtnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(259, 394);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(75, 23);
-            this.btnEliminar.TabIndex = 21;
-            this.btnEliminar.Text = "Eliminar";
-            this.btnEliminar.UseVisualStyleBackColor = true;
+            this.BtnEliminar.Location = new System.Drawing.Point(259, 394);
+            this.BtnEliminar.Name = "BtnEliminar";
+            this.BtnEliminar.Size = new System.Drawing.Size(75, 23);
+            this.BtnEliminar.TabIndex = 21;
+            this.BtnEliminar.Text = "Eliminar";
+            this.BtnEliminar.UseVisualStyleBackColor = true;
             // 
-            // btnActualizar
+            // BtnActualizar
             // 
-            this.btnActualizar.Location = new System.Drawing.Point(152, 394);
-            this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.Size = new System.Drawing.Size(75, 23);
-            this.btnActualizar.TabIndex = 22;
-            this.btnActualizar.Text = "Actualizar";
-            this.btnActualizar.UseVisualStyleBackColor = true;
+            this.BtnActualizar.Location = new System.Drawing.Point(152, 394);
+            this.BtnActualizar.Name = "BtnActualizar";
+            this.BtnActualizar.Size = new System.Drawing.Size(75, 23);
+            this.BtnActualizar.TabIndex = 22;
+            this.BtnActualizar.Text = "Actualizar";
+            this.BtnActualizar.UseVisualStyleBackColor = true;
+            this.BtnActualizar.Click += new System.EventHandler(this.BtnActualizar_Click);
             // 
             // txtBuscar
             // 
@@ -461,9 +461,9 @@
             this.Controls.Add(this.LblUsuario);
             this.Controls.Add(this.lblContrasena);
             this.Controls.Add(this.txtBuscar);
-            this.Controls.Add(this.btnActualizar);
-            this.Controls.Add(this.btnEliminar);
-            this.Controls.Add(this.btnLimpiar);
+            this.Controls.Add(this.BtnActualizar);
+            this.Controls.Add(this.BtnEliminar);
+            this.Controls.Add(this.BtnLimpiar);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.dgvDatosPersonales);
@@ -527,9 +527,9 @@
         private PrestamosDataSet1TableAdapters.ClientesTableAdapter clientesTableAdapter;
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Button btnBuscar;
-        private System.Windows.Forms.Button btnLimpiar;
-        private System.Windows.Forms.Button btnEliminar;
-        private System.Windows.Forms.Button btnActualizar;
+        private System.Windows.Forms.Button BtnLimpiar;
+        private System.Windows.Forms.Button BtnEliminar;
+        private System.Windows.Forms.Button BtnActualizar;
         private System.Windows.Forms.TextBox txtBuscar;
         private System.Windows.Forms.DataGridViewTextBoxColumn cliIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn cliNombreDataGridViewTextBoxColumn;

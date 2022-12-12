@@ -58,7 +58,7 @@ namespace MicroPrestamos
                 };
                 command2.Parameters.AddWithValue("@Usu_Usuario", TxtUsuario.Text);
                 command2.Parameters.AddWithValue("@Usu_Contrasena", TxtContrasena.Text);
-                command2.Parameters.AddWithValue("@Usu_Nombre", $"{Nombretxt} {Apellido1txt}");
+                command2.Parameters.AddWithValue("@Usu_Nombre", $"{Nombretxt.Text} {Apellido1txt.Text}");
                 command2.Parameters.AddWithValue("@Rol_ID", "5");
                 command2.Parameters.AddWithValue("@Usu_Estado", "1");
                 command2.ExecuteNonQuery();
@@ -89,6 +89,105 @@ namespace MicroPrestamos
             {
                 TxtContrasena.PasswordChar = '*';
                 BtnVerContrasena.Text = "Ver";
+            }
+        }
+
+        private void BtnActualizar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (conn.State == ConnectionState.Closed)
+                    conn.Open();
+                string cedula = $"Select Cli_Cedula From Clientes Where Cli_Cedula = '{CedulaDPtxt.Text}'";
+                SqlCommand cmdCedula = new SqlCommand(cedula, conn)
+                {
+                    CommandType = CommandType.Text
+                };
+                SqlDataReader reader = cmdCedula.ExecuteReader();
+                string cedulaSql = "";
+                while (reader.Read())
+                {
+                    cedulaSql = reader.GetString(0);
+                }
+                conn.Close();
+                if (conn.State == ConnectionState.Closed)
+                    conn.Open();
+                if (Nombretxt.Text != "")
+                {
+                    string query = $"Update Clientes Set Cli_Nombre = @Cli_Nombre Where Cli_Cedula = '{cedulaSql}'";
+                    SqlCommand command = new SqlCommand(query, conn);
+                    command.Parameters.AddWithValue("@Cli_Nombre", Nombretxt.Text);
+                    command.ExecuteNonQuery();
+                }
+                conn.Close();
+                if (conn.State == ConnectionState.Closed)
+                    conn.Open();
+                if (Apellido1txt.Text != "")
+                {
+                    string query = $"Update Clientes Set Cli_Primer_Apellido = @Cli_Primer_Apellido Where Cli_Cedula = '{cedulaSql}'";
+                    SqlCommand command = new SqlCommand(query, conn);
+                    command.Parameters.AddWithValue("@Cli_Primer_Apellido", Apellido1txt.Text);
+                    command.ExecuteNonQuery();
+                }
+                conn.Close();
+                if (conn.State == ConnectionState.Closed)
+                    conn.Open();
+                if (Apellido2txt.Text != "")
+                {
+                    string query = $"Update Clientes Set Cli_Segundo_Apellido = @Cli_Segundo_Apellido Where Cli_Cedula = '{cedulaSql}'";
+                    SqlCommand command = new SqlCommand(query, conn);
+                    command.Parameters.AddWithValue("@Cli_Segundo_Apellido", Apellido2txt.Text);
+                    command.ExecuteNonQuery();
+                }
+                conn.Close();
+                if (conn.State == ConnectionState.Closed)
+                    conn.Open();
+                if (EstadoCivilbox.Text != "")
+                {
+                    string query = $"Update Clientes Set Cli_Estado_Civil = @Cli_Estado_Civil Where Cli_Cedula = '{cedulaSql}'";
+                    SqlCommand command = new SqlCommand(query, conn);
+                    command.Parameters.AddWithValue("@Cli_Estado_Civil", EstadoCivilbox.Text);
+                    command.ExecuteNonQuery();
+                }
+                conn.Close();
+                if (conn.State == ConnectionState.Closed)
+                    conn.Open();
+                if (Correotxt.Text != "")
+                {
+                    string query = $"Update Clientes Set Cli_Correo_Electronico = @Cli_Correo_Electronico Where Cli_Cedula = '{cedulaSql}'";
+                    SqlCommand command = new SqlCommand(query, conn);
+                    command.Parameters.AddWithValue("@Cli_Correo_Electronico", Correotxt.Text);
+                    command.ExecuteNonQuery();
+                }
+                conn.Close();
+                if (conn.State == ConnectionState.Closed)
+                    conn.Open();
+                if (Direcciontxt.Text != "")
+                {
+                    string query = $"Update Clientes Set Cli_Direccion = @Cli_Direccion Where Cli_Cedula = '{cedulaSql}'";
+                    SqlCommand command = new SqlCommand(query, conn);
+                    command.Parameters.AddWithValue("@Cli_Direccion", Direcciontxt.Text);
+                    command.ExecuteNonQuery();
+                }
+                MessageBox.Show("Datos Actualizados");
+                SqlDataAdapter MyDA = new SqlDataAdapter();
+                string sqlSelectAll = "SELECT * from Clientes";
+                MyDA.SelectCommand = new SqlCommand(sqlSelectAll, conn);
+                DataTable table = new DataTable();
+                MyDA.Fill(table);
+                BindingSource bSource = new BindingSource
+                {
+                    DataSource = table
+                };
+                dgvDatosPersonales.DataSource = bSource;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                conn.Close();
             }
         }
     }
