@@ -23,5 +23,12 @@ namespace MicroPrestamos
             this.Hide();
             MenuPant.ShowDialog();
         }
+
+        private void ConsultaPant_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'prestamosDataSet2.Servicios' table. You can move, or remove it, as needed.
+            this.serviciosTableAdapter.Fill(this.prestamosDataSet2.Servicios);
+
+        }
     }
 }
