@@ -34,5 +34,22 @@ namespace MicroPrestamos
             this.Hide();
             login.ShowDialog();
         }
+
+        private void UsuariosMenubtn_Click(object sender, EventArgs e)
+        {
+            UsuariosPant UsuariosPant = new UsuariosPant();
+            this.Hide();
+            UsuariosPant.ShowDialog();
+
+        }
+
+        private void ConsultaMenubtn_Click(object sender, EventArgs e)
+        {
+            ConsultaPant ConsultaPant = new ConsultaPant();
+            this.Hide();
+            ConsultaPant.ShowDialog();
+
+
+        }
     }
 }
