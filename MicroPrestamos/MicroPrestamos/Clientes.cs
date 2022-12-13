@@ -285,5 +285,13 @@ namespace MicroPrestamos
                 conn.Close();
             }
         }
+
+        private void VolverPrestamobtn_Click(object sender, EventArgs e)
+        {
+            MenuPant MenuPant = new MenuPant();
+            this.Hide();
+            MenuPant.ShowDialog();
+        }
+
     }
 }

@@ -48,7 +48,6 @@
             this.EstadoCivilbox = new System.Windows.Forms.ComboBox();
             this.Correotxt = new System.Windows.Forms.TextBox();
             this.Direcciontxt = new System.Windows.Forms.TextBox();
-            this.lblTitulo = new System.Windows.Forms.Label();
             this.prestamosDataSet = new MicroPrestamos.PrestamosDataSet();
             this.prestamosDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.serviciosBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -73,6 +72,8 @@
             this.BtnHabilitar = new System.Windows.Forms.Button();
             this.VolverRegistrobtn = new System.Windows.Forms.Button();
             this.BtnBuscar = new System.Windows.Forms.Button();
+            this.VolverPrestamobtn = new System.Windows.Forms.Button();
+            this.ClientesPantallalbl = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.prestamosDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.prestamosDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.serviciosBindingSource)).BeginInit();
@@ -236,19 +237,6 @@
             this.Direcciontxt.Size = new System.Drawing.Size(475, 20);
             this.Direcciontxt.TabIndex = 15;
             // 
-            // lblTitulo
-            // 
-            this.lblTitulo.AutoSize = true;
-            this.lblTitulo.BackColor = System.Drawing.SystemColors.Control;
-            this.lblTitulo.Enabled = false;
-            this.lblTitulo.Font = new System.Drawing.Font("Segoe Print", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitulo.Location = new System.Drawing.Point(295, 9);
-            this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(221, 43);
-            this.lblTitulo.TabIndex = 16;
-            this.lblTitulo.Text = "Datos Personales";
-            this.lblTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // prestamosDataSet
             // 
             this.prestamosDataSet.DataSetName = "PrestamosDataSet";
@@ -294,7 +282,7 @@
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.Desktop;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.HotTrack;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
@@ -465,11 +453,38 @@
             this.BtnBuscar.UseVisualStyleBackColor = true;
             this.BtnBuscar.Click += new System.EventHandler(this.BtnBuscar_Click);
             // 
+            // VolverPrestamobtn
+            // 
+            this.VolverPrestamobtn.BackColor = System.Drawing.Color.LightBlue;
+            this.VolverPrestamobtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.VolverPrestamobtn.Font = new System.Drawing.Font("MV Boli", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.VolverPrestamobtn.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.VolverPrestamobtn.Location = new System.Drawing.Point(774, 364);
+            this.VolverPrestamobtn.Name = "VolverPrestamobtn";
+            this.VolverPrestamobtn.Size = new System.Drawing.Size(70, 33);
+            this.VolverPrestamobtn.TabIndex = 32;
+            this.VolverPrestamobtn.Text = "Volver";
+            this.VolverPrestamobtn.UseVisualStyleBackColor = false;
+            this.VolverPrestamobtn.Click += new System.EventHandler(this.VolverPrestamobtn_Click);
+            // 
+            // ClientesPantallalbl
+            // 
+            this.ClientesPantallalbl.AutoSize = true;
+            this.ClientesPantallalbl.Font = new System.Drawing.Font("Segoe Print", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ClientesPantallalbl.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.ClientesPantallalbl.Location = new System.Drawing.Point(338, 9);
+            this.ClientesPantallalbl.Name = "ClientesPantallalbl";
+            this.ClientesPantallalbl.Size = new System.Drawing.Size(125, 47);
+            this.ClientesPantallalbl.TabIndex = 33;
+            this.ClientesPantallalbl.Text = "Clientes";
+            // 
             // ClientesPant
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(856, 409);
+            this.Controls.Add(this.ClientesPantallalbl);
+            this.Controls.Add(this.VolverPrestamobtn);
             this.Controls.Add(this.BtnBuscar);
             this.Controls.Add(this.VolverRegistrobtn);
             this.Controls.Add(this.BtnHabilitar);
@@ -479,7 +494,6 @@
             this.Controls.Add(this.BtnLimpiar);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.dgvDatosPersonales);
-            this.Controls.Add(this.lblTitulo);
             this.Controls.Add(this.Direcciontxt);
             this.Controls.Add(this.Correotxt);
             this.Controls.Add(this.EstadoCivilbox);
@@ -531,7 +545,6 @@
         private System.Windows.Forms.ComboBox EstadoCivilbox;
         private System.Windows.Forms.TextBox Correotxt;
         private System.Windows.Forms.TextBox Direcciontxt;
-        private System.Windows.Forms.Label lblTitulo;
         private System.Windows.Forms.BindingSource prestamosDataSetBindingSource;
         private PrestamosDataSet prestamosDataSet;
         private System.Windows.Forms.BindingSource serviciosBindingSource;
@@ -556,5 +569,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn cliEstadoCivilDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn cliCorreoElectronicoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn cliDireccionDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Button VolverPrestamobtn;
+        private System.Windows.Forms.Label ClientesPantallalbl;
     }
 }
