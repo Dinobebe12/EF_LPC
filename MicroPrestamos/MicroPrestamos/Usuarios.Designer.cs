@@ -148,6 +148,7 @@
             this.BtnActualizar.TabIndex = 34;
             this.BtnActualizar.Text = "Actualizar";
             this.BtnActualizar.UseVisualStyleBackColor = true;
+            this.BtnActualizar.Click += new System.EventHandler(this.BtnActualizar_Click);
             // 
             // BtnHabilitar
             // 

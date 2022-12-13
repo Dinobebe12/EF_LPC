@@ -173,5 +173,64 @@ namespace MicroPrestamos
                 }
             }
         }
+
+        private void BtnActualizar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (conn.State == ConnectionState.Closed)
+                    conn.Open();
+                string usuario = $"Select Usu_Usuario From Usuario Where Usu_Usuario = '{TxtUsuario.Text}'";
+                SqlCommand cmdUsuario = new SqlCommand(usuario, conn)
+                {
+                    CommandType = CommandType.Text
+                };
+                SqlDataReader reader = cmdUsuario.ExecuteReader();
+                string usuarioSql = "";
+                while (reader.Read())
+                {
+                    usuarioSql = reader.GetString(0);
+                }
+                conn.Close();
+                if (conn.State == ConnectionState.Closed)
+                    conn.Open();
+                if (TxtUsuario.Text != "")
+                {
+                    string query = $"Update Usuarios Set Usu_Usuario = @Usu_Usuario Where Usu_Usuario = '{usuarioSql}'";
+                    SqlCommand command = new SqlCommand(query, conn);
+                    command.Parameters.AddWithValue("@Usu_Usuario", TxtUsuario.Text);
+                    command.ExecuteNonQuery();
+                }
+                conn.Close();
+                if (conn.State == ConnectionState.Closed)
+                    conn.Open();
+                if (TxtContrasena.Text != "")
+                {
+                    string query = $"Update Usuarios Set Usu_Contrasena = @Usu_Contrasena Where Usu_Usuario = '{usuarioSql}'";
+                    SqlCommand command = new SqlCommand(query, conn);
+                    command.Parameters.AddWithValue("@Usu_Contrasena", TxtContrasena.Text);
+                    command.ExecuteNonQuery();
+                }
+                MessageBox.Show("Datos Actualizados");
+                //SqlDataAdapter MyDA = new SqlDataAdapter();
+                //string sqlSelectAll = "SELECT * from Clientes";
+                //MyDA.SelectCommand = new SqlCommand(sqlSelectAll, conn);
+                //DataTable table = new DataTable();
+                //MyDA.Fill(table);
+                //BindingSource bSource = new BindingSource
+                //{
+                //    DataSource = table
+                //};
+                //dgvDatosPersonales.DataSource = bSource;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
     }
 }
