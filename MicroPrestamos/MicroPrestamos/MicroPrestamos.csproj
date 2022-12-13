@@ -53,6 +53,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>PrestamosDataSet2.xsd</DependentUpon>
     </Compile>
+    <Compile Include="PrestamosDataSet3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PrestamosDataSet3.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Usuarios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -161,6 +166,17 @@
     </None>
     <None Include="PrestamosDataSet2.xss">
       <DependentUpon>PrestamosDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="PrestamosDataSet3.xsc">
+      <DependentUpon>PrestamosDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="PrestamosDataSet3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PrestamosDataSet3.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="PrestamosDataSet3.xss">
+      <DependentUpon>PrestamosDataSet3.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

@@ -30,25 +30,23 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ConsultaPant));
             this.Consultaslbl = new System.Windows.Forms.Label();
             this.VolverConsultabtn = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.prestamosDataSet2 = new MicroPrestamos.PrestamosDataSet2();
-            this.serviciosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.serviciosTableAdapter = new MicroPrestamos.PrestamosDataSet2TableAdapters.ServiciosTableAdapter();
+            this.DgvConsultas = new System.Windows.Forms.DataGridView();
             this.cliCedulaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.servMontoPrestamoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.servCuotaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.servTasaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.servTotalPagarDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.prestamosDataSet2)).BeginInit();
+            this.serviciosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.prestamosDataSet2 = new MicroPrestamos.PrestamosDataSet2();
+            this.serviciosTableAdapter = new MicroPrestamos.PrestamosDataSet2TableAdapters.ServiciosTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvConsultas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.serviciosBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.prestamosDataSet2)).BeginInit();
             this.SuspendLayout();
             // 
             // Consultaslbl
@@ -93,65 +91,34 @@
             this.button2.Text = "button2";
             this.button2.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // DgvConsultas
             // 
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.DgvConsultas.AutoGenerateColumns = false;
+            this.DgvConsultas.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
+            this.DgvConsultas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DgvConsultas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.cliCedulaDataGridViewTextBoxColumn,
             this.servMontoPrestamoDataGridViewTextBoxColumn,
             this.servCuotaDataGridViewTextBoxColumn,
             this.servTasaDataGridViewTextBoxColumn,
             this.servTotalPagarDataGridViewTextBoxColumn});
-            this.dataGridView1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.dataGridView1.DataSource = this.serviciosBindingSource;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.HotTrack;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridView1.GridColor = System.Drawing.SystemColors.ActiveCaption;
-            this.dataGridView1.Location = new System.Drawing.Point(205, 260);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe Print", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.MenuText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.Size = new System.Drawing.Size(505, 187);
-            this.dataGridView1.TabIndex = 8;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // prestamosDataSet2
-            // 
-            this.prestamosDataSet2.DataSetName = "PrestamosDataSet2";
-            this.prestamosDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // serviciosBindingSource
-            // 
-            this.serviciosBindingSource.DataMember = "Servicios";
-            this.serviciosBindingSource.DataSource = this.prestamosDataSet2;
-            // 
-            // serviciosTableAdapter
-            // 
-            this.serviciosTableAdapter.ClearBeforeFill = true;
+            this.DgvConsultas.Cursor = System.Windows.Forms.Cursors.Default;
+            this.DgvConsultas.DataSource = this.serviciosBindingSource;
+            this.DgvConsultas.GridColor = System.Drawing.SystemColors.ActiveCaption;
+            this.DgvConsultas.Location = new System.Drawing.Point(205, 260);
+            this.DgvConsultas.Name = "DgvConsultas";
+            this.DgvConsultas.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe Print", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.MenuText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgvConsultas.RowHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.DgvConsultas.RowHeadersVisible = false;
+            this.DgvConsultas.Size = new System.Drawing.Size(505, 187);
+            this.DgvConsultas.TabIndex = 8;
             // 
             // cliCedulaDataGridViewTextBoxColumn
             // 
@@ -183,12 +150,26 @@
             this.servTotalPagarDataGridViewTextBoxColumn.HeaderText = "Total a Pagar";
             this.servTotalPagarDataGridViewTextBoxColumn.Name = "servTotalPagarDataGridViewTextBoxColumn";
             // 
+            // serviciosBindingSource
+            // 
+            this.serviciosBindingSource.DataMember = "Servicios";
+            this.serviciosBindingSource.DataSource = this.prestamosDataSet2;
+            // 
+            // prestamosDataSet2
+            // 
+            this.prestamosDataSet2.DataSetName = "PrestamosDataSet2";
+            this.prestamosDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // serviciosTableAdapter
+            // 
+            this.serviciosTableAdapter.ClearBeforeFill = true;
+            // 
             // ConsultaPant
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(916, 459);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.DgvConsultas);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.VolverConsultabtn);
@@ -201,9 +182,9 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Consultas";
             this.Load += new System.EventHandler(this.ConsultaPant_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.prestamosDataSet2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvConsultas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.serviciosBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.prestamosDataSet2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -215,7 +196,7 @@
         private System.Windows.Forms.Button VolverConsultabtn;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView DgvConsultas;
         private PrestamosDataSet2 prestamosDataSet2;
         private System.Windows.Forms.BindingSource serviciosBindingSource;
         private PrestamosDataSet2TableAdapters.ServiciosTableAdapter serviciosTableAdapter;
