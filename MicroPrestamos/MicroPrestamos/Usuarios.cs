@@ -17,8 +17,8 @@ namespace MicroPrestamos
         {
             InitializeComponent();
         }
-        //readonly SqlConnection conn = new SqlConnection(@"Data Source = DESKTOP-TKG1DP2; Initial Catalog = Prestamos; Integrated Security=True;");
-        readonly SqlConnection conn = new SqlConnection(@"Data Source = DINO\SQLEXPRESS; Initial Catalog = Prestamos; Integrated Security=True;");
+        readonly SqlConnection conn = new SqlConnection(@"Data Source = DESKTOP-TKG1DP2; Initial Catalog = Prestamos; Integrated Security=True;");
+        //readonly SqlConnection conn = new SqlConnection(@"Data Source = DINO\SQLEXPRESS; Initial Catalog = Prestamos; Integrated Security=True;");
 
         private void UsuariosPant_Load(object sender, EventArgs e)
         {
@@ -335,6 +335,46 @@ namespace MicroPrestamos
                 TxtConfirmarContrasena.PasswordChar = '*';
                 BtnVerConfirmarContrasena.Text = "Ver";
             }
+        }
+
+        private void LblUsuario_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LblNombre_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LblApellido_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblContrasena_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LblRol_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LblNuevoUsuario_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LblNuevaContrasena_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LblConfirmarContrasena_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -48,15 +48,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="PrestamosDataSet2.Designer.cs">
+    <Compile Include="DataSetConsultas.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>PrestamosDataSet2.xsd</DependentUpon>
+      <DependentUpon>DataSetConsultas.xsd</DependentUpon>
     </Compile>
-    <Compile Include="PrestamosDataSet3.Designer.cs">
+    <Compile Include="DataSetUsuarios.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>PrestamosDataSet3.xsd</DependentUpon>
+      <DependentUpon>DataSetUsuarios.xsd</DependentUpon>
     </Compile>
     <Compile Include="Usuarios.cs">
       <SubType>Form</SubType>
@@ -88,15 +88,15 @@
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="PrestamosDataSet.Designer.cs">
+    <Compile Include="DataSetPrestamos.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>PrestamosDataSet.xsd</DependentUpon>
+      <DependentUpon>DataSetPrestamos.xsd</DependentUpon>
     </Compile>
-    <Compile Include="PrestamosDataSet1.Designer.cs">
+    <Compile Include="DataSetClientes.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>PrestamosDataSet1.xsd</DependentUpon>
+      <DependentUpon>DataSetClientes.xsd</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -134,49 +134,49 @@
     <EmbeddedResource Include="Clientes.resx">
       <DependentUpon>Clientes.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="PrestamosDataSet.xsc">
-      <DependentUpon>PrestamosDataSet.xsd</DependentUpon>
+    <None Include="DataSetPrestamos.xsc">
+      <DependentUpon>DataSetPrestamos.xsd</DependentUpon>
     </None>
-    <None Include="PrestamosDataSet.xsd">
+    <None Include="DataSetPrestamos.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>PrestamosDataSet.Designer.cs</LastGenOutput>
+      <LastGenOutput>DataSetPrestamos.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="PrestamosDataSet.xss">
-      <DependentUpon>PrestamosDataSet.xsd</DependentUpon>
+    <None Include="DataSetPrestamos.xss">
+      <DependentUpon>DataSetPrestamos.xsd</DependentUpon>
     </None>
-    <None Include="PrestamosDataSet1.xsc">
-      <DependentUpon>PrestamosDataSet1.xsd</DependentUpon>
+    <None Include="DataSetClientes.xsc">
+      <DependentUpon>DataSetClientes.xsd</DependentUpon>
     </None>
-    <None Include="PrestamosDataSet1.xsd">
+    <None Include="DataSetClientes.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>PrestamosDataSet1.Designer.cs</LastGenOutput>
+      <LastGenOutput>DataSetClientes.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="PrestamosDataSet1.xss">
-      <DependentUpon>PrestamosDataSet1.xsd</DependentUpon>
+    <None Include="DataSetClientes.xss">
+      <DependentUpon>DataSetClientes.xsd</DependentUpon>
     </None>
-    <None Include="PrestamosDataSet2.xsc">
-      <DependentUpon>PrestamosDataSet2.xsd</DependentUpon>
+    <None Include="DataSetConsultas.xsc">
+      <DependentUpon>DataSetConsultas.xsd</DependentUpon>
     </None>
-    <None Include="PrestamosDataSet2.xsd">
+    <None Include="DataSetConsultas.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>PrestamosDataSet2.Designer.cs</LastGenOutput>
+      <LastGenOutput>DataSetConsultas.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="PrestamosDataSet2.xss">
-      <DependentUpon>PrestamosDataSet2.xsd</DependentUpon>
+    <None Include="DataSetConsultas.xss">
+      <DependentUpon>DataSetConsultas.xsd</DependentUpon>
     </None>
-    <None Include="PrestamosDataSet3.xsc">
-      <DependentUpon>PrestamosDataSet3.xsd</DependentUpon>
+    <None Include="DataSetUsuarios.xsc">
+      <DependentUpon>DataSetUsuarios.xsd</DependentUpon>
     </None>
-    <None Include="PrestamosDataSet3.xsd">
+    <None Include="DataSetUsuarios.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>PrestamosDataSet3.Designer.cs</LastGenOutput>
+      <LastGenOutput>DataSetUsuarios.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="PrestamosDataSet3.xss">
-      <DependentUpon>PrestamosDataSet3.xsd</DependentUpon>
+    <None Include="DataSetUsuarios.xss">
+      <DependentUpon>DataSetUsuarios.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -199,6 +199,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\X mark.jpg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

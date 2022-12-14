@@ -48,7 +48,7 @@
             this.EstadoCivilbox = new System.Windows.Forms.ComboBox();
             this.Correotxt = new System.Windows.Forms.TextBox();
             this.Direcciontxt = new System.Windows.Forms.TextBox();
-            this.prestamosDataSet = new MicroPrestamos.PrestamosDataSet();
+            this.prestamosDataSet = new MicroPrestamos.DataSetPrestamos();
             this.prestamosDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.serviciosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.serviciosTableAdapter = new MicroPrestamos.PrestamosDataSetTableAdapters.ServiciosTableAdapter();
@@ -547,7 +547,7 @@
         private System.Windows.Forms.TextBox Correotxt;
         private System.Windows.Forms.TextBox Direcciontxt;
         private System.Windows.Forms.BindingSource prestamosDataSetBindingSource;
-        private PrestamosDataSet prestamosDataSet;
+        private DataSetPrestamos prestamosDataSet;
         private System.Windows.Forms.BindingSource serviciosBindingSource;
         private PrestamosDataSetTableAdapters.ServiciosTableAdapter serviciosTableAdapter;
         private System.Windows.Forms.DataGridView dgvDatosPersonales;

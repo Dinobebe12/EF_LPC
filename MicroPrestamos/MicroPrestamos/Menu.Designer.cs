@@ -40,7 +40,7 @@
             // PrestamosMenubtn
             // 
             this.PrestamosMenubtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.PrestamosMenubtn.Font = new System.Drawing.Font("MV Boli", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PrestamosMenubtn.Font = new System.Drawing.Font("Segoe Print", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PrestamosMenubtn.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.PrestamosMenubtn.Location = new System.Drawing.Point(136, 215);
             this.PrestamosMenubtn.Name = "PrestamosMenubtn";
@@ -53,7 +53,7 @@
             // ClientesMenubtn
             // 
             this.ClientesMenubtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ClientesMenubtn.Font = new System.Drawing.Font("MV Boli", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ClientesMenubtn.Font = new System.Drawing.Font("Segoe Print", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ClientesMenubtn.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.ClientesMenubtn.Location = new System.Drawing.Point(318, 215);
             this.ClientesMenubtn.Name = "ClientesMenubtn";
@@ -66,7 +66,7 @@
             // UsuariosMenubtn
             // 
             this.UsuariosMenubtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.UsuariosMenubtn.Font = new System.Drawing.Font("MV Boli", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UsuariosMenubtn.Font = new System.Drawing.Font("Segoe Print", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UsuariosMenubtn.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.UsuariosMenubtn.Location = new System.Drawing.Point(502, 215);
             this.UsuariosMenubtn.Name = "UsuariosMenubtn";
@@ -79,7 +79,7 @@
             // ConsultaMenubtn
             // 
             this.ConsultaMenubtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ConsultaMenubtn.Font = new System.Drawing.Font("MV Boli", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ConsultaMenubtn.Font = new System.Drawing.Font("Segoe Print", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ConsultaMenubtn.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.ConsultaMenubtn.Location = new System.Drawing.Point(318, 318);
             this.ConsultaMenubtn.Name = "ConsultaMenubtn";

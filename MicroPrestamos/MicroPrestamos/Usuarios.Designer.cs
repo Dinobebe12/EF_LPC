@@ -63,7 +63,7 @@
             this.rolIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.usuEstadoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.usuariosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.prestamosDataSet3 = new MicroPrestamos.PrestamosDataSet3();
+            this.prestamosDataSet3 = new MicroPrestamos.DataSetUsuarios();
             this.usuariosTableAdapter = new MicroPrestamos.PrestamosDataSet3TableAdapters.UsuariosTableAdapter();
             this.BtnVerNuevaContrasena = new System.Windows.Forms.Button();
             this.BtnVerConfirmarContrasena = new System.Windows.Forms.Button();
@@ -99,15 +99,17 @@
             // LblUsuario
             // 
             this.LblUsuario.AutoSize = true;
-            this.LblUsuario.Location = new System.Drawing.Point(109, 84);
+            this.LblUsuario.Font = new System.Drawing.Font("Segoe Print", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblUsuario.Location = new System.Drawing.Point(23, 154);
             this.LblUsuario.Name = "LblUsuario";
-            this.LblUsuario.Size = new System.Drawing.Size(54, 19);
+            this.LblUsuario.Size = new System.Drawing.Size(72, 26);
             this.LblUsuario.TabIndex = 26;
             this.LblUsuario.Text = "Usuario:";
+            this.LblUsuario.Click += new System.EventHandler(this.LblUsuario_Click);
             // 
             // TxtUsuario
             // 
-            this.TxtUsuario.Location = new System.Drawing.Point(113, 106);
+            this.TxtUsuario.Location = new System.Drawing.Point(27, 179);
             this.TxtUsuario.Name = "TxtUsuario";
             this.TxtUsuario.Size = new System.Drawing.Size(170, 27);
             this.TxtUsuario.TabIndex = 28;
@@ -115,18 +117,21 @@
             // lblContrasena
             // 
             this.lblContrasena.AutoSize = true;
-            this.lblContrasena.Location = new System.Drawing.Point(109, 144);
+            this.lblContrasena.Font = new System.Drawing.Font("Segoe Print", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblContrasena.Location = new System.Drawing.Point(216, 154);
             this.lblContrasena.Name = "lblContrasena";
-            this.lblContrasena.Size = new System.Drawing.Size(74, 19);
+            this.lblContrasena.Size = new System.Drawing.Size(101, 26);
             this.lblContrasena.TabIndex = 29;
             this.lblContrasena.Text = "Contraseña:";
+            this.lblContrasena.Click += new System.EventHandler(this.lblContrasena_Click);
             // 
             // BtnVerContrasena
             // 
+            this.BtnVerContrasena.Font = new System.Drawing.Font("Segoe Print", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnVerContrasena.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.BtnVerContrasena.Location = new System.Drawing.Point(289, 169);
+            this.BtnVerContrasena.Location = new System.Drawing.Point(392, 179);
             this.BtnVerContrasena.Name = "BtnVerContrasena";
-            this.BtnVerContrasena.Size = new System.Drawing.Size(71, 27);
+            this.BtnVerContrasena.Size = new System.Drawing.Size(67, 27);
             this.BtnVerContrasena.TabIndex = 30;
             this.BtnVerContrasena.Text = "Ver";
             this.BtnVerContrasena.UseVisualStyleBackColor = true;
@@ -134,7 +139,7 @@
             // 
             // TxtContrasena
             // 
-            this.TxtContrasena.Location = new System.Drawing.Point(113, 169);
+            this.TxtContrasena.Location = new System.Drawing.Point(220, 179);
             this.TxtContrasena.Name = "TxtContrasena";
             this.TxtContrasena.PasswordChar = '*';
             this.TxtContrasena.Size = new System.Drawing.Size(170, 27);
@@ -143,7 +148,7 @@
             // BtnLimpiar
             // 
             this.BtnLimpiar.ForeColor = System.Drawing.Color.Magenta;
-            this.BtnLimpiar.Location = new System.Drawing.Point(208, 262);
+            this.BtnLimpiar.Location = new System.Drawing.Point(504, 134);
             this.BtnLimpiar.Name = "BtnLimpiar";
             this.BtnLimpiar.Size = new System.Drawing.Size(75, 30);
             this.BtnLimpiar.TabIndex = 32;
@@ -154,9 +159,9 @@
             // btnAgregar
             // 
             this.btnAgregar.ForeColor = System.Drawing.Color.ForestGreen;
-            this.btnAgregar.Location = new System.Drawing.Point(113, 261);
+            this.btnAgregar.Location = new System.Drawing.Point(504, 98);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(75, 28);
+            this.btnAgregar.Size = new System.Drawing.Size(75, 30);
             this.btnAgregar.TabIndex = 33;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
@@ -164,8 +169,9 @@
             // 
             // BtnActualizar
             // 
+            this.BtnActualizar.Font = new System.Drawing.Font("Segoe Print", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnActualizar.ForeColor = System.Drawing.Color.Teal;
-            this.BtnActualizar.Location = new System.Drawing.Point(596, 385);
+            this.BtnActualizar.Location = new System.Drawing.Point(315, 407);
             this.BtnActualizar.Name = "BtnActualizar";
             this.BtnActualizar.Size = new System.Drawing.Size(75, 27);
             this.BtnActualizar.TabIndex = 34;
@@ -176,9 +182,9 @@
             // BtnHabilitar
             // 
             this.BtnHabilitar.ForeColor = System.Drawing.Color.Crimson;
-            this.BtnHabilitar.Location = new System.Drawing.Point(366, 224);
+            this.BtnHabilitar.Location = new System.Drawing.Point(503, 170);
             this.BtnHabilitar.Name = "BtnHabilitar";
-            this.BtnHabilitar.Size = new System.Drawing.Size(75, 32);
+            this.BtnHabilitar.Size = new System.Drawing.Size(75, 29);
             this.BtnHabilitar.TabIndex = 35;
             this.BtnHabilitar.Text = "Habilitar";
             this.BtnHabilitar.UseVisualStyleBackColor = true;
@@ -187,9 +193,9 @@
             // BtnDeshabilitar
             // 
             this.BtnDeshabilitar.ForeColor = System.Drawing.Color.Crimson;
-            this.BtnDeshabilitar.Location = new System.Drawing.Point(366, 262);
+            this.BtnDeshabilitar.Location = new System.Drawing.Point(498, 205);
             this.BtnDeshabilitar.Name = "BtnDeshabilitar";
-            this.BtnDeshabilitar.Size = new System.Drawing.Size(86, 31);
+            this.BtnDeshabilitar.Size = new System.Drawing.Size(87, 29);
             this.BtnDeshabilitar.TabIndex = 36;
             this.BtnDeshabilitar.Text = "Deshabilitar";
             this.BtnDeshabilitar.UseVisualStyleBackColor = true;
@@ -198,31 +204,35 @@
             // LblApellido
             // 
             this.LblApellido.AutoSize = true;
-            this.LblApellido.Location = new System.Drawing.Point(362, 144);
+            this.LblApellido.Font = new System.Drawing.Font("Segoe Print", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblApellido.Location = new System.Drawing.Point(220, 82);
             this.LblApellido.Name = "LblApellido";
-            this.LblApellido.Size = new System.Drawing.Size(56, 19);
+            this.LblApellido.Size = new System.Drawing.Size(76, 26);
             this.LblApellido.TabIndex = 37;
             this.LblApellido.Text = "Apellido:";
+            this.LblApellido.Click += new System.EventHandler(this.LblApellido_Click);
             // 
             // LblNombre
             // 
             this.LblNombre.AutoSize = true;
-            this.LblNombre.Location = new System.Drawing.Point(362, 84);
+            this.LblNombre.Font = new System.Drawing.Font("Segoe Print", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblNombre.Location = new System.Drawing.Point(23, 85);
             this.LblNombre.Name = "LblNombre";
-            this.LblNombre.Size = new System.Drawing.Size(56, 19);
+            this.LblNombre.Size = new System.Drawing.Size(76, 26);
             this.LblNombre.TabIndex = 38;
             this.LblNombre.Text = "Nombre:";
+            this.LblNombre.Click += new System.EventHandler(this.LblNombre_Click);
             // 
             // TxtNombre
             // 
-            this.TxtNombre.Location = new System.Drawing.Point(366, 106);
+            this.TxtNombre.Location = new System.Drawing.Point(27, 107);
             this.TxtNombre.Name = "TxtNombre";
             this.TxtNombre.Size = new System.Drawing.Size(166, 27);
             this.TxtNombre.TabIndex = 39;
             // 
             // TxtApellido
             // 
-            this.TxtApellido.Location = new System.Drawing.Point(366, 169);
+            this.TxtApellido.Location = new System.Drawing.Point(224, 107);
             this.TxtApellido.Name = "TxtApellido";
             this.TxtApellido.Size = new System.Drawing.Size(166, 27);
             this.TxtApellido.TabIndex = 40;
@@ -230,11 +240,13 @@
             // LblRol
             // 
             this.LblRol.AutoSize = true;
-            this.LblRol.Location = new System.Drawing.Point(109, 202);
+            this.LblRol.Font = new System.Drawing.Font("Segoe Print", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblRol.Location = new System.Drawing.Point(22, 222);
             this.LblRol.Name = "LblRol";
-            this.LblRol.Size = new System.Drawing.Size(29, 19);
+            this.LblRol.Size = new System.Drawing.Size(39, 26);
             this.LblRol.TabIndex = 41;
             this.LblRol.Text = "Rol:";
+            this.LblRol.Click += new System.EventHandler(this.LblRol_Click);
             // 
             // CbbRol
             // 
@@ -245,7 +257,7 @@
             "Servicio",
             "Supervisor",
             "Nose"});
-            this.CbbRol.Location = new System.Drawing.Point(113, 224);
+            this.CbbRol.Location = new System.Drawing.Point(27, 246);
             this.CbbRol.Name = "CbbRol";
             this.CbbRol.Size = new System.Drawing.Size(170, 27);
             this.CbbRol.TabIndex = 42;
@@ -253,9 +265,10 @@
             // CkbCambiarDatos
             // 
             this.CkbCambiarDatos.AutoSize = true;
-            this.CkbCambiarDatos.Location = new System.Drawing.Point(113, 307);
+            this.CkbCambiarDatos.Font = new System.Drawing.Font("Segoe Print", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CkbCambiarDatos.Location = new System.Drawing.Point(247, 246);
             this.CkbCambiarDatos.Name = "CkbCambiarDatos";
-            this.CkbCambiarDatos.Size = new System.Drawing.Size(109, 23);
+            this.CkbCambiarDatos.Size = new System.Drawing.Size(143, 30);
             this.CkbCambiarDatos.TabIndex = 43;
             this.CkbCambiarDatos.Text = "Cambiar Datos";
             this.CkbCambiarDatos.UseVisualStyleBackColor = true;
@@ -264,40 +277,46 @@
             // LblConfirmarContrasena
             // 
             this.LblConfirmarContrasena.AutoSize = true;
-            this.LblConfirmarContrasena.Location = new System.Drawing.Point(248, 360);
+            this.LblConfirmarContrasena.Font = new System.Drawing.Font("Segoe Print", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblConfirmarContrasena.Location = new System.Drawing.Point(12, 379);
             this.LblConfirmarContrasena.Name = "LblConfirmarContrasena";
-            this.LblConfirmarContrasena.Size = new System.Drawing.Size(135, 19);
+            this.LblConfirmarContrasena.Size = new System.Drawing.Size(185, 26);
             this.LblConfirmarContrasena.TabIndex = 44;
             this.LblConfirmarContrasena.Text = "Confirmar Contraseña:";
+            this.LblConfirmarContrasena.Click += new System.EventHandler(this.LblConfirmarContrasena_Click);
             // 
             // LblNuevaContrasena
             // 
             this.LblNuevaContrasena.AutoSize = true;
-            this.LblNuevaContrasena.Location = new System.Drawing.Point(248, 308);
+            this.LblNuevaContrasena.Font = new System.Drawing.Font("Segoe Print", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblNuevaContrasena.Location = new System.Drawing.Point(14, 320);
             this.LblNuevaContrasena.Name = "LblNuevaContrasena";
-            this.LblNuevaContrasena.Size = new System.Drawing.Size(112, 19);
+            this.LblNuevaContrasena.Size = new System.Drawing.Size(153, 26);
             this.LblNuevaContrasena.TabIndex = 45;
             this.LblNuevaContrasena.Text = "Nueva Contraseña:";
+            this.LblNuevaContrasena.Click += new System.EventHandler(this.LblNuevaContrasena_Click);
             // 
             // LblNuevoUsuario
             // 
             this.LblNuevoUsuario.AutoSize = true;
-            this.LblNuevoUsuario.Location = new System.Drawing.Point(501, 308);
+            this.LblNuevoUsuario.Font = new System.Drawing.Font("Segoe Print", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblNuevoUsuario.Location = new System.Drawing.Point(273, 321);
             this.LblNuevoUsuario.Name = "LblNuevoUsuario";
-            this.LblNuevoUsuario.Size = new System.Drawing.Size(92, 19);
+            this.LblNuevoUsuario.Size = new System.Drawing.Size(123, 26);
             this.LblNuevoUsuario.TabIndex = 46;
             this.LblNuevoUsuario.Text = "Nuevo Usuario:";
+            this.LblNuevoUsuario.Click += new System.EventHandler(this.LblNuevoUsuario_Click);
             // 
             // TxtNuevoUsuario
             // 
-            this.TxtNuevoUsuario.Location = new System.Drawing.Point(505, 333);
+            this.TxtNuevoUsuario.Location = new System.Drawing.Point(278, 350);
             this.TxtNuevoUsuario.Name = "TxtNuevoUsuario";
             this.TxtNuevoUsuario.Size = new System.Drawing.Size(166, 27);
             this.TxtNuevoUsuario.TabIndex = 47;
             // 
             // TxtConfirmarContrasena
             // 
-            this.TxtConfirmarContrasena.Location = new System.Drawing.Point(252, 382);
+            this.TxtConfirmarContrasena.Location = new System.Drawing.Point(19, 408);
             this.TxtConfirmarContrasena.Name = "TxtConfirmarContrasena";
             this.TxtConfirmarContrasena.PasswordChar = '*';
             this.TxtConfirmarContrasena.Size = new System.Drawing.Size(170, 27);
@@ -305,7 +324,7 @@
             // 
             // TxtNuevaContrasena
             // 
-            this.TxtNuevaContrasena.Location = new System.Drawing.Point(252, 330);
+            this.TxtNuevaContrasena.Location = new System.Drawing.Point(19, 349);
             this.TxtNuevaContrasena.Name = "TxtNuevaContrasena";
             this.TxtNuevaContrasena.PasswordChar = '*';
             this.TxtNuevaContrasena.Size = new System.Drawing.Size(170, 27);
@@ -313,7 +332,10 @@
             // 
             // DgvUsuarios
             // 
+            this.DgvUsuarios.AllowUserToAddRows = false;
             this.DgvUsuarios.AutoGenerateColumns = false;
+            this.DgvUsuarios.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
+            this.DgvUsuarios.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.DgvUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DgvUsuarios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.usuIDDataGridViewTextBoxColumn,
@@ -322,10 +344,13 @@
             this.usuNombreDataGridViewTextBoxColumn,
             this.rolIDDataGridViewTextBoxColumn,
             this.usuEstadoDataGridViewTextBoxColumn});
+            this.DgvUsuarios.Cursor = System.Windows.Forms.Cursors.Default;
             this.DgvUsuarios.DataSource = this.usuariosBindingSource;
-            this.DgvUsuarios.Location = new System.Drawing.Point(555, 106);
+            this.DgvUsuarios.GridColor = System.Drawing.SystemColors.ActiveCaption;
+            this.DgvUsuarios.Location = new System.Drawing.Point(619, 84);
             this.DgvUsuarios.Name = "DgvUsuarios";
-            this.DgvUsuarios.Size = new System.Drawing.Size(354, 187);
+            this.DgvUsuarios.RowHeadersVisible = false;
+            this.DgvUsuarios.Size = new System.Drawing.Size(300, 309);
             this.DgvUsuarios.TabIndex = 50;
             // 
             // usuIDDataGridViewTextBoxColumn
@@ -334,24 +359,28 @@
             this.usuIDDataGridViewTextBoxColumn.HeaderText = "ID";
             this.usuIDDataGridViewTextBoxColumn.Name = "usuIDDataGridViewTextBoxColumn";
             this.usuIDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.usuIDDataGridViewTextBoxColumn.Width = 46;
             // 
             // usuUsuarioDataGridViewTextBoxColumn
             // 
             this.usuUsuarioDataGridViewTextBoxColumn.DataPropertyName = "Usu_Usuario";
             this.usuUsuarioDataGridViewTextBoxColumn.HeaderText = "Usuario";
             this.usuUsuarioDataGridViewTextBoxColumn.Name = "usuUsuarioDataGridViewTextBoxColumn";
+            this.usuUsuarioDataGridViewTextBoxColumn.Width = 76;
             // 
             // usuContrasenaDataGridViewTextBoxColumn
             // 
             this.usuContrasenaDataGridViewTextBoxColumn.DataPropertyName = "Usu_Contrasena";
             this.usuContrasenaDataGridViewTextBoxColumn.HeaderText = "Contraseña";
             this.usuContrasenaDataGridViewTextBoxColumn.Name = "usuContrasenaDataGridViewTextBoxColumn";
+            this.usuContrasenaDataGridViewTextBoxColumn.Width = 96;
             // 
             // usuNombreDataGridViewTextBoxColumn
             // 
             this.usuNombreDataGridViewTextBoxColumn.DataPropertyName = "Usu_Nombre";
             this.usuNombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
             this.usuNombreDataGridViewTextBoxColumn.Name = "usuNombreDataGridViewTextBoxColumn";
+            this.usuNombreDataGridViewTextBoxColumn.Width = 78;
             // 
             // rolIDDataGridViewTextBoxColumn
             // 
@@ -383,10 +412,11 @@
             // 
             // BtnVerNuevaContrasena
             // 
+            this.BtnVerNuevaContrasena.Font = new System.Drawing.Font("Segoe Print", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnVerNuevaContrasena.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.BtnVerNuevaContrasena.Location = new System.Drawing.Point(428, 333);
+            this.BtnVerNuevaContrasena.Location = new System.Drawing.Point(194, 349);
             this.BtnVerNuevaContrasena.Name = "BtnVerNuevaContrasena";
-            this.BtnVerNuevaContrasena.Size = new System.Drawing.Size(71, 27);
+            this.BtnVerNuevaContrasena.Size = new System.Drawing.Size(67, 27);
             this.BtnVerNuevaContrasena.TabIndex = 51;
             this.BtnVerNuevaContrasena.Text = "Ver";
             this.BtnVerNuevaContrasena.UseVisualStyleBackColor = true;
@@ -394,10 +424,11 @@
             // 
             // BtnVerConfirmarContrasena
             // 
+            this.BtnVerConfirmarContrasena.Font = new System.Drawing.Font("Segoe Print", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnVerConfirmarContrasena.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.BtnVerConfirmarContrasena.Location = new System.Drawing.Point(428, 385);
+            this.BtnVerConfirmarContrasena.Location = new System.Drawing.Point(194, 407);
             this.BtnVerConfirmarContrasena.Name = "BtnVerConfirmarContrasena";
-            this.BtnVerConfirmarContrasena.Size = new System.Drawing.Size(71, 27);
+            this.BtnVerConfirmarContrasena.Size = new System.Drawing.Size(67, 27);
             this.BtnVerConfirmarContrasena.TabIndex = 52;
             this.BtnVerConfirmarContrasena.Text = "Ver";
             this.BtnVerConfirmarContrasena.UseVisualStyleBackColor = true;
@@ -436,7 +467,7 @@
             this.Controls.Add(this.LblUsuario);
             this.Controls.Add(this.VolverUsuariosbtn);
             this.Controls.Add(this.Usuarioslbl);
-            this.Font = new System.Drawing.Font("Segoe Print", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Segoe Print", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -480,8 +511,7 @@
         private System.Windows.Forms.TextBox TxtNuevoUsuario;
         private System.Windows.Forms.TextBox TxtConfirmarContrasena;
         private System.Windows.Forms.TextBox TxtNuevaContrasena;
-        private System.Windows.Forms.DataGridView DgvUsuarios;
-        private PrestamosDataSet3 prestamosDataSet3;
+        private DataSetUsuarios prestamosDataSet3;
         private System.Windows.Forms.BindingSource usuariosBindingSource;
         private PrestamosDataSet3TableAdapters.UsuariosTableAdapter usuariosTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn usuIDDataGridViewTextBoxColumn;
@@ -492,5 +522,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn usuEstadoDataGridViewTextBoxColumn;
         private System.Windows.Forms.Button BtnVerNuevaContrasena;
         private System.Windows.Forms.Button BtnVerConfirmarContrasena;
+        private System.Windows.Forms.DataGridView DgvUsuarios;
     }
 }
