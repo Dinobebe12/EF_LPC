@@ -33,8 +33,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ConsultaPant));
             this.Consultaslbl = new System.Windows.Forms.Label();
             this.VolverConsultabtn = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.Imprimirbtn = new System.Windows.Forms.Button();
+            this.BuscarConsultabtn = new System.Windows.Forms.Button();
             this.DgvConsultas = new System.Windows.Forms.DataGridView();
             this.cliCedulaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.servMontoPrestamoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -42,8 +42,13 @@
             this.servTasaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.servTotalPagarDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.serviciosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.prestamosDataSet2 = new MicroPrestamos.PrestamosDataSet2();
+            this.prestamosDataSet2 = new MicroPrestamos.DataSetConsultas();
             this.serviciosTableAdapter = new MicroPrestamos.PrestamosDataSet2TableAdapters.ServiciosTableAdapter();
+            this.CedulaConsultatxt = new System.Windows.Forms.TextBox();
+            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
+            this.printDialog1 = new System.Windows.Forms.PrintDialog();
+            this.CedulaConsultalbl = new System.Windows.Forms.Label();
+            this.ExcelConsultabtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DgvConsultas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.serviciosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.prestamosDataSet2)).BeginInit();
@@ -73,23 +78,25 @@
             this.VolverConsultabtn.UseVisualStyleBackColor = false;
             this.VolverConsultabtn.Click += new System.EventHandler(this.VolverConsultabtn_Click);
             // 
-            // button1
+            // Imprimirbtn
             // 
-            this.button1.Location = new System.Drawing.Point(101, 414);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(77, 28);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Aprobar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.Imprimirbtn.Location = new System.Drawing.Point(788, 87);
+            this.Imprimirbtn.Name = "Imprimirbtn";
+            this.Imprimirbtn.Size = new System.Drawing.Size(94, 28);
+            this.Imprimirbtn.TabIndex = 6;
+            this.Imprimirbtn.Text = "Imprimir";
+            this.Imprimirbtn.UseVisualStyleBackColor = true;
+            this.Imprimirbtn.Click += new System.EventHandler(this.Imprimirbtn_Click);
             // 
-            // button2
+            // BuscarConsultabtn
             // 
-            this.button2.Location = new System.Drawing.Point(101, 380);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(77, 28);
-            this.button2.TabIndex = 7;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
+            this.BuscarConsultabtn.Location = new System.Drawing.Point(537, 86);
+            this.BuscarConsultabtn.Name = "BuscarConsultabtn";
+            this.BuscarConsultabtn.Size = new System.Drawing.Size(77, 28);
+            this.BuscarConsultabtn.TabIndex = 7;
+            this.BuscarConsultabtn.Text = "Buscar";
+            this.BuscarConsultabtn.UseVisualStyleBackColor = true;
+            this.BuscarConsultabtn.Click += new System.EventHandler(this.BuscarConsultabtn_Click);
             // 
             // DgvConsultas
             // 
@@ -164,14 +171,53 @@
             // 
             this.serviciosTableAdapter.ClearBeforeFill = true;
             // 
+            // CedulaConsultatxt
+            // 
+            this.CedulaConsultatxt.Font = new System.Drawing.Font("Segoe Print", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CedulaConsultatxt.Location = new System.Drawing.Point(345, 86);
+            this.CedulaConsultatxt.Name = "CedulaConsultatxt";
+            this.CedulaConsultatxt.Size = new System.Drawing.Size(186, 27);
+            this.CedulaConsultatxt.TabIndex = 9;
+            // 
+            // printDocument1
+            // 
+            this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
+            // 
+            // printDialog1
+            // 
+            this.printDialog1.UseEXDialog = true;
+            // 
+            // CedulaConsultalbl
+            // 
+            this.CedulaConsultalbl.AutoSize = true;
+            this.CedulaConsultalbl.Font = new System.Drawing.Font("Segoe Print", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CedulaConsultalbl.Location = new System.Drawing.Point(260, 82);
+            this.CedulaConsultalbl.Name = "CedulaConsultalbl";
+            this.CedulaConsultalbl.Size = new System.Drawing.Size(79, 33);
+            this.CedulaConsultalbl.TabIndex = 10;
+            this.CedulaConsultalbl.Text = "Cedula";
+            // 
+            // ExcelConsultabtn
+            // 
+            this.ExcelConsultabtn.Location = new System.Drawing.Point(788, 133);
+            this.ExcelConsultabtn.Name = "ExcelConsultabtn";
+            this.ExcelConsultabtn.Size = new System.Drawing.Size(94, 28);
+            this.ExcelConsultabtn.TabIndex = 11;
+            this.ExcelConsultabtn.Text = "Excel";
+            this.ExcelConsultabtn.UseVisualStyleBackColor = true;
+            this.ExcelConsultabtn.Click += new System.EventHandler(this.ExcelConsultabtn_Click);
+            // 
             // ConsultaPant
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(916, 459);
+            this.Controls.Add(this.ExcelConsultabtn);
+            this.Controls.Add(this.CedulaConsultalbl);
+            this.Controls.Add(this.CedulaConsultatxt);
             this.Controls.Add(this.DgvConsultas);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.BuscarConsultabtn);
+            this.Controls.Add(this.Imprimirbtn);
             this.Controls.Add(this.VolverConsultabtn);
             this.Controls.Add(this.Consultaslbl);
             this.Font = new System.Drawing.Font("Segoe Print", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -195,10 +241,10 @@
 
         private System.Windows.Forms.Label Consultaslbl;
         private System.Windows.Forms.Button VolverConsultabtn;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button Imprimirbtn;
+        private System.Windows.Forms.Button BuscarConsultabtn;
         private System.Windows.Forms.DataGridView DgvConsultas;
-        private PrestamosDataSet2 prestamosDataSet2;
+        private DataSetConsultas prestamosDataSet2;
         private System.Windows.Forms.BindingSource serviciosBindingSource;
         private PrestamosDataSet2TableAdapters.ServiciosTableAdapter serviciosTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn cliCedulaDataGridViewTextBoxColumn;
@@ -206,5 +252,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn servCuotaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn servTasaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn servTotalPagarDataGridViewTextBoxColumn;
+        private System.Windows.Forms.TextBox CedulaConsultatxt;
+        private System.Drawing.Printing.PrintDocument printDocument1;
+        private System.Windows.Forms.PrintDialog printDialog1;
+        private System.Windows.Forms.Label CedulaConsultalbl;
+        private System.Windows.Forms.Button ExcelConsultabtn;
     }
 }

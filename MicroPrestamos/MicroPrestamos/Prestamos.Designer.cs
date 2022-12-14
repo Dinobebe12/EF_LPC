@@ -41,7 +41,7 @@
             this.servFechaFinDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.servTotalPagarDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.serviciosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.prestamosDataSet = new MicroPrestamos.PrestamosDataSet();
+            this.prestamosDataSet = new MicroPrestamos.DataSetPrestamos();
             this.serviciosTableAdapter = new MicroPrestamos.PrestamosDataSetTableAdapters.ServiciosTableAdapter();
             this.Cedulalbl = new System.Windows.Forms.Label();
             this.MontoPrestamolbl = new System.Windows.Forms.Label();
@@ -419,7 +419,7 @@
         #endregion
 
         private System.Windows.Forms.DataGridView DgvServicios;
-        private PrestamosDataSet prestamosDataSet;
+        private DataSetPrestamos prestamosDataSet;
         private System.Windows.Forms.BindingSource serviciosBindingSource;
         private PrestamosDataSetTableAdapters.ServiciosTableAdapter serviciosTableAdapter;
         private System.Windows.Forms.Label Cedulalbl;
