@@ -25,72 +25,103 @@ namespace MicroPrestamos
             {
                 if (conn.State == ConnectionState.Closed)
                     conn.Open();
-                string query = "SELECT COUNT(1) FROM Usuarios WHERE Usu_Usuario = @Usu_Usuario AND Usu_Contrasena = @Usu_Contrasena";
-                SqlCommand Command = new SqlCommand(query, conn)
+                string queryNo = $"Select Usu_Estado From Usuarios Where Usu_Usuario = '{TxtUsuario.Text}'";
+                SqlCommand commandNo = new SqlCommand(queryNo, conn)
                 {
                     CommandType = CommandType.Text
                 };
-                Command.Parameters.AddWithValue("@Usu_Usuario", TxtUsuario.Text);
-                Command.Parameters.AddWithValue("@Usu_Contrasena", TxtContrasena.Text);
-                int count = Convert.ToInt32(Command.ExecuteScalar());
-                if (count == 1)
+                SqlDataReader readerNo = commandNo.ExecuteReader();
+                string no = "";
+                while (readerNo.Read())
+                {
+                    no = readerNo.GetInt32(0).ToString();
+                }
+                if (no == "1")
                 {
                     conn.Close();
                     if (conn.State == ConnectionState.Closed)
                         conn.Open();
-                    string queryCambio = $"Select Usu_LoginVencido From Usuarios Where Usu_Usuario = '{TxtUsuario.Text}'";
-                    SqlCommand commandCambio = new SqlCommand(queryCambio, conn);
-                    SqlDataReader reader = commandCambio.ExecuteReader();
-                    string idRol = "";
-                    while (reader.Read())
-                    {
-                        idRol = reader.GetInt32(0).ToString();
-                    }
-                    conn.Close();
-                    if (conn.State == ConnectionState.Closed)
-                        conn.Open();
-                    string queryTemp = $"Insert Into LoginTemporal (Lt_Usuario) Values (@Lt_Usuario)";
-                    SqlCommand commandTemp = new SqlCommand(queryTemp, conn)
+                    string query = "SELECT COUNT(1) FROM Usuarios WHERE Usu_Usuario = @Usu_Usuario AND Usu_Contrasena = @Usu_Contrasena";
+                    SqlCommand Command = new SqlCommand(query, conn)
                     {
                         CommandType = CommandType.Text
                     };
-                    commandTemp.Parameters.AddWithValue("@Lt_Usuario", TxtUsuario.Text);
-                    commandTemp.ExecuteNonQuery();
-                    if (idRol == "3")
+                    Command.Parameters.AddWithValue("@Usu_Usuario", TxtUsuario.Text);
+                    Command.Parameters.AddWithValue("@Usu_Contrasena", TxtContrasena.Text);
+                    int count = Convert.ToInt32(Command.ExecuteScalar());
+                    int cont = 0;
+                    if (count == 1)
                     {
-                        MessageBox.Show("\tAlerta!!!\n\nCambio de contraseña requerido");
                         conn.Close();
                         if (conn.State == ConnectionState.Closed)
                             conn.Open();
-                        idRol = "0";
-                        string queryReinicio = $"Update Usuarios Set Usu_LoginVencido = @Usu_LoginVencido Where Usu_Usuario = '{TxtUsuario.Text}'";
-                        SqlCommand commandReinicio = new SqlCommand(queryReinicio, conn);
-                        commandReinicio.Parameters.AddWithValue("@Usu_LoginVencido", idRol);
-                        commandReinicio.ExecuteNonQuery();
-                        NuevaContraseña nuevaContraseña = new NuevaContraseña();
-                        this.Hide();
-                        nuevaContraseña.ShowDialog();
+                        string queryCambio = $"Select Usu_LoginVencido From Usuarios Where Usu_Usuario = '{TxtUsuario.Text}'";
+                        SqlCommand commandCambio = new SqlCommand(queryCambio, conn);
+                        SqlDataReader reader = commandCambio.ExecuteReader();
+                        string idRol = "";
+                        while (reader.Read())
+                        {
+                            idRol = reader.GetInt32(0).ToString();
+                        }
+                        conn.Close();
+                        if (conn.State == ConnectionState.Closed)
+                            conn.Open();
+                        string queryTemp = $"Insert Into LoginTemporal (Lt_Usuario) Values (@Lt_Usuario)";
+                        SqlCommand commandTemp = new SqlCommand(queryTemp, conn)
+                        {
+                            CommandType = CommandType.Text
+                        };
+                        commandTemp.Parameters.AddWithValue("@Lt_Usuario", TxtUsuario.Text);
+                        commandTemp.ExecuteNonQuery();
+                        if (idRol == "3")
+                        {
+                            MessageBox.Show("\tAlerta!!!\n\nCambio de contraseña requerido");
+                            conn.Close();
+                            if (conn.State == ConnectionState.Closed)
+                                conn.Open();
+                            idRol = "0";
+                            string queryReinicio = $"Update Usuarios Set Usu_LoginVencido = @Usu_LoginVencido Where Usu_Usuario = '{TxtUsuario.Text}'";
+                            SqlCommand commandReinicio = new SqlCommand(queryReinicio, conn);
+                            commandReinicio.Parameters.AddWithValue("@Usu_LoginVencido", idRol);
+                            commandReinicio.ExecuteNonQuery();
+                            NuevaContraseña nuevaContraseña = new NuevaContraseña();
+                            this.Hide();
+                            nuevaContraseña.ShowDialog();
 
+                        }
+                        else
+                        {
+                            idRol = Convert.ToString(Convert.ToInt32(idRol) + 1);
+                            conn.Close();
+                            if (conn.State == ConnectionState.Closed)
+                                conn.Open();
+                            string queryLogin = $"Update Usuarios Set Usu_LoginVencido = @Usu_LoginVencido Where Usu_Usuario = '{TxtUsuario.Text}'";
+                            SqlCommand commandLogin = new SqlCommand(queryLogin, conn);
+                            commandLogin.Parameters.AddWithValue("@Usu_LoginVencido", idRol);
+                            commandLogin.ExecuteNonQuery();
+
+                            MenuPant MenuPant = new MenuPant();
+                            this.Hide();
+                            MenuPant.ShowDialog();
+                        }
                     }
                     else
                     {
-                        idRol = Convert.ToString(Convert.ToInt32(idRol) + 1);
-                        conn.Close();
-                        if (conn.State == ConnectionState.Closed)
-                            conn.Open();
-                        string queryLogin = $"Update Usuarios Set Usu_LoginVencido = @Usu_LoginVencido Where Usu_Usuario = '{TxtUsuario.Text}'";
-                        SqlCommand commandLogin = new SqlCommand(queryLogin, conn);
-                        commandLogin.Parameters.AddWithValue("@Usu_LoginVencido", idRol);
-                        commandLogin.ExecuteNonQuery();
-
-                        MenuPant MenuPant = new MenuPant();
-                        this.Hide();
-                        MenuPant.ShowDialog();
+                        MessageBox.Show("Usuario o Contraseña incorrecto.");
+                        cont++;
+                        if (cont == 3)
+                        {
+                            string queryCont = $"Update Usuarios Set Usu_Estado = @Usu_Estado Where Usu_Usuario = '{TxtUsuario.Text}'";
+                            SqlCommand commandCont = new SqlCommand(queryCont, conn);
+                            commandCont.Parameters.AddWithValue("@Usu_Estado", "0");
+                            commandCont.ExecuteNonQuery();
+                            cont = 0;
+                        }
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Usuario o Contraseña incorrecto.");
+                    MessageBox.Show("\tUsuario bloqueado\n\nContactarse con un supervisor");
                 }
             }
             catch (Exception ex)
