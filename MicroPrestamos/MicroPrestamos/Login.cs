@@ -25,7 +25,7 @@ namespace MicroPrestamos
             {
                 if (conn.State == ConnectionState.Closed)
                     conn.Open();
-                String query = "SELECT COUNT(1) FROM Usuarios WHERE Usu_Usuario = @Usu_Usuario AND Usu_Contrasena = @Usu_Contrasena";
+                string query = "SELECT COUNT(1) FROM Usuarios WHERE Usu_Usuario = @Usu_Usuario AND Usu_Contrasena = @Usu_Contrasena";
                 SqlCommand Command = new SqlCommand(query, conn)
                 {
                     CommandType = CommandType.Text
@@ -35,6 +35,38 @@ namespace MicroPrestamos
                 int count = Convert.ToInt32(Command.ExecuteScalar());
                 if (count == 1)
                 {
+                    conn.Close();
+                    if (conn.State == ConnectionState.Closed)
+                        conn.Open();
+                    string queryCambio = $"Select Usu_LoginVencido From Usuarios Where Usu_Usuario = '{TxtUsuario.Text}'";
+                    SqlCommand commandCambio = new SqlCommand(queryCambio, conn);
+                    SqlDataReader reader = commandCambio.ExecuteReader();
+                    string idRol = "";
+                    while (reader.Read())
+                    {
+                        idRol = reader.GetInt32(0).ToString();
+                    }
+                    if (idRol == "3")
+                    {
+                        MessageBox.Show("Alerta!!!\n\nCambio de contraseña requerido");
+                        conn.Close();
+                        if (conn.State == ConnectionState.Closed)
+                            conn.Open();
+                        idRol = "0";
+                        string queryReinicio = $"Update Usuarios Set Usu_LoginVencido = @Usu_LoginVencido Where Usu_Usuario = '{TxtUsuario.Text}'";
+                        SqlCommand commandReinicio = new SqlCommand(queryReinicio, conn);
+                        commandReinicio.Parameters.AddWithValue("@Usu_LoginVencido", idRol);
+                        commandReinicio.ExecuteNonQuery();
+                    }
+                    idRol = Convert.ToString(Convert.ToInt32(idRol) + 1);
+                    conn.Close();
+                    if (conn.State == ConnectionState.Closed)
+                        conn.Open();
+                    string queryLogin = $"Update Usuarios Set Usu_LoginVencido = @Usu_LoginVencido Where Usu_Usuario = '{TxtUsuario.Text}'";
+                    SqlCommand commandLogin = new SqlCommand(queryLogin, conn);
+                    commandLogin.Parameters.AddWithValue("@Usu_LoginVencido", idRol);
+                    commandLogin.ExecuteNonQuery();
+
                     MenuPant MenuPant = new MenuPant();
                     this.Hide();
                     MenuPant.ShowDialog();
