@@ -52,7 +52,12 @@ namespace MicroPrestamos
 
         }
 
-        
+        private void BtnPago_Click(object sender, EventArgs e)
+        {
+            PagoPant pagoPant = new PagoPant();
+            this.Hide();
+            pagoPant.ShowDialog();
 
+        }
     }
 }

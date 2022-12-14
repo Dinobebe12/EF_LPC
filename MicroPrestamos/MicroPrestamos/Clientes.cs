@@ -17,8 +17,8 @@ namespace MicroPrestamos
         {
             InitializeComponent();
         }
-        readonly SqlConnection conn = new SqlConnection(@"Data Source = DESKTOP-TKG1DP2; Initial Catalog = Prestamos; Integrated Security=True;");
-        //readonly SqlConnection conn = new SqlConnection(@"Data Source = DINO\SQLEXPRESS; Initial Catalog = Prestamos; Integrated Security=True;");
+        //readonly SqlConnection conn = new SqlConnection(@"Data Source = DESKTOP-TKG1DP2; Initial Catalog = Prestamos; Integrated Security=True;");
+        readonly SqlConnection conn = new SqlConnection(@"Data Source = DINO\SQLEXPRESS; Initial Catalog = Prestamos; Integrated Security=True;");
         private void Registrarse_Load(object sender, EventArgs e)
         {
             SqlDataAdapter MyDA = new SqlDataAdapter();
@@ -38,6 +38,7 @@ namespace MicroPrestamos
             {
                 string query = "Insert Into Clientes (Cli_Nombre, Cli_Primer_Apellido, Cli_Segundo_Apellido, Cli_Cedula, Cli_Genero, Cli_Estado_Civil, Cli_Correo_Electronico, Cli_Direccion)" +
                                             "Values (@Cli_Nombre, @Cli_Primer_Apellido, @Cli_Segundo_Apellido, @Cli_Cedula, @Cli_Genero, @Cli_Estado_Civil, @Cli_Correo_Electronico, @Cli_Direccion)";
+                string queryCedula = "Insert Into Pagos (Cli_Cedula) Values (@Cli_Cedula)";
                 if (conn.State == ConnectionState.Closed)
                     conn.Open();
                 SqlCommand command = new SqlCommand(query, conn)
@@ -56,6 +57,15 @@ namespace MicroPrestamos
                     command.Parameters.AddWithValue("@Cli_Direccion", Direcciontxt.Text);
                     command.ExecuteNonQuery();
                     MessageBox.Show("Usuario creado con satisfacción");
+                    conn.Close();
+                    if (conn.State == ConnectionState.Closed)
+                        conn.Open();
+                    SqlCommand commandCedula = new SqlCommand(queryCedula, conn)
+                    {
+                        CommandType = CommandType.Text
+                    };
+                    commandCedula.Parameters.AddWithValue("@Cli_Cedula", CedulaDPtxt.Text);
+                    commandCedula.ExecuteNonQuery();
                 }
                 else
                 {

@@ -17,8 +17,8 @@ namespace MicroPrestamos
         {
             InitializeComponent();
         }
-        readonly SqlConnection conn = new SqlConnection(@"Data Source = DESKTOP-TKG1DP2; Initial Catalog = Prestamos; Integrated Security=True;");
-       // readonly SqlConnection conn = new SqlConnection(@"Data Source = DINO\SQLEXPRESS; Initial Catalog = Prestamos; Integrated Security=True;");
+        //readonly SqlConnection conn = new SqlConnection(@"Data Source = DESKTOP-TKG1DP2; Initial Catalog = Prestamos; Integrated Security=True;");
+        readonly SqlConnection conn = new SqlConnection(@"Data Source = DINO\SQLEXPRESS; Initial Catalog = Prestamos; Integrated Security=True;");
         private void PrestamoPant_Load(object sender, EventArgs e)
         {
             SqlDataAdapter MyDA = new SqlDataAdapter();
@@ -57,6 +57,21 @@ namespace MicroPrestamos
                     command.Parameters.AddWithValue("@Serv_Fecha_Fin", FechaFinDataTime.Text);
                     command.Parameters.AddWithValue("@Serv_Total_Pagar", TotalPagartxt.Text);
                     command.ExecuteNonQuery();
+
+                    DateTime fechaInicio = FechaInicioDataTime.Value;
+                    DateTime fechaFinal = FechaFinDataTime.Value;
+                    TimeSpan fechaTotal = fechaFinal.Subtract(fechaInicio);
+                    int cantidadMeses = Convert.ToInt32(fechaTotal.TotalDays / 30);
+                    string queryCantidadMeses = "Insert Into Servicios (Serv_CantidadMeses) Values (@Serv_CantidadMeses)";
+                    conn.Close();
+                    if (conn.State == ConnectionState.Closed)
+                        conn.Open();
+                    SqlCommand commandCantidadMeses = new SqlCommand(queryCantidadMeses, conn)
+                    {
+                        CommandType = CommandType.Text,
+                    };
+                    commandCantidadMeses.Parameters.AddWithValue("@Serv_CantidadMeses", cantidadMeses);
+                    commandCantidadMeses.ExecuteNonQuery();
                 }
                 else
                 {
@@ -274,6 +289,15 @@ namespace MicroPrestamos
             TimeSpan fechaTotal = fechaFinal.Subtract(fechaInicio);
             int cantidadMeses = Convert.ToInt32(fechaTotal.TotalDays / 30);
 
+            string queryCantidadMeses = "Insert Into Servicios (Serv_CantidadMeses) Values (@Serv_CantidadMeses)";
+            if (conn.State == ConnectionState.Closed)
+                conn.Open();
+            SqlCommand commandCantidadMeses = new SqlCommand(queryCantidadMeses, conn)
+            {
+                CommandType = CommandType.Text,
+            };
+            commandCantidadMeses.Parameters.AddWithValue("@Serv_CantidadMeses", cantidadMeses);
+            commandCantidadMeses.ExecuteNonQuery();
             Cuotatxt.Text = Convert.ToString(Convert.ToInt32(MontoPrestamotxt.Text) / cantidadMeses * Convert.ToDouble(CbbTasa.Text));
             TotalPagartxt.Text = Convert.ToString((Convert.ToInt32(MontoPrestamotxt.Text) + (Convert.ToInt32(MontoPrestamotxt.Text) * Convert.ToDouble(CbbTasa.Text))));
         }

@@ -43,3 +43,6 @@ C:\Users\Jose Rodriguez\Documents\GitHub\EF_LPC\MicroPrestamos\MicroPrestamos\ob
 C:\Users\Jose Rodriguez\Documents\GitHub\EF_LPC\MicroPrestamos\MicroPrestamos\obj\Debug\MicroPrestamos.ConsultaPant.resources
 C:\Users\victo\source\repos\EF_LPC\MicroPrestamos\MicroPrestamos\obj\Debug\MicroPrestamos.UsuariosPant.resources
 C:\Users\victo\source\repos\EF_LPC\MicroPrestamos\MicroPrestamos\obj\Debug\MicroPrestamos.ConsultaPant.resources
+C:\Users\victo\source\repos\EF_LPC\MicroPrestamos\MicroPrestamos\obj\Debug\MicroPrestamos.NuevaContraseña.resources
+C:\Users\victo\source\repos\EF_LPC\MicroPrestamos\MicroPrestamos\obj\Debug\MicroPrestamos.csproj.ResolveComReference.cache
+C:\Users\victo\source\repos\EF_LPC\MicroPrestamos\MicroPrestamos\obj\Debug\MicroPrestamos.PagoPant.resources

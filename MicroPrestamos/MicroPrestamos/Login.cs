@@ -17,8 +17,8 @@ namespace MicroPrestamos
         {
             InitializeComponent();
         }
-        readonly SqlConnection conn = new SqlConnection(@"Data Source = DESKTOP-TKG1DP2; Initial Catalog = Prestamos; Integrated Security=True;");
-       // readonly SqlConnection conn = new SqlConnection(@"Data Source = DINO\SQLEXPRESS; Initial Catalog = Prestamos; Integrated Security=True;");
+        //readonly SqlConnection conn = new SqlConnection(@"Data Source = DESKTOP-TKG1DP2; Initial Catalog = Prestamos; Integrated Security=True;");
+        readonly SqlConnection conn = new SqlConnection(@"Data Source = DINO\SQLEXPRESS; Initial Catalog = Prestamos; Integrated Security=True;");
         private void BtnLogin_Click(object sender, EventArgs e)
         {
             try
@@ -46,6 +46,16 @@ namespace MicroPrestamos
                     {
                         idRol = reader.GetInt32(0).ToString();
                     }
+                    conn.Close();
+                    if (conn.State == ConnectionState.Closed)
+                        conn.Open();
+                    string queryTemp = $"Insert Into LoginTemporal (Lt_Usuario) Values (@Lt_Usuario)";
+                    SqlCommand commandTemp = new SqlCommand(queryTemp, conn)
+                    {
+                        CommandType = CommandType.Text
+                    };
+                    commandTemp.Parameters.AddWithValue("@Lt_Usuario", TxtUsuario.Text);
+                    commandTemp.ExecuteNonQuery();
                     if (idRol == "3")
                     {
                         MessageBox.Show("\tAlerta!!!\n\nCambio de contraseña requerido");
@@ -57,9 +67,9 @@ namespace MicroPrestamos
                         SqlCommand commandReinicio = new SqlCommand(queryReinicio, conn);
                         commandReinicio.Parameters.AddWithValue("@Usu_LoginVencido", idRol);
                         commandReinicio.ExecuteNonQuery();
-                        UsuariosPant UsuariosPant = new UsuariosPant();
+                        NuevaContraseña nuevaContraseña = new NuevaContraseña();
                         this.Hide();
-                        UsuariosPant.ShowDialog();
+                        nuevaContraseña.ShowDialog();
 
                     }
                     else

@@ -58,6 +58,23 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetUsuarios.xsd</DependentUpon>
     </Compile>
+    <Compile Include="NuevaContraseña.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NuevaContraseña.Designer.cs">
+      <DependentUpon>NuevaContraseña.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PagoPant.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PagoPant.Designer.cs">
+      <DependentUpon>PagoPant.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PrestamosDataLoginTemporal.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PrestamosDataLoginTemporal.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Usuarios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -106,6 +123,12 @@
     <Compile Include="Clientes.Designer.cs">
       <DependentUpon>Clientes.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="NuevaContraseña.resx">
+      <DependentUpon>NuevaContraseña.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PagoPant.resx">
+      <DependentUpon>PagoPant.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Usuarios.resx">
       <DependentUpon>Usuarios.cs</DependentUpon>
     </EmbeddedResource>
@@ -134,6 +157,7 @@
     <EmbeddedResource Include="Clientes.resx">
       <DependentUpon>Clientes.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="ClassDiagram2.cd" />
     <None Include="DataSetPrestamos.xsc">
       <DependentUpon>DataSetPrestamos.xsd</DependentUpon>
     </None>
@@ -178,6 +202,17 @@
     <None Include="DataSetUsuarios.xss">
       <DependentUpon>DataSetUsuarios.xsd</DependentUpon>
     </None>
+    <None Include="PrestamosDataLoginTemporal.xsc">
+      <DependentUpon>PrestamosDataLoginTemporal.xsd</DependentUpon>
+    </None>
+    <None Include="PrestamosDataLoginTemporal.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PrestamosDataLoginTemporal.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="PrestamosDataLoginTemporal.xss">
+      <DependentUpon>PrestamosDataLoginTemporal.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -202,6 +237,35 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>8</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Excel">
+      <Guid>{00020813-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>9</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

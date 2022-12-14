@@ -18,8 +18,8 @@ namespace MicroPrestamos
         {
             InitializeComponent();
         }
-        readonly SqlConnection conn = new SqlConnection(@"Data Source = DESKTOP-TKG1DP2; Initial Catalog = Prestamos; Integrated Security=True;");
-        //readonly SqlConnection conn = new SqlConnection(@"Data Source = DINO\SQLEXPRESS; Initial Catalog = Prestamos; Integrated Security=True;");
+        //readonly SqlConnection conn = new SqlConnection(@"Data Source = DESKTOP-TKG1DP2; Initial Catalog = Prestamos; Integrated Security=True;");
+        readonly SqlConnection conn = new SqlConnection(@"Data Source = DINO\SQLEXPRESS; Initial Catalog = Prestamos; Integrated Security=True;");
 
         private void VolverConsultabtn_Click(object sender, EventArgs e)
         {
@@ -81,15 +81,15 @@ namespace MicroPrestamos
 
         public int i = 0;
 
-        private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        private void PrintDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
         {
             // La fuente que vamos a usar para imprimir.
             Font printFont = new Font("Arial", 10);
             float topMargin = e.MarginBounds.Top;
-            float yPos = 0;
-            float linesPerPage = 0;
+            float yPos;
+            float linesPerPage;
             int count = 0;
-            string texto = "";
+            string texto;
             DataGridViewRow row;
 
             // Calculamos el número de líneas que caben en cada página.
@@ -137,9 +137,33 @@ namespace MicroPrestamos
 
         }
 
+        public void ExcelConsulta(DataGridView dataGridView)
+        {
+            Microsoft.Office.Interop.Excel.Application application = new Microsoft.Office.Interop.Excel.Application();
+            application.Application.Workbooks.Add(true);
+            int indexColumna = 0;
+            foreach (DataGridViewColumn columna in dataGridView.Columns)
+            {
+                indexColumna++;
+                application.Cells[1, indexColumna] = columna.Name;
+            }
+            int indexFila = 0;
+            foreach (DataGridViewRow fila in dataGridView.Rows)
+            {
+                indexFila++;
+                indexColumna = 0;
+                foreach (DataGridViewColumn columna in dataGridView.Columns)
+                {
+                    indexColumna++;
+                    application.Cells[indexFila + 1, indexColumna] = fila.Cells[columna.Name].Value;
+                }
+            }
+            application.Visible = true;
+        }
+
         private void ExcelConsultabtn_Click(object sender, EventArgs e)
         {
-
+            ExcelConsulta(DgvConsultas);
         }
     }
     
