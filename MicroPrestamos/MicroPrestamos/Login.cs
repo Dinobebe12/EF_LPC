@@ -52,6 +52,21 @@ namespace MicroPrestamos
                     int cont = 0;
                     if (count == 1)
                     {
+                        if (count == 1)
+                        {
+                            string frole = $"Select Rol_ID From Usuarios Where Usu_Usuario='{TxtUsuario.Text}'";
+                            SqlCommand cmdRole = new SqlCommand(frole, conn)
+                            {
+                                CommandType = CommandType.Text
+                            };
+                            SqlDataReader reader2 = cmdRole.ExecuteReader();
+                            reader2.Read();
+                            MenuPant MenuPant = new MenuPant(reader2.GetInt32(0));
+                        }
+                        else
+                        {
+                            MessageBox.Show("Usuario o Contraseña incorrecto.");
+                        }
                         conn.Close();
                         if (conn.State == ConnectionState.Closed)
                             conn.Open();

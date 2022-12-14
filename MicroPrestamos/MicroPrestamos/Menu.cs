@@ -16,6 +16,34 @@ namespace MicroPrestamos
         {
             InitializeComponent();
         }
+
+        public MenuPant(int role)
+        {
+            InitializeComponent();
+            if (role == 1)
+            {
+                PrestamosMenubtn.Enabled = false;
+            }
+            else if (role == 2)
+            {
+                PrestamosMenubtn.Enabled= false;
+
+            }
+            else if (role == 3)
+            {
+                UsuariosMenubtn.Enabled=false;
+                ConsultaMenubtn.Enabled = false;
+            }
+            else if (role == 4)
+            {
+                UsuariosMenubtn.Enabled = false;
+
+            }
+            else
+            {
+            }
+        }
+
         private void PrestamosMenubtn_Click(object sender, EventArgs e)
         {
             PrestamoPant PrestamoPant = new PrestamoPant();
@@ -52,12 +80,5 @@ namespace MicroPrestamos
 
         }
 
-        private void BtnPago_Click(object sender, EventArgs e)
-        {
-            PagoPant pagoPant = new PagoPant();
-            this.Hide();
-            pagoPant.ShowDialog();
-
-        }
     }
 }
