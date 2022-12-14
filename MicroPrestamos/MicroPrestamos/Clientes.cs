@@ -44,19 +44,23 @@ namespace MicroPrestamos
                 {
                     CommandType = CommandType.Text
                 };
-                command.Parameters.AddWithValue("@Cli_Nombre", Nombretxt.Text);
-                command.Parameters.AddWithValue("@Cli_Primer_Apellido", Apellido1txt.Text);
-                command.Parameters.AddWithValue("@Cli_Segundo_Apellido", Apellido2txt.Text);
-                command.Parameters.AddWithValue("@Cli_Cedula", CedulaDPtxt.Text);
-                command.Parameters.AddWithValue("@Cli_Genero", Generobox.Text);
-                command.Parameters.AddWithValue("@Cli_Estado_Civil", EstadoCivilbox.Text);
-                command.Parameters.AddWithValue("@Cli_Correo_Electronico", Correotxt.Text);
-                command.Parameters.AddWithValue("@Cli_Direccion", Direcciontxt.Text);
-                command.ExecuteNonQuery();
-
-                Login login = new Login();
-                this.Hide();
-                login.ShowDialog();
+                if (Nombretxt.Text != "" && Apellido1txt.Text != "" && Apellido2txt.Text != "" && CedulaDPtxt.Text != "")
+                {
+                    command.Parameters.AddWithValue("@Cli_Nombre", Nombretxt.Text);
+                    command.Parameters.AddWithValue("@Cli_Primer_Apellido", Apellido1txt.Text);
+                    command.Parameters.AddWithValue("@Cli_Segundo_Apellido", Apellido2txt.Text);
+                    command.Parameters.AddWithValue("@Cli_Cedula", CedulaDPtxt.Text);
+                    command.Parameters.AddWithValue("@Cli_Genero", Generobox.Text);
+                    command.Parameters.AddWithValue("@Cli_Estado_Civil", EstadoCivilbox.Text);
+                    command.Parameters.AddWithValue("@Cli_Correo_Electronico", Correotxt.Text);
+                    command.Parameters.AddWithValue("@Cli_Direccion", Direcciontxt.Text);
+                    command.ExecuteNonQuery();
+                    MessageBox.Show("Usuario creado con satisfacción");
+                }
+                else
+                {
+                    MessageBox.Show("Campos obligatorios vacíos!!!");
+                }
             }
             catch (Exception ex)
             {

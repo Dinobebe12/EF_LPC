@@ -30,7 +30,7 @@ namespace MicroPrestamos
             {
                 DataSource = table
             };
-            dataGridView1.DataSource = bSource;
+            DgvServicios.DataSource = bSource;
         }
 
         private void AgregarPrestamosbtn_Click(object sender, EventArgs e)
@@ -47,16 +47,21 @@ namespace MicroPrestamos
                 {
                     CommandType = CommandType.Text
                 };
-                command.Parameters.AddWithValue("@Cli_Cedula", CedulaPrestamostxt.Text);
-                command.Parameters.AddWithValue("@Serv_Monto_Prestamo", MontoPrestamotxt.Text);
-                command.Parameters.AddWithValue("@Serv_Cuota", Cuotatxt.Text);
-                command.Parameters.AddWithValue("@Serv_Tasa", Tasatxt.Text);
-                command.Parameters.AddWithValue("@Serv_Fecha_Inicio", FechaInicioDataTime.Text);
-                command.Parameters.AddWithValue("@Serv_Fecha_Fin", FechaFinDataTime.Text);
-                command.Parameters.AddWithValue("@Serv_Total_Pagar", TotalPagartxt.Text);
-                command.ExecuteNonQuery();
-
-
+                if (CedulaPrestamostxt.Text != "" && MontoPrestamotxt.Text != "")
+                {
+                    command.Parameters.AddWithValue("@Cli_Cedula", CedulaPrestamostxt.Text);
+                    command.Parameters.AddWithValue("@Serv_Monto_Prestamo", MontoPrestamotxt.Text);
+                    command.Parameters.AddWithValue("@Serv_Cuota", Cuotatxt.Text);
+                    command.Parameters.AddWithValue("@Serv_Tasa", CbbTasa.Text);
+                    command.Parameters.AddWithValue("@Serv_Fecha_Inicio", FechaInicioDataTime.Text);
+                    command.Parameters.AddWithValue("@Serv_Fecha_Fin", FechaFinDataTime.Text);
+                    command.Parameters.AddWithValue("@Serv_Total_Pagar", TotalPagartxt.Text);
+                    command.ExecuteNonQuery();
+                }
+                else
+                {
+                    MessageBox.Show("Campos obligatorios vacíos!!!");
+                }
                 MessageBox.Show("Se agrego el prestamo satisfactoriamente!");
                 SqlDataAdapter MyDA = new SqlDataAdapter();
                 string sqlSelectAll = "SELECT * from Servicios";
@@ -67,7 +72,7 @@ namespace MicroPrestamos
                 {
                     DataSource = table
                 };
-                dataGridView1.DataSource = bSource;
+                DgvServicios.DataSource = bSource;
 
 
                 PrestamoPant PrestamoPant = new PrestamoPant();
@@ -137,11 +142,11 @@ namespace MicroPrestamos
                 if (conn.State == ConnectionState.Closed)
                     conn.Open();
 
-                if (Tasatxt.Text != "")
+                if (CbbTasa.Text != "")
                 {
                     string query = $"Update Servicios Set Serv_Tasa = @Serv_Tasa Where Cli_Cedula = '{cedulaSql}'";
                     SqlCommand command = new SqlCommand(query, conn);
-                    command.Parameters.AddWithValue("@Serv_Tasa", Tasatxt.Text);
+                    command.Parameters.AddWithValue("@Serv_Tasa", CbbTasa.Text);
                     command.ExecuteNonQuery();
                 }
                 conn.Close();
@@ -190,7 +195,7 @@ namespace MicroPrestamos
                 {
                     DataSource = table
                 };
-                dataGridView1.DataSource = bSource;
+                DgvServicios.DataSource = bSource;
             }
             catch (Exception ex)
             {
@@ -238,7 +243,7 @@ namespace MicroPrestamos
                     {
                         DataSource = table
                     };
-                    dataGridView1.DataSource = bSource;
+                    DgvServicios.DataSource = bSource;
                 }
                 else
                 {
@@ -261,7 +266,18 @@ namespace MicroPrestamos
             this.Hide();
             MenuPant.ShowDialog();
         }
+
+        private void BtnCalcular_Click(object sender, EventArgs e)
+        {
+            DateTime fechaInicio = FechaInicioDataTime.Value;
+            DateTime fechaFinal = FechaFinDataTime.Value;
+            TimeSpan fechaTotal = fechaFinal.Subtract(fechaInicio);
+            int cantidadMeses = Convert.ToInt32(fechaTotal.TotalDays / 30);
+
+            Cuotatxt.Text = Convert.ToString(Convert.ToInt32(MontoPrestamotxt.Text) / cantidadMeses * Convert.ToDouble(CbbTasa.Text));
+            TotalPagartxt.Text = Convert.ToString((Convert.ToInt32(MontoPrestamotxt.Text) + (Convert.ToInt32(MontoPrestamotxt.Text) * Convert.ToDouble(CbbTasa.Text))));
+        }
     }
-    
-    
+
+
 }
